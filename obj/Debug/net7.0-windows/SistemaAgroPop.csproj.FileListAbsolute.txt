@@ -1,3 +1,8 @@
+C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.csproj.AssemblyReference.cache
+C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.GeneratedMSBuildEditorConfig.editorconfig
+C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.AssemblyInfoInputs.cache
+C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.AssemblyInfo.cs
+C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.csproj.CoreCompileInputs.cache
 C:\ProgramacaoDesktop\SistemaAgroPop\bin\Debug\net7.0-windows\SistemaAgroPop.exe
 C:\ProgramacaoDesktop\SistemaAgroPop\bin\Debug\net7.0-windows\SistemaAgroPop.deps.json
 C:\ProgramacaoDesktop\SistemaAgroPop\bin\Debug\net7.0-windows\SistemaAgroPop.runtimeconfig.json
@@ -27,11 +32,6 @@ C:\ProgramacaoDesktop\SistemaAgroPop\bin\Debug\net7.0-windows\MySqlConnector.dll
 C:\ProgramacaoDesktop\SistemaAgroPop\bin\Debug\net7.0-windows\Pomelo.EntityFrameworkCore.MySql.dll
 C:\ProgramacaoDesktop\SistemaAgroPop\bin\Debug\net7.0-windows\Pomelo.EntityFrameworkCore.MySql.Design.dll
 C:\ProgramacaoDesktop\SistemaAgroPop\bin\Debug\net7.0-windows\ThenInclude.EF6.dll
-C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.csproj.AssemblyReference.cache
-C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.GeneratedMSBuildEditorConfig.editorconfig
-C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.AssemblyInfoInputs.cache
-C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.AssemblyInfo.cs
-C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.csproj.CoreCompileInputs.cache
 C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.csproj.CopyComplete
 C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.dll
 C:\ProgramacaoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\refint\SistemaAgroPop.dll
