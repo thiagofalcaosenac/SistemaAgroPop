@@ -9,6 +9,7 @@ namespace Repository
     public class Database : DbContext
     {
         public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<Fazenda> Fazendas { get; set; }
 
         private string _connectionString = "Server=localhost;User Id=root;Database=sistemaagropop;";
 
