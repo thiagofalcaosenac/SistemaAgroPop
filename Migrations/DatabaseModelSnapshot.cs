@@ -67,7 +67,7 @@ namespace SistemaAgroPop.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("idEndereco")
+                    b.Property<int>("enderecoid")
                         .HasColumnType("int");
 
                     b.Property<string>("nome")
@@ -79,7 +79,20 @@ namespace SistemaAgroPop.Migrations
 
                     b.HasKey("id");
 
+                    b.HasIndex("enderecoid");
+
                     b.ToTable("Fazendas");
+                });
+
+            modelBuilder.Entity("Model.Fazenda", b =>
+                {
+                    b.HasOne("Model.Endereco", "endereco")
+                        .WithMany()
+                        .HasForeignKey("enderecoid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("endereco");
                 });
 #pragma warning restore 612, 618
         }

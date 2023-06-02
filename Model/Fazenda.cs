@@ -11,14 +11,16 @@ namespace Model
         public int id { get; set; }
         public string nome { get; set; }
         public int qtdLimiteAnimal { get; set; }
-        //public virtual int qtdAtualAnimal { get; set; }
-        public int idEndereco { get; set; }
 
-        public Fazenda(string nome, int qtdLimiteAnimal, int idEndereco)
+        //A fórmula desse campo qtdAtualAnimal irá ser feita após o Model Animal ser criado
+        //public virtual int qtdAtualAnimal { get; set; }
+        public Endereco endereco { get; set; }
+
+        public Fazenda(string nome, int qtdLimiteAnimal, Endereco endereco)
         {
             this.nome = nome;
             this.qtdLimiteAnimal = qtdLimiteAnimal;
-            this.idEndereco = idEndereco;
+            this.endereco = endereco;
 
             Database db = new Database();
             db.Fazendas.Add(this);
@@ -31,7 +33,7 @@ namespace Model
 
         public override string ToString()
         {
-            return $"Id: {id}, Nome: {nome}, Quantidade Limite Animal: {qtdLimiteAnimal}, Id Endereco: {idEndereco}";
+            return $"Id: {id}, Nome: {nome}, Quantidade Limite Animal: {qtdLimiteAnimal}";
         }
 
         public override int GetHashCode()
@@ -79,7 +81,7 @@ namespace Model
             int id,
             string nome,
             int qtdLimiteAnimal,
-            int idEndereco
+            Endereco endereco
         )
         {
             try
@@ -87,7 +89,7 @@ namespace Model
                 Fazenda fazenda = BuscarFazenda(id);
                 fazenda.nome = nome;
                 fazenda.qtdLimiteAnimal = qtdLimiteAnimal;
-                fazenda.idEndereco = idEndereco;
+                fazenda.endereco = endereco;
 
                 Database db = new Database();
                 db.Fazendas.Update(fazenda);

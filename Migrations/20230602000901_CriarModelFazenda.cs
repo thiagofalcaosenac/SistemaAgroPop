@@ -20,13 +20,24 @@ namespace SistemaAgroPop.Migrations
                     nome = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     qtdLimiteAnimal = table.Column<int>(type: "int", nullable: false),
-                    idEndereco = table.Column<int>(type: "int", nullable: false)
+                    enderecoid = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Fazendas", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_Fazendas_Enderecos_enderecoid",
+                        column: x => x.enderecoid,
+                        principalTable: "Enderecos",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Fazendas_enderecoid",
+                table: "Fazendas",
+                column: "enderecoid");
         }
 
         /// <inheritdoc />
