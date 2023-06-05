@@ -149,13 +149,58 @@ namespace Model
             return animal;
         }
 
-        public static Model.Animal BuscarPorNome(int nroRegistro)
+        public static Model.Animal BuscarPorId(int Id)
+        {
+            try
+            {
+                Database db = new Database();
+                Model.Animal animal = (from u in db.Animals
+                                          where u.Id == Id
+                                          select u).First();
+                return animal;
+            }
+            catch
+            {
+                throw new System.Exception("Animal não encontrado");
+            }
+        }
+         public static Model.Animal BuscarPornroRegistro(int nroRegistro)
         {
             try
             {
                 Database db = new Database();
                 Model.Animal animal = (from u in db.Animals
                                           where u.nroRegistro == nroRegistro
+                                          select u).First();
+                return animal;
+            }
+            catch
+            {
+                throw new System.Exception("Animal não encontrado");
+            }
+        }
+         public static Model.Animal BuscarPorRaca(int raca)
+        {
+            try
+            {
+                Database db = new Database();
+                Model.Animal animal = (from u in db.Animals
+                                          where u.fk_raca == raca
+                                          select u).First();
+                return animal;
+            }
+            catch
+            {
+                throw new System.Exception("Animal não encontrado");
+            }
+        }
+         public static Model.Animal BuscarPorFazenda(int fazenda)
+        {
+            try
+            {
+                Database db = new Database();
+                Model.Animal animal = (from u in db.Animals
+                                          where u.fk_fazenda == fazenda
                                           select u).First();
                 return animal;
             }
