@@ -21,6 +21,13 @@ namespace Model
             DataVacinacao = dataVacinacao;
             ProximaDose = proximaDose;
             NroDose = nroDose;
+            
+            Database db = new Database();
+            db.CarteiraVacinacoes.Add(this);
+            db.SaveChanges();
+        }
+        public CarteiraVacinacao()
+        {
         }
 
         public static CarteiraVacinacao BuscarPorId(int id)
