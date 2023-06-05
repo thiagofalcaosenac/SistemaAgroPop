@@ -14,10 +14,45 @@ namespace SistemaAgroPop.Migrations
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
-#pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("Model.Animal", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("cor")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("dataNascimento")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("fazendaid")
+                        .HasColumnType("int");
+
+                    b.Property<int>("nroRegistro")
+                        .HasColumnType("int");
+
+                    b.Property<int>("origem")
+                        .HasColumnType("int");
+
+                    b.Property<int>("peso")
+                        .HasColumnType("int");
+
+                    b.Property<int>("racaid")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("fazendaid");
+
+                    b.HasIndex("racaid");
+
+                    b.ToTable("Animals");
+                });
 
             modelBuilder.Entity("Model.Endereco", b =>
                 {
@@ -112,19 +147,112 @@ namespace SistemaAgroPop.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("VacinaFornecidas");
-                });
+                    modelBuilder.Entity("Model.Raca", b =>
+                      {
+                          b.Property<int>("id")
+                              .ValueGeneratedOnAdd()
+                              .HasColumnType("int");
 
-            modelBuilder.Entity("Model.Fazenda", b =>
-                {
-                    b.HasOne("Model.Endereco", "endereco")
-                        .WithMany()
-                        .HasForeignKey("enderecoid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                          b.Property<int>("enderecoid")
+                              .HasColumnType("int");
 
-                    b.Navigation("endereco");
+                          b.Property<string>("especie")
+                              .IsRequired()
+                              .HasColumnType("longtext");
+
+                          b.Property<string>("nome")
+                              .IsRequired()
+                              .HasColumnType("longtext");
+
+                          b.Property<string>("porte")
+                              .IsRequired()
+                              .HasColumnType("longtext");
+
+                          b.HasKey("id");
+
+                          b.HasIndex("enderecoid");
+
+                          b.ToTable("Racas");
+                      });
+                    modelBuilder.Entity("Model.Fornecedor", b =>
+
+                        {
+                            b.Property<int>("id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
+
+                            b.Property<string>("cnpj")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b.Property<int>("enderecoid")
+                                .HasColumnType("int");
+
+                            b.Property<string>("nomeFantasia")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b.Property<string>("razaoSocial")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b.HasKey("id");
+
+                            b.HasIndex("enderecoid");
+                            b.ToTable("Fornecedors");
+                        });
+
+                    modelBuilder.Entity("Model.Animal", b =>
+                        {
+                            b.HasOne("Model.Fazenda", "fazenda")
+                                .WithMany()
+                                .HasForeignKey("fazendaid")
+                                .OnDelete(DeleteBehavior.Cascade)
+                                .IsRequired();
+
+                            b.HasOne("Model.Raca", "raca")
+                                .WithMany()
+                                .HasForeignKey("racaid")
+                                .OnDelete(DeleteBehavior.Cascade)
+                                .IsRequired();
+
+                            b.Navigation("fazenda");
+
+                            b.Navigation("raca");
+                        });
+
+                    modelBuilder.Entity("Model.Fazenda", b =>
+                        {
+                            b.HasOne("Model.Endereco", "endereco")
+                                .WithMany()
+                                .HasForeignKey("enderecoid")
+                                .OnDelete(DeleteBehavior.Cascade)
+                                .IsRequired();
+
+                            b.Navigation("endereco");
+                        });
+
+                    modelBuilder.Entity("Model.Fornecedor", b =>
+                        {
+                            b.HasOne("Model.Endereco", "endereco")
+                                .WithMany()
+                                .HasForeignKey("enderecoid")
+                                .OnDelete(DeleteBehavior.Cascade)
+                                .IsRequired();
+
+                            b.Navigation("endereco");
+                        });
+                    modelBuilder.Entity("Model.Raca", b =>
+                    {
+                        b.HasOne("Model.Endereco", "endereco")
+                            .WithMany()
+                            .HasForeignKey("enderecoid")
+                            .OnDelete(DeleteBehavior.Cascade)
+                            .IsRequired();
+
+                        b.Navigation("endereco");
+                    });
                 });
-#pragma warning restore 612, 618
         }
     }
 }

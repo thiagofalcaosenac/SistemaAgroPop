@@ -10,8 +10,9 @@ namespace Repository
     {
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Fazenda> Fazendas { get; set; }
-
+        public DbSet<Fornecedor> Fornecedors { get; set; }
          public DbSet<VacinaFornecida> VacinaFornecidas { get; set; }
+        public DbSet<Animal> Animals { get; set; }
 
         private string _connectionString = "Server=localhost;User Id=root;Database=sistemaagropop;";
 
