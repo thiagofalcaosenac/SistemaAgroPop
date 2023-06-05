@@ -19,8 +19,14 @@ namespace Model
             this.Tipo = tipo;
             Periodicidade = periodicidade;
             QtdMinima = qtdMinima;
-        }
 
+            Database db = new Database();
+            db.Vacinas.Add(this);
+            db.SaveChanges();
+        }
+        public Vacina()
+        {
+        }
         public static Vacina BuscarVacinaPorId(int id)
         {
             Database db = new Database();
