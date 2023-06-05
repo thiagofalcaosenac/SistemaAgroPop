@@ -11,6 +11,7 @@ namespace Repository
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Fazenda> Fazendas { get; set; }
 
+        public DbSet<Raca> Racas { get; set; }
         private string _connectionString = "Server=localhost;User Id=root;Database=sistemaagropop;";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
