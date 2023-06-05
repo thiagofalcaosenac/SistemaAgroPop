@@ -142,6 +142,22 @@ namespace Model
                 throw new System.Exception("Raca não encontrada");
             }
         }
+
+              public static Model.Raca BuscarPorEspecie(string especie)
+        {
+            try
+            {
+                Database db = new Database();
+                Model.Raca raca = (from u in db.Racas
+                                          where u.especie == especie
+                                          select u).First();
+                return raca;
+            }
+            catch
+            {
+                throw new System.Exception("Raca não encontrada");
+            }
+        }
     }
 
 }
