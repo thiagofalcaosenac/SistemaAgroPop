@@ -155,7 +155,7 @@ namespace Model
             {
                 Database db = new Database();
                 Model.Animal animal = (from u in db.Animals
-                                          where u.Id == Id
+                                          where u.id == Id
                                           select u).First();
                 return animal;
             }
@@ -185,7 +185,7 @@ namespace Model
             {
                 Database db = new Database();
                 Model.Animal animal = (from u in db.Animals
-                                          where u.fk_raca == raca
+                                          where u.raca.id == raca
                                           select u).First();
                 return animal;
             }
@@ -200,7 +200,7 @@ namespace Model
             {
                 Database db = new Database();
                 Model.Animal animal = (from u in db.Animals
-                                          where u.fk_fazenda == fazenda
+                                          where u.fazenda.id == fazenda
                                           select u).First();
                 return animal;
             }
