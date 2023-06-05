@@ -272,6 +272,37 @@ namespace SistemaAgroPop.Migrations
                             });
                         });
                 });
+
+            modelBuilder.Entity("Model.Vacina", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("Periodicidade")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QtdMinima")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Tipo")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Vacinas");
+                });
+
+            modelBuilder.Entity("Model.Fazenda", b =>
+                {
+                    b.HasOne("Model.Endereco", "endereco")
+                        .WithMany()
+                        .HasForeignKey("enderecoid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("endereco");
+                });
         }
     }
 }

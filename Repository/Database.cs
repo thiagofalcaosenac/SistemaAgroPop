@@ -10,6 +10,7 @@ namespace Repository
     {
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Fazenda> Fazendas { get; set; }
+        public DbSet<Vacina> Vacinas { get; set; }
         public DbSet<Fornecedor> Fornecedors { get; set; }
          public DbSet<VacinaFornecida> VacinaFornecidas { get; set; }
         public DbSet<Animal> Animals { get; set; }
