@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
@@ -10,9 +11,11 @@ using Repository;
 namespace SistemaAgroPop.Migrations
 {
     [DbContext(typeof(Database))]
-    partial class DatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230605061732_criandoAnimal")]
+    partial class criandoAnimal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,7 +124,7 @@ namespace SistemaAgroPop.Migrations
                     b.ToTable("Fazendas");
                 });
 
-              modelBuilder.Entity("Model.Raca", b =>
+            modelBuilder.Entity("Model.Raca", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -147,33 +150,6 @@ namespace SistemaAgroPop.Migrations
                     b.HasIndex("enderecoid");
 
                     b.ToTable("Racas");
-                });
-            modelBuilder.Entity("Model.Fornecedor", b =>
-
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("cnpj")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("enderecoid")
-                        .HasColumnType("int");
-
-                    b.Property<string>("nomeFantasia")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("razaoSocial")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("enderecoid");
-                    b.ToTable("Fornecedors");
                 });
 
             modelBuilder.Entity("Model.Animal", b =>
@@ -206,17 +182,7 @@ namespace SistemaAgroPop.Migrations
                     b.Navigation("endereco");
                 });
 
-            modelBuilder.Entity("Model.Fornecedor", b =>
-                {
-                    b.HasOne("Model.Endereco", "endereco")
-                        .WithMany()
-                        .HasForeignKey("enderecoid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("endereco");
-                });
-                modelBuilder.Entity("Model.Raca", b =>
+            modelBuilder.Entity("Model.Raca", b =>
                 {
                     b.HasOne("Model.Endereco", "endereco")
                         .WithMany()
