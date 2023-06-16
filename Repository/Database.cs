@@ -17,7 +17,7 @@ namespace Repository
         public DbSet<CarteiraVacinacao> CarteiraVacinacoes { get; set; }
         public DbSet<Raca> Racas { get; set; }
 
-        private string _connectionString = "Server=localhost;User Id=root;Database=sistemaagropop;";
+        private string _connectionString = "Server=localhost;User Id=root;pwd=pamela;Database=sistema_fazenda;";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseMySql(_connectionString, ServerVersion.AutoDetect(_connectionString));

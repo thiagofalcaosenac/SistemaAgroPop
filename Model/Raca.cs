@@ -9,13 +9,13 @@ namespace Model
     public class Raca
     {
         public int id { get; set; }
-        public string especie { get; set; }
+        public EnumEspecie especie { get; set; }
+
+        public EnumPorte porte { get; set; }
         public string nome { get; set; }
-        public string porte { get; set; }
 
-        public Endereco endereco { get; set; }
 
-        public Raca(string nome, string especie, string porte)
+        public Raca(string nome, EnumEspecie especie, EnumPorte porte)
         {
             this.nome = nome;
             this.especie = especie;
@@ -32,7 +32,7 @@ namespace Model
 
         public override string ToString()
         {
-            return $"Id: {id}, Nome: {nome}, especie: {especie}";
+            return $"Id: {id}, Nome: {nome}, especie: {especie}, porte: {porte}";
         }
 
         public override int GetHashCode()
@@ -79,8 +79,8 @@ namespace Model
         public static Raca AlterarRaca(
             int id,
             string nome,
-            string especie,
-            string porte
+            EnumEspecie especie,
+            EnumPorte porte
         )
         {
             try
@@ -143,7 +143,7 @@ namespace Model
             }
         }
 
-              public static Model.Raca BuscarPorEspecie(string especie)
+              public static Model.Raca BuscarPorEspecie(EnumEspecie especie)
         {
             try
             {
