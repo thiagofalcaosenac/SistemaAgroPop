@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8t5Qvzrel1HBityoa78z+wlqL01cdSAIA1UL9pVDmG87Mn1UnrAoTCHhQaa+tpFmMgf2lmQmxIcSrpZsTI8kKA==",
+  "dgSpecHash": "izpKuVtYDi6+Q1vJ+2/A0CFkvrFKjxZuz1dspUIuahCcSm//ADep8jSzfvwBHjMrOYFV4EOsrtG/H8NjFynE6w==",
   "success": true,
-  "projectFilePath": "C:\\ProgramacaoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
+  "projectFilePath": "C:\\Programacao\\SistemaAgroPop\\SistemaAgroPop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thiago.falcao\\.nuget\\packages\\entityframework\\6.2.0\\entityframework.6.2.0.nupkg.sha512",
     "C:\\Users\\thiago.falcao\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
