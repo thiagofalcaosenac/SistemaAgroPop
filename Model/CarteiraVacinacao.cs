@@ -11,16 +11,19 @@ namespace Model
         public DateOnly DataVacinacao { get; set; }
         public DateOnly ProximaDose { get; set; }
         public int NroDose { get; set; }
-        /*public Animal animal {get; set;}
-        public Vacina vacinal {get; set;}
-        public Fornecedor fornecedor {get; set;}*/
+        public Animal Animal {get; set;}
+        public Vacina Vacina {get; set;}
+        public Fornecedor Fornecedor {get; set;}
 
-        public CarteiraVacinacao(int id, DateOnly dataVacinacao, DateOnly proximaDose, int nroDose)
+        public CarteiraVacinacao(int id, DateOnly dataVacinacao, DateOnly proximaDose, int nroDose, Animal animal, Vacina vacina, Fornecedor fornecedor)
         {
             Id = id;
             DataVacinacao = dataVacinacao;
             ProximaDose = proximaDose;
             NroDose = nroDose;
+            Animal = animal;
+            Vacina = vacina;
+            Fornecedor = fornecedor;
             
             Database db = new Database();
             db.CarteiraVacinacoes.Add(this);
@@ -90,37 +93,37 @@ namespace Model
             return carteiraVacinacoes;
         }
 
-        // public static CarteiraVacinacao BuscarPorAnimal(Animal animal)
-        // {
-        //     try
-        //     {
-        //         Database db = new Database();
-        //         CarteiraVacinacao carteiraVacinacao = (from u in db.CarteiraVacinacoes
-        //                                                where u.Animal == animal
-        //                                                select u).First();
-        //         return carteiraVacinacao;
-        //     }
-        //     catch
-        //     {
-        //         throw new System.Exception("CarteiraVacinal não encontrado");
-        //     }
-        // }
+        public static CarteiraVacinacao BuscarPorAnimal(Animal animal)
+        {
+            try
+            {
+                Database db = new Database();
+                CarteiraVacinacao carteiraVacinacao = (from u in db.CarteiraVacinacoes
+                                                       where u.Animal == animal
+                                                       select u).First();
+                return carteiraVacinacao;
+            }
+            catch
+            {
+                throw new System.Exception("CarteiraVacinal não encontrado");
+            }
+        }
 
-        // public static CarteiraVacinacao BuscarPorVacina(Vacina vacina)
-        // {
-        //     try
-        //     {
-        //         Database db = new Database();
-        //         CarteiraVacinacao carteiraVacinacao = (from u in db.CarteiraVacinacoes
-        //                                                where u.Vacina == vacina
-        //                                                select u).First();
-        //         return carteiraVacinacao;
-        //     }
-        //     catch
-        //     {
-        //         throw new System.Exception("CarteiraVacinal não encontrado");
-        //     }
-        // }
+        public static CarteiraVacinacao BuscarPorVacina(Vacina vacina)
+        {
+            try
+            {
+                Database db = new Database();
+                CarteiraVacinacao carteiraVacinacao = (from u in db.CarteiraVacinacoes
+                                                       where u.Vacina == vacina
+                                                       select u).First();
+                return carteiraVacinacao;
+            }
+            catch
+            {
+                throw new System.Exception("CarteiraVacinal não encontrado");
+            }
+        }
 
         public override bool Equals(object? obj)
         {

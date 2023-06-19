@@ -15,13 +15,15 @@ namespace Model
         public int Quantidade { get; set; }
         public float Preco { get; set; }
         public float ValorTotal { get; set; } //qtd * preco
+        public Fornecedor Fornecedor { get; set; }
+        public Vacina Vacina { get; set; }
 
-        // public Fornecedor fornecedor { get; set; }
-        // public Vacina vacina { get; set; }
         public VacinaFornecida(int id, DateOnly dataFabricacao, DateOnly dataValidade, DateOnly dataCompra,
         int quantidade,
         float preco,
-        float valorTotal)
+        float valorTotal,
+        Fornecedor fornecedor,
+        Vacina vacina)
         {
             Id = id;
             DataFabricacao = dataFabricacao;
@@ -30,6 +32,8 @@ namespace Model
             Quantidade = quantidade;
             Preco = preco;
             ValorTotal = valorTotal;
+            Fornecedor = fornecedor;
+            Vacina = vacina;
 
             Database db = new Database();
             db.VacinaFornecidas.Add(this);
@@ -109,37 +113,37 @@ namespace Model
 
 
 
-        // public static VacinaFornecida BuscarPorFornecedor(Fornecedor fornecedor)
-        // {
-        //     try
-        //     {
-        //         Database db = new Database();
-        //         VacinaFornecida vacina = (from u in db.CarteiraVacinacoes
-        //                                                where u.Fornecedor == fornecedor
-        //                                                select u).First();
-        //         return vacina;
-        //     }
-        //     catch
-        //     {
-        //         throw new System.Exception("CarteiraVacinal não encontrado");
-        //     }
-        // }
+        public static VacinaFornecida BuscarPorFornecedor(Fornecedor fornecedor)
+        {
+            try
+            {
+                Database db = new Database();
+                VacinaFornecida vacina = (from u in db.VacinaFornecidas
+                                          where u.Fornecedor == fornecedor
+                                          select u).First();
+                return vacina;
+            }
+            catch
+            {
+                throw new System.Exception("CarteiraVacinal não encontrado");
+            }
+        }
 
-        // public static VacinaFornecida BuscarPorVacina(Vacina vacina)
-        // {
-        //     try
-        //     {
-        //         Database db = new Database();
-        //         VacinaFornecida vacina = (from u in db.CarteiraVacinacoes
-        //                                                where u.Vacina == vacina
-        //                                                select u).First();
-        //         return vacina;
-        //     }
-        //     catch
-        //     {
-        //         throw new System.Exception("CarteiraVacinal não encontrado");
-        //     }
-        // }
+        public static VacinaFornecida BuscarPorVacina(Vacina vacina)
+        {
+            try
+            {
+                Database db = new Database();
+                VacinaFornecida vacinaFornecida = (from u in db.VacinaFornecidas
+                                          where u.Vacina == vacina
+                                          select u).First();
+                return vacinaFornecida;
+            }
+            catch
+            {
+                throw new System.Exception("CarteiraVacinal não encontrado");
+            }
+        }
 
         public override string ToString()
         {
