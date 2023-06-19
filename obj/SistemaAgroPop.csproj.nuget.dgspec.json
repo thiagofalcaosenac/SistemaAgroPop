@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ProgramacaoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj": {}
+    "C:\\Programacao\\SistemaAgroPop\\SistemaAgroPop.csproj": {}
   },
   "projects": {
-    "C:\\ProgramacaoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj": {
+    "C:\\Programacao\\SistemaAgroPop\\SistemaAgroPop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProgramacaoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
+        "projectUniqueName": "C:\\Programacao\\SistemaAgroPop\\SistemaAgroPop.csproj",
         "projectName": "SistemaAgroPop",
-        "projectPath": "C:\\ProgramacaoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
+        "projectPath": "C:\\Programacao\\SistemaAgroPop\\SistemaAgroPop.csproj",
         "packagesPath": "C:\\Users\\thiago.falcao\\.nuget\\packages\\",
-        "outputPath": "C:\\ProgramacaoDesktop\\SistemaAgroPop\\obj\\",
+        "outputPath": "C:\\Programacao\\SistemaAgroPop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
