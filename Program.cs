@@ -1,2 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World 123!");
+﻿using Views;
+
+namespace SistemaAgroPop
+{
+
+    static class Program
+    {
+        public static Menu form = new Menu();
+        [STAThread]
+        static void Main()
+        {
+            form.FormLayout();
+            Application.Run(form);
+        }
+    }
+}
