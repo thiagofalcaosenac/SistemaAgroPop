@@ -117,13 +117,12 @@ namespace View
         {
             List<Model.Fazenda> listaFazendas = Controller.Fazenda.ListarFazendas();
 
+            fazendaGridView.Rows.Clear();
             foreach (var fazenda in listaFazendas)
             {
                 object[] linhaFazenda = { fazenda.id.ToString(), fazenda.nome };
                 fazendaGridView.Rows.Add(linhaFazenda);
             }
-
-            fazendaGridView.DataSource = Controller.Fazenda.ListarFazendas();
         }
 
         private void adicionarFazendaButton_Click(object sender, EventArgs e)
@@ -149,6 +148,10 @@ namespace View
                 {
                     // Model.Fazenda customer = (Model.Fazenda)this.fazendaGridView.SelectedItem;
                     // MessageBox.Show(index);
+
+                    string idFazenda = fazendaGridView.Rows[this.fazendaGridView.SelectedRows[0].Index].Cells[0].Value.ToString();
+                    Controller.Fazenda.ExcluirFazenda(idFazenda);
+                    this.PopulateDataGridView();
                     this.fazendaGridView.Refresh();
                 }
                 else
