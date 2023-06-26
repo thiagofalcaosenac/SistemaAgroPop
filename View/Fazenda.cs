@@ -132,12 +132,12 @@ namespace View
 
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.Location = new Point(10, 10);
+            btnConfirmar.Location = new Point(800, 10);
             btnConfirmar.Click += new EventHandler(adicionarFazendaButton_Click);
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
-            btnVoltar.Location = new Point(400, 10);
+            btnVoltar.Location = new Point(900, 10);
             btnVoltar.Click += new EventHandler(voltarButton_Click);
 
             buttonPanel.Controls.Add(btnConfirmar);
