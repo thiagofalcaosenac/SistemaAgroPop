@@ -93,11 +93,8 @@ namespace View
 
         public void Fazenda_Click(object sender, EventArgs e)
         {
-            // using var context = new Models.Context();
-
-            // ListaVacina listaVacina = new ListaVacina(context);
-            // listaVacina.FormLayout();
-            // listaVacina.Show();
+            ListaFazenda listaFazendaForm = new ListaFazenda();
+            listaFazendaForm.ShowDialog();
         }
 
         public void Raca_Click(object sender, EventArgs e)
