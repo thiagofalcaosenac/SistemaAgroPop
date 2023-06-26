@@ -56,19 +56,19 @@ namespace View
             this.Size = new Size(1000, 900);
 
             adicionarFazendaButton.Text = "Adicionar";
-            adicionarFazendaButton.Location = new Point(10, 10);
+            adicionarFazendaButton.Location = new Point(600, 10);
             adicionarFazendaButton.Click += new EventHandler(adicionarFazendaButton_Click);
 
             atualizarFazendaButton.Text = "Editar";
-            atualizarFazendaButton.Location = new Point(100, 10);
+            atualizarFazendaButton.Location = new Point(700, 10);
             atualizarFazendaButton.Click += new EventHandler(atualizarFazendaButton_Click);
 
             deletarFazendaButton.Text = "Excluir";
-            deletarFazendaButton.Location = new Point(200, 10);
+            deletarFazendaButton.Location = new Point(800, 10);
             deletarFazendaButton.Click += new EventHandler(deletarFazendaButton_Click);
 
             voltarButton.Text = "Voltar";
-            voltarButton.Location = new Point(400, 10);
+            voltarButton.Location = new Point(900, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
 
             buttonPanel.Controls.Add(adicionarFazendaButton);
