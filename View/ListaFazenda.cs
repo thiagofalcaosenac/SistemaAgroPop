@@ -53,7 +53,7 @@ namespace View
 
         private void SetupLayout()
         {
-            this.Size = new Size(600, 500);
+            this.Size = new Size(1000, 900);
 
             adicionarFazendaButton.Text = "Adicionar";
             adicionarFazendaButton.Location = new Point(10, 10);
@@ -86,7 +86,7 @@ namespace View
         {
             this.Controls.Add(fazendaGridView);
 
-            fazendaGridView.ColumnCount = 2;
+            fazendaGridView.ColumnCount = 11;
 
             fazendaGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
             fazendaGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -103,8 +103,15 @@ namespace View
 
             fazendaGridView.Columns[0].Name = "Id";
             fazendaGridView.Columns[1].Name = "Nome";
-            // fazendaGridView.Columns[2].DefaultCellStyle.Font =
-            //     new Font(fazendaGridView.DefaultCellStyle.Font, FontStyle.Italic);
+            fazendaGridView.Columns[2].Name = "Qtd Limite Animal";
+            fazendaGridView.Columns[3].Name = "Telefone";
+            fazendaGridView.Columns[4].Name = "Email";
+            fazendaGridView.Columns[5].Name = "Bairro";
+            fazendaGridView.Columns[6].Name = "Rua";
+            fazendaGridView.Columns[7].Name = "Numero";
+            fazendaGridView.Columns[8].Name = "Complemento";
+            fazendaGridView.Columns[9].Name = "Cidade";
+            fazendaGridView.Columns[10].Name = "Estado";
 
             fazendaGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             fazendaGridView.MultiSelect = false;
@@ -120,20 +127,47 @@ namespace View
             fazendaGridView.Rows.Clear();
             foreach (var fazenda in listaFazendas)
             {
-                object[] linhaFazenda = { fazenda.id.ToString(), fazenda.nome };
+                Model.Endereco endereco = Controller.Endereco.BuscarPorId(fazenda.enderecoId);
+
+                object[] linhaFazenda = {
+                                            fazenda.id.ToString(),
+                                            fazenda.nome,
+                                            fazenda.qtdLimiteAnimal,
+                                            endereco.telefone,
+                                            endereco.email,
+                                            endereco.bairro,
+                                            endereco.rua,
+                                            endereco.numero,
+                                            endereco.complemento,
+                                            endereco.cidade,
+                                            endereco.estado
+                                        };
                 fazendaGridView.Rows.Add(linhaFazenda);
             }
         }
 
         private void adicionarFazendaButton_Click(object sender, EventArgs e)
         {
-            View.Fazenda telaFazenda = new View.Fazenda();
+            View.Fazenda telaFazenda = new View.Fazenda(null);
+            telaFazenda.FormClosed += new FormClosedEventHandler(recarregarDadosGrid);
             telaFazenda.ShowDialog();
         }
 
         private void atualizarFazendaButton_Click(object sender, EventArgs e)
         {
-            this.fazendaGridView.Rows.Add();
+            if (this.fazendaGridView.SelectedRows.Count > 0 &&
+                this.fazendaGridView.SelectedRows[0].Index !=
+                this.fazendaGridView.Rows.Count - 1)
+            {
+                string idFazenda = fazendaGridView.Rows[this.fazendaGridView.SelectedRows[0].Index].Cells[0].Value.ToString();
+                View.Fazenda telaFazenda = new View.Fazenda(Int32.Parse(idFazenda));
+                telaFazenda.FormClosed += new FormClosedEventHandler(recarregarDadosGrid);
+                telaFazenda.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nenhum registro selecionado!");
+            }
         }
 
         private void deletarFazendaButton_Click(object sender, EventArgs e)
@@ -146,9 +180,6 @@ namespace View
 
                 if (confirmResult == DialogResult.Yes)
                 {
-                    // Model.Fazenda customer = (Model.Fazenda)this.fazendaGridView.SelectedItem;
-                    // MessageBox.Show(index);
-
                     string idFazenda = fazendaGridView.Rows[this.fazendaGridView.SelectedRows[0].Index].Cells[0].Value.ToString();
                     Controller.Fazenda.ExcluirFazenda(idFazenda);
                     this.PopulateDataGridView();
@@ -158,7 +189,10 @@ namespace View
                 {
                     MessageBox.Show("Operação cancelada");
                 }
-
+            }
+            else
+            {
+                MessageBox.Show("Nenhum registro selecionado!");
             }
         }
 
@@ -166,6 +200,13 @@ namespace View
         {
             this.Close();
         }
+
+        private void recarregarDadosGrid(object sender, FormClosedEventArgs e)
+        {
+            PopulateDataGridView();
+            this.fazendaGridView.Refresh();
+        }
+
     }
 
 }
