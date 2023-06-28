@@ -4,7 +4,6 @@ namespace View
     public class Fornecedor : Form
     {
         Panel buttonPanel = new Panel();
-
         Label lblNome;
         Label lblCnpj;
         Label lblRazaoSocial;

@@ -117,6 +117,7 @@ namespace View
 
         public void Fornecedor_Click(object sender, EventArgs e)
         {
+            
             ListaFornecedor listaFornecedor = new ListaFornecedor();
             listaFornecedor.ShowDialog();
         }
