@@ -13,13 +13,14 @@ namespace Model
         public string razaoSocial { get; set; }
         public string nomeFantasia { get; set; }
         public Endereco endereco { get; set; }
+        public int enderecoId { get; set; }
 
         public Fornecedor(string cnpj, string razaoSocial,string nomeFantasia, Endereco endereco)
         {
             this.cnpj = cnpj;
             this.razaoSocial = razaoSocial;
             this.nomeFantasia = nomeFantasia;
-            this.endereco = endereco;
+            this.enderecoId = endereco.id;
 
             Database db = new Database();
             db.Fornecedors.Add(this);
