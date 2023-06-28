@@ -117,8 +117,11 @@ namespace View
 
         public void Fornecedor_Click(object sender, EventArgs e)
         {
-            ListaFornecedor listaFornecedor = new ListaFornecedor();
-            listaFornecedor.ShowDialog();
+            // using var context = new Models.Context();
+
+            // ListaAnimal listaAnimal = new ListaAnimal(context);
+            // listaAnimal.FormLayout();
+            // listaAnimal.Show();
         }
 
         public void Vacina_Click(object sender, EventArgs e)

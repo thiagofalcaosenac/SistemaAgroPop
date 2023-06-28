@@ -61,14 +61,8 @@ namespace SistemaAgroPop.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Animalid")
-                        .HasColumnType("int");
-
                     b.Property<DateOnly>("DataVacinacao")
                         .HasColumnType("date");
-
-                    b.Property<int>("Fornecedorid")
-                        .HasColumnType("int");
 
                     b.Property<int>("NroDose")
                         .HasColumnType("int");
@@ -76,16 +70,7 @@ namespace SistemaAgroPop.Migrations
                     b.Property<DateOnly>("ProximaDose")
                         .HasColumnType("date");
 
-                    b.Property<int>("VacinaId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("Animalid");
-
-                    b.HasIndex("Fornecedorid");
-
-                    b.HasIndex("VacinaId");
 
                     b.ToTable("CarteiraVacinacoes");
                 });
@@ -139,7 +124,7 @@ namespace SistemaAgroPop.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("enderecoId")
+                    b.Property<int>("enderecoid")
                         .HasColumnType("int");
 
                     b.Property<string>("nome")
@@ -151,7 +136,7 @@ namespace SistemaAgroPop.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("enderecoId");
+                    b.HasIndex("enderecoid");
 
                     b.ToTable("Fazendas");
                 });
@@ -166,7 +151,7 @@ namespace SistemaAgroPop.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("enderecoId")
+                    b.Property<int>("enderecoid")
                         .HasColumnType("int");
 
                     b.Property<string>("nomeFantasia")
@@ -179,7 +164,7 @@ namespace SistemaAgroPop.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("enderecoId");
+                    b.HasIndex("enderecoid");
 
                     b.ToTable("Fornecedors");
                 });
@@ -240,26 +225,16 @@ namespace SistemaAgroPop.Migrations
                     b.Property<DateOnly>("DataValidade")
                         .HasColumnType("date");
 
-                    b.Property<int>("Fornecedorid")
-                        .HasColumnType("int");
-
                     b.Property<float>("Preco")
                         .HasColumnType("float");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
-                    b.Property<int>("VacinaId")
-                        .HasColumnType("int");
-
                     b.Property<float>("ValorTotal")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Fornecedorid");
-
-                    b.HasIndex("VacinaId");
 
                     b.ToTable("VacinaFornecidas");
                 });
@@ -283,38 +258,11 @@ namespace SistemaAgroPop.Migrations
                     b.Navigation("raca");
                 });
 
-            modelBuilder.Entity("Model.CarteiraVacinacao", b =>
-                {
-                    b.HasOne("Model.Animal", "Animal")
-                        .WithMany()
-                        .HasForeignKey("Animalid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Model.Fornecedor", "Fornecedor")
-                        .WithMany()
-                        .HasForeignKey("Fornecedorid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Model.Vacina", "Vacina")
-                        .WithMany()
-                        .HasForeignKey("VacinaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Animal");
-
-                    b.Navigation("Fornecedor");
-
-                    b.Navigation("Vacina");
-                });
-
             modelBuilder.Entity("Model.Fazenda", b =>
                 {
                     b.HasOne("Model.Endereco", "endereco")
                         .WithMany()
-                        .HasForeignKey("enderecoId")
+                        .HasForeignKey("enderecoid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -325,30 +273,11 @@ namespace SistemaAgroPop.Migrations
                 {
                     b.HasOne("Model.Endereco", "endereco")
                         .WithMany()
-                        .HasForeignKey("enderecoId")
+                        .HasForeignKey("enderecoid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("endereco");
-                });
-
-            modelBuilder.Entity("Model.VacinaFornecida", b =>
-                {
-                    b.HasOne("Model.Fornecedor", "Fornecedor")
-                        .WithMany()
-                        .HasForeignKey("Fornecedorid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Model.Vacina", "Vacina")
-                        .WithMany()
-                        .HasForeignKey("VacinaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Fornecedor");
-
-                    b.Navigation("Vacina");
                 });
 #pragma warning restore 612, 618
         }
