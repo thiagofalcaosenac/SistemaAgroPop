@@ -27,7 +27,7 @@ namespace Views
             Vacina.Location = new Point(75, 100);
             Vacina.Height = 40;
             Vacina.Width = 300;
-            //vacina.Click += new EventHandler(Vacina_Click);
+            Vacina.Click += new EventHandler(Vacina_Click);
 
             Animal.Text = "Animal";
             Animal.Name = "Animal";
@@ -50,8 +50,8 @@ namespace Views
             Fornecedor.Width = 300;
             //fornecedor.Click += new EventHandler(Fornecedor_Click);
 
-            CarteiraVacinacao.Text = "carteira de Vacinação";
-            CarteiraVacinacao.Name = "carteira de Vacinação";
+            CarteiraVacinacao.Text = "Carteira de Vacinação";
+            CarteiraVacinacao.Name = "Carteira de Vacinação";
             CarteiraVacinacao.Location = new Point(75, 300);
             CarteiraVacinacao.Height = 40;
             CarteiraVacinacao.Width = 300;
@@ -81,14 +81,13 @@ namespace Views
             Controls.Add(Sair);
 
         }
-        //     public void Vacina_Click(object sender, EventArgs e)
-        //     {
-        //         using var context = new Models.Context();
+            public void Vacina_Click(object sender, EventArgs e)
+            {
+                
+            ListaVacina listaVacinaForm = new ListaVacina();
+            listaVacinaForm.ShowDialog();
 
-        //         ListaVacina listaVacina = new ListaVacina(context);
-        //         listaVacina.FormLayout();
-        //         listaVacina.Show();
-        //     }
+            }
         //     public void Animal_Click(object sender, EventArgs e)
         //     {
         //         using var context = new Models.Context();
