@@ -15,12 +15,13 @@ namespace Model
         //A fórmula desse campo qtdAtualAnimal irá ser feita após o Model Animal ser criado
         //public virtual int qtdAtualAnimal { get; set; }
         public Endereco endereco { get; set; }
+        public int enderecoId { get; set; }
 
         public Fazenda(string nome, int qtdLimiteAnimal, Endereco endereco)
         {
             this.nome = nome;
             this.qtdLimiteAnimal = qtdLimiteAnimal;
-            this.endereco = endereco;
+            this.enderecoId = endereco.id;
 
             Database db = new Database();
             db.Fazendas.Add(this);
@@ -89,7 +90,7 @@ namespace Model
                 Fazenda fazenda = BuscarFazenda(id);
                 fazenda.nome = nome;
                 fazenda.qtdLimiteAnimal = qtdLimiteAnimal;
-                fazenda.endereco = endereco;
+                fazenda.enderecoId = endereco.id;
 
                 Database db = new Database();
                 db.Fazendas.Update(fazenda);

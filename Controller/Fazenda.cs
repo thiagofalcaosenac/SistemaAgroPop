@@ -65,7 +65,7 @@ namespace Controller
                 int idFazenda = Int32.Parse(id);
                 Model.Fazenda fazendaAtual = Controller.Fazenda.BuscarPorId(idFazenda);
 
-                Model.Endereco endereco = Controller.Endereco.BuscarPorId(fazendaAtual.endereco.id);
+                Model.Endereco endereco = Controller.Endereco.BuscarPorId(fazendaAtual.enderecoId);
                 endereco = Controller.Endereco.AlterarEndereco(endereco.id.ToString(),
                                                                 telefone,
                                                                 email,
