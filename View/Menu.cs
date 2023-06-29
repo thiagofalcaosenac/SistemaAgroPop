@@ -1,3 +1,5 @@
+using Views;
+
 namespace View
 {
     public class Menu : Form
@@ -30,19 +32,12 @@ namespace View
             Fazenda.Width = 300;
             Fazenda.Click += new EventHandler(Fazenda_Click);
 
-            Vacina.Text = "Vacina";
-            Vacina.Name = "Vacina";
-            Vacina.Location = new Point(75, 100);
-            Vacina.Height = 40;
-            Vacina.Width = 300;
-            Vacina.Click += new EventHandler(Vacina_Click);
-            
             Raca.Text = "Raça";
             Raca.Name = "Raça";
             Raca.Location = new Point(75, 150);
             Raca.Height = 40;
             Raca.Width = 300;
-            Raca.Click += new EventHandler(Raca_Click);            
+            Raca.Click += new EventHandler(Raca_Click);
 
 
             Animal.Text = "Animal";
@@ -106,13 +101,6 @@ namespace View
 
         }
 
-            public void Vacina_Click(object sender, EventArgs e)
-            {
-                
-            ListaVacina listaVacinaForm = new ListaVacina();
-            listaVacinaForm.ShowDialog();
-
-            }
         //     public void Animal_Click(object sender, EventArgs e)
         //     {
         //         using var context = new Models.Context();
@@ -180,18 +168,16 @@ namespace View
 
         public void Fornecedor_Click(object sender, EventArgs e)
         {
-            
+
             ListaFornecedor listaFornecedor = new ListaFornecedor();
             listaFornecedor.ShowDialog();
         }
 
         public void Vacina_Click(object sender, EventArgs e)
         {
-            // using var context = new Models.Context();
 
-            // ListaFornecedor listaFornecedor = new ListaFornecedor(context);
-            // listaFornecedor.FormLayout();
-            // listaFornecedor.Show();
+            ListaVacina listaVacinaForm = new ListaVacina();
+            listaVacinaForm.ShowDialog();
         }
 
         public void VacinaFornecida_Click(object sender, EventArgs e)

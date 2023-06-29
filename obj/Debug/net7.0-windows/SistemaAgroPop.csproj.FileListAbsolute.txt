@@ -38,3 +38,11 @@ C:\DesenvolvimentoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\refint\Sistema
 C:\DesenvolvimentoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.pdb
 C:\DesenvolvimentoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.genruntimeconfig.cache
 C:\DesenvolvimentoDesktop\SistemaAgroPop\obj\Debug\net7.0-windows\ref\SistemaAgroPop.dll
+C:\Users\Alessandra\Documents\Desenolvimento_Desktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.csproj.AssemblyReference.cache
+C:\Users\Alessandra\Documents\Desenolvimento_Desktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alessandra\Documents\Desenolvimento_Desktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.AssemblyInfoInputs.cache
+C:\Users\Alessandra\Documents\Desenolvimento_Desktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.AssemblyInfo.cs
+C:\Users\Alessandra\Documents\Desenolvimento_Desktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.csproj.CoreCompileInputs.cache
+C:\Users\Alessandra\Documents\Desenolvimento_Desktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.dll
+C:\Users\Alessandra\Documents\Desenolvimento_Desktop\SistemaAgroPop\obj\Debug\net7.0-windows\refint\SistemaAgroPop.dll
+C:\Users\Alessandra\Documents\Desenolvimento_Desktop\SistemaAgroPop\obj\Debug\net7.0-windows\SistemaAgroPop.pdb
