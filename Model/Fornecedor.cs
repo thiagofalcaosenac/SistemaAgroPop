@@ -24,6 +24,7 @@ namespace Model
             Database db = new Database();
             db.Fornecedors.Add(this);
             db.SaveChanges();
+            
         }
 
         public Fornecedor()
