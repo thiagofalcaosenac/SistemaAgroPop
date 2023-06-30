@@ -12,12 +12,12 @@ namespace Model
         public DateTime dataNascimento { get; set; }
         public int nroRegistro { get; set; }
         public EnumOrigem origem { get; set; }
-        public int cor { get; set; }
+        public string cor { get; set; }
         public int peso { get; set; }
         public Raca raca { get; set; }
         public Fazenda fazenda { get; set; }
 
-        public Animal(DateTime dataNascimento, int nroRegistro,EnumOrigem origem,int cor,int peso,Raca raca,Fazenda fazenda)
+        public Animal(DateTime dataNascimento, int nroRegistro,EnumOrigem origem,string cor,int peso,Raca raca,Fazenda fazenda)
         {
             this.dataNascimento = dataNascimento;
             this.nroRegistro = nroRegistro;
@@ -95,7 +95,7 @@ namespace Model
             DateTime dataNascimento,
             int nroRegistro,
             EnumOrigem origem,
-            int cor,
+            string cor,
             int peso,
             Raca raca,
             Fazenda fazenda
