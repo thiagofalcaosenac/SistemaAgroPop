@@ -12,7 +12,14 @@ namespace Controller
             string cnpj,
             string razaoSocial,
             string nomeFantasia,
-            string endereco
+            string telefone,
+            string email,
+            string rua,
+            string bairro,
+            string numero,
+            string complemento,
+            string cidade,
+            string estado
         )
         /*Fornecedor
 
@@ -24,19 +31,34 @@ namespace Controller
 
 ‌*/
         {
-            validarCnpjFornecedorInformado(cnpj);
+            validarCnpjFornecedorInformado(cnpj); //valida se é numero
             validarRazaoSocialFornecedorInformado(razaoSocial);
             validarNomeFantasiaFornecedorInformado(nomeFantasia);
-            validarEnderecoFornecedorInformado(endereco);
-            int enderecoId = Int32.Parse(endereco);
-            Model.Endereco enderecoBanco = Controller.Endereco.BuscarPorId(enderecoId);
-
+            validarTelefoneFornecedorInformado(telefone); //valida se é numero
+            validarEmailFornecedorInformado(email);
+            validarRuaFornecedorInformado(rua); 
+            validarBairroFornecedorInformado(bairro);
+            validarNumeroFornecedorInformado(numero); //valida se é numero
+            validarComplementoFornecedorInformado(complemento);
+            validarCidadeFornecedorInformado(cidade);
+            validarEstadoFornecedorInformado(estado);
+          
+            Model.Endereco novoEndereco = Controller.Endereco.CriarEndereco(
+                telefone,
+                email,
+                bairro,
+                rua,
+                numero,
+                complemento,
+                cidade,
+                estado
+            );
             //Criar e retornar novo fornecedor criado
             return new Model.Fornecedor(
                 cnpj,
                 razaoSocial,
                 nomeFantasia,
-                enderecoBanco
+                novoEndereco
             );
         }
 
@@ -45,26 +67,49 @@ namespace Controller
             string cnpj,
             string razaoSocial,
             string nomeFantasia,
-            string endereco
+            string telefone,
+            string email, 
+            string rua,
+            string bairro,
+            string numero,
+            string complemento,
+            string cidade,
+            string estado
         )
         {
             try
             {
-                int idFornecedor = Int32.Parse(id);
-
+            int idFornecedor = Int32.Parse(id);
+            Model.Fornecedor fornecedorAtual = Controller.Fornecedor.BuscarPorId(idFornecedor);
             validarCnpjFornecedorInformado(cnpj);
             validarRazaoSocialFornecedorInformado(razaoSocial);
             validarNomeFantasiaFornecedorInformado(nomeFantasia);
-            validarEnderecoFornecedorInformado(endereco);
-            int enderecoId = Int32.Parse(endereco);
-            Model.Endereco enderecoBanco = Controller.Endereco.BuscarPorId(enderecoId);
+            validarTelefoneFornecedorInformado(telefone);
+            validarEmailFornecedorInformado(email);
+            validarRuaFornecedorInformado(rua);
+            validarBairroFornecedorInformado(bairro);
+            validarNumeroFornecedorInformado(numero);
+            validarComplementoFornecedorInformado(complemento);
+            validarCidadeFornecedorInformado(cidade);
+            validarEstadoFornecedorInformado(estado);
+            Model.Endereco endereco = Controller.Endereco.BuscarPorId(fornecedorAtual.enderecoId);
+            endereco = Controller.Endereco.AlterarEndereco(endereco.id.ToString(),
+                telefone,
+                email,
+                bairro,
+                rua,
+                numero,
+                complemento,
+                cidade,
+                estado
+                );
 
                 return Model.Fornecedor.AlterarFornecedor(
                     idFornecedor,
                     cnpj,
                     razaoSocial,
                     nomeFantasia,
-                    enderecoBanco
+                    endereco
                 );
             }
             catch (System.Exception e)
@@ -133,6 +178,46 @@ namespace Controller
         {
             if (String.IsNullOrEmpty(endereco))
                 throw new Exception("Informe o endereco do fornecedor!");
+        }
+         private static void validarTelefoneFornecedorInformado(string telefone)
+        {
+            if (String.IsNullOrEmpty(telefone))
+                throw new Exception("Informe o Telefone do fornecedor!");
+        }
+         private static void validarEmailFornecedorInformado(string email)
+        {
+            if (String.IsNullOrEmpty(email))
+                throw new Exception("Informe o Email do fornecedor!");
+        }
+         private static void validarRuaFornecedorInformado(string rua)
+        {
+            if (String.IsNullOrEmpty(rua))
+                throw new Exception("Informe a rua!");
+        }
+         private static void validarBairroFornecedorInformado(string bairro)
+        {
+            if (String.IsNullOrEmpty(bairro))
+                throw new Exception("Informe o Bairro!");
+        }
+          private static void validarNumeroFornecedorInformado(string numero)
+        {
+            if (String.IsNullOrEmpty(numero))
+                throw new Exception("Informe o numero do fornecedor!");
+        }
+        private static void validarComplementoFornecedorInformado(string complemento)
+        {
+            if (String.IsNullOrEmpty(complemento))
+                throw new Exception("Informe o complemento!");
+        }
+        private static void validarCidadeFornecedorInformado(string cidade)
+        {
+            if (String.IsNullOrEmpty(cidade))
+                throw new Exception("Informe a cidade!");
+        }
+        private static void validarEstadoFornecedorInformado(string estado)
+        {
+            if (String.IsNullOrEmpty(estado))
+                throw new Exception("Informe o estado!");
         }
 
     }
