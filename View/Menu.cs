@@ -99,11 +99,8 @@ namespace View
 
         public void Raca_Click(object sender, EventArgs e)
         {
-            // using var context = new Models.Context();
-
-            // ListaVacina listaVacina = new ListaVacina(context);
-            // listaVacina.FormLayout();
-            // listaVacina.Show();
+             ListaRaca listaRaca = new ListaRaca();
+            listaRaca.ShowDialog();
         }
 
         public void Animal_Click(object sender, EventArgs e)
