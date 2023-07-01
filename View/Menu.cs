@@ -142,11 +142,8 @@ namespace View
 
         public void CarteiraVacinacao_Click(object sender, EventArgs e)
         {
-            // using var context = new Models.Context();
-
-            // ListaCarteiraVacinacao listaCarteiraVacinacao = new ListaCarteiraVacinacao(context);
-            // listaCarteiraVacinacao.FormLayout();
-            // listaCarteiraVacinacao.Show();
+            ListaCarteiraVacinacao listaCarteiraVacinacaoForm = new ListaCarteiraVacinacao();
+            listaCarteiraVacinacaoForm.ShowDialog();
         }
 
         private void Sair_Click(object sender, EventArgs e)
