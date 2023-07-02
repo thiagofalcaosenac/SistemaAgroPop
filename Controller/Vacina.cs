@@ -71,12 +71,12 @@ namespace Controller
                 throw new ArgumentException("O tipo da vacina é obrigatório.");
             }
 
-            if (int.IsPositive(periodicidade))
+            if (int.IsNegative(periodicidade))
             {
                 throw new ArgumentException("A periodicidade é obrigatória.");
             }
 
-            if (int.IsPositive(qtdMinima))
+            if (int.IsNegative(qtdMinima))
             {
                 throw new ArgumentException("A quantidade minima é obrigatória.");
             }

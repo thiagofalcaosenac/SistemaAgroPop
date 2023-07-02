@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\DesenvolvimentoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj": {}
+    "C:\\Users\\Alessandra\\Documents\\Desenolvimento_Desktop\\SistemaAgroPop\\SistemaAgroPop.csproj": {}
   },
   "projects": {
-    "C:\\DesenvolvimentoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj": {
+    "C:\\Users\\Alessandra\\Documents\\Desenolvimento_Desktop\\SistemaAgroPop\\SistemaAgroPop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\DesenvolvimentoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
+        "projectUniqueName": "C:\\Users\\Alessandra\\Documents\\Desenolvimento_Desktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
         "projectName": "SistemaAgroPop",
-        "projectPath": "C:\\DesenvolvimentoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
-        "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
-        "outputPath": "C:\\DesenvolvimentoDesktop\\SistemaAgroPop\\obj\\",
+        "projectPath": "C:\\Users\\Alessandra\\Documents\\Desenolvimento_Desktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
+        "packagesPath": "C:\\Users\\Alessandra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alessandra\\Documents\\Desenolvimento_Desktop\\SistemaAgroPop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Alessandra\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0-windows"
@@ -80,7 +80,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.2.23157.25\\RuntimeIdentifierGraph.json"
         }
       }
     }
