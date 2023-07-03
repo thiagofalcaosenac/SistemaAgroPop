@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alessandra\\Documents\\Desenolvimento_Desktop\\SistemaAgroPop\\SistemaAgroPop.csproj": {}
+    "C:\\DesenvolvimentoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alessandra\\Documents\\Desenolvimento_Desktop\\SistemaAgroPop\\SistemaAgroPop.csproj": {
+    "C:\\DesenvolvimentoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alessandra\\Documents\\Desenolvimento_Desktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
+        "projectUniqueName": "C:\\DesenvolvimentoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
         "projectName": "SistemaAgroPop",
-        "projectPath": "C:\\Users\\Alessandra\\Documents\\Desenolvimento_Desktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
-        "packagesPath": "C:\\Users\\Alessandra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alessandra\\Documents\\Desenolvimento_Desktop\\SistemaAgroPop\\obj\\",
+        "projectPath": "C:\\DesenvolvimentoDesktop\\SistemaAgroPop\\SistemaAgroPop.csproj",
+        "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
+        "outputPath": "C:\\DesenvolvimentoDesktop\\SistemaAgroPop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alessandra\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0-windows"
@@ -38,6 +38,14 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.2, )"
@@ -59,6 +67,10 @@
             "ThenInclude.EF6": {
               "target": "Package",
               "version": "[1.0.0.8, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.3.0, )"
             }
           },
           "imports": [
@@ -80,7 +92,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.2.23157.25\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
