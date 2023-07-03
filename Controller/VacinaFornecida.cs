@@ -75,7 +75,7 @@ namespace Controller
             return Model.VacinaFornecida.BuscarPorFornecedor(fornecedor);
         }
 
-        public Model.VacinaFornecida BuscarVacinaFornecidaPorVacina(Model.Vacina vacina)
+        public static Model.VacinaFornecida BuscarVacinaFornecidaPorVacina(Model.Vacina vacina)
         {
             if (vacina == null)
                 throw new Exception("É necessário selecionar uma vacina.");

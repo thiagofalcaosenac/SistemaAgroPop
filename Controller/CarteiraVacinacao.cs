@@ -8,7 +8,7 @@ namespace Controller
 {
     public class CarteiraVacinacao
     {
-        public Model.CarteiraVacinacao CriarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, int nroDose, Model.Animal animal, Model.Vacina vacina, Model.Fornecedor fornecedor)
+        public static Model.CarteiraVacinacao CriarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, int nroDose, Model.Animal animal, Model.Vacina vacina, Model.Fornecedor fornecedor)
         {
             if (string.IsNullOrEmpty(dataVacinacao) || string.IsNullOrEmpty(proximaDose))
                 throw new Exception("Data de vacinação e próxima dose são obrigatórias.");
@@ -28,10 +28,14 @@ namespace Controller
                 throw new Exception("É necessário selecionar um fornecedor.");
 
             Model.CarteiraVacinacao carteiraVacinacao = new Model.CarteiraVacinacao(id, parsedDataVacinacao, parsedProximaDose, nroDose, animal, vacina, fornecedor);
+            
+            Model.VacinaFornecida vacinaFornecida = Controller.VacinaFornecida.BuscarVacinaFornecidaPorVacina(vacina);
+            vacinaFornecida.AtualizarNrDoses(nroDose);
+            
             return carteiraVacinacao;
         }
 
-        public Model.CarteiraVacinacao AlterarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, int nroDose)
+        public static Model.CarteiraVacinacao AlterarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, int nroDose)
         {
             if (string.IsNullOrEmpty(dataVacinacao) || string.IsNullOrEmpty(proximaDose))
                 throw new Exception("Data de vacinação e próxima dose são obrigatórias.");
@@ -49,17 +53,17 @@ namespace Controller
             return Model.CarteiraVacinacao.Alterar(id, parsedDataVacinacao, parsedProximaDose, nroDose);
         }
 
-        public void ExcluirVacinaCarteiraVacinacao(int id)
+        public static void ExcluirVacinaCarteiraVacinacao(int id)
         {
             Model.CarteiraVacinacao.Excluir(id);
         }
 
-        public List<Model.CarteiraVacinacao> ListarCarteiraVacinacao()
+        public static List<Model.CarteiraVacinacao> ListarCarteiraVacinacao()
         {
             return Model.CarteiraVacinacao.Listar();
         }
 
-        public Model.CarteiraVacinacao BuscarPorId(int id)
+        public static Model.CarteiraVacinacao BuscarPorId(int id)
         {
             return Model.CarteiraVacinacao.BuscarPorId(id);
         }
@@ -91,17 +95,14 @@ namespace Controller
             }
         }
 
-        public static void VerificarCarteirasProximaDose()
+        public static List<Model.CarteiraVacinacao>  VerificarCarteirasProximaDose()
         {
             Database db = new Database();
             List<Model.CarteiraVacinacao> carteirasVacinacao = (from cv in db.CarteiraVacinacoes
                                                                 where (DateTime.Parse(cv.ProximaDose.ToString()) - DateTime.Today).TotalDays <= 30
                                                                 select cv).ToList();
-
-            foreach (Model.CarteiraVacinacao carteiraVacinacao in carteirasVacinacao)
-            {
-                Console.WriteLine($"A carteira de vacinação de ID {carteiraVacinacao.Id} está com a próxima dose agendada para daqui a 30 dias.");
-            }
+            return carteirasVacinacao;
+           
         }
     }
 }
