@@ -16,7 +16,9 @@ namespace Model
         public float Preco { get; set; }
         public float ValorTotal { get; set; } //qtd * preco
         public Fornecedor Fornecedor { get; set; }
+        public int fornecedorId { get; set; }        
         public Vacina Vacina { get; set; }
+        public int vacinaId { get; set; }
 
         public VacinaFornecida(int id, DateOnly dataFabricacao, DateOnly dataValidade, DateOnly dataCompra,
         int quantidade,
@@ -32,8 +34,8 @@ namespace Model
             Quantidade = quantidade;
             Preco = preco;
             ValorTotal = valorTotal;
-            Fornecedor = fornecedor;
-            Vacina = vacina;
+            fornecedorId = fornecedor.id;
+            vacinaId = vacina.Id;
 
             Database db = new Database();
             db.VacinaFornecidas.Add(this);
@@ -135,14 +137,23 @@ namespace Model
             {
                 Database db = new Database();
                 VacinaFornecida vacinaFornecida = (from u in db.VacinaFornecidas
-                                          where u.Vacina == vacina
-                                          select u).First();
+                                                   where u.Vacina == vacina
+                                                   select u).First();
                 return vacinaFornecida;
             }
             catch
             {
                 throw new System.Exception("CarteiraVacinal não encontrado");
             }
+        }
+
+        public void AtualizarNrDoses(int nroDoseUtilizadas)
+        {
+            this.Quantidade -= nroDoseUtilizadas;
+            Database db = new Database();
+            db.VacinaFornecidas.Update(this);
+            db.SaveChanges();
+
         }
 
         public override string ToString()

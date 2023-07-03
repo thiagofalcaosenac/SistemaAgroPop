@@ -92,6 +92,7 @@ namespace View
             fornecedorGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             fornecedorGridView.ColumnHeadersDefaultCellStyle.Font = new Font(fornecedorGridView.Font, FontStyle.Bold);
 
+
             fornecedorGridView.Name = "fornecedorGridView";
             fornecedorGridView.Location = new Point(8, 8);
             fornecedorGridView.Size = new Size(500, 250);
