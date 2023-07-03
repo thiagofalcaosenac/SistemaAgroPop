@@ -44,7 +44,6 @@ namespace Controller
                pesoInt,
                racaBanco,
                fazendaBanco
-
             );
         }
 

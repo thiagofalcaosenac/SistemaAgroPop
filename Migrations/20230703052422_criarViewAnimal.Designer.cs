@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repository;
 
@@ -10,9 +11,11 @@ using Repository;
 namespace SistemaAgroPop.Migrations
 {
     [DbContext(typeof(Database))]
-    partial class DatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230703052422_criarViewAnimal")]
+    partial class criarViewAnimal
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,9 +35,6 @@ namespace SistemaAgroPop.Migrations
                     b.Property<DateTime>("dataNascimento")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("fazenda_id")
-                        .HasColumnType("int");
-
                     b.Property<int>("fazendaid")
                         .HasColumnType("int");
 
@@ -45,9 +45,6 @@ namespace SistemaAgroPop.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("peso")
-                        .HasColumnType("int");
-
-                    b.Property<int>("raca_id")
                         .HasColumnType("int");
 
                     b.Property<int>("racaid")

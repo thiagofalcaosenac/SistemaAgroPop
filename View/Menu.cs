@@ -99,17 +99,14 @@ namespace View
 
         public void Raca_Click(object sender, EventArgs e)
         {
-             ListaRaca listaRaca = new ListaRaca();
+            ListaRaca listaRaca = new ListaRaca();
             listaRaca.ShowDialog();
         }
 
         public void Animal_Click(object sender, EventArgs e)
         {
-            // using var context = new Models.Context();
-
-            // ListaVacina listaVacina = new ListaVacina(context);
-            // listaVacina.FormLayout();
-            // listaVacina.Show();
+            ListaAnimal listaAnimal = new ListaAnimal();
+            listaAnimal.ShowDialog();
         }
 
         public void Fornecedor_Click(object sender, EventArgs e)
