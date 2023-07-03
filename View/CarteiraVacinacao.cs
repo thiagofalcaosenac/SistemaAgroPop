@@ -147,7 +147,7 @@ namespace Views
                     Model.Animal animal = Controller.Animal.BuscarPorId((this.comboBoxAnimal.SelectedItem as ModelComboBox).Id);
                     Model.Vacina vacina = Controller.Vacina.BuscarPorId((this.comboBoxVacina.SelectedItem as ModelComboBox).Id);
                     Model.Fornecedor fornecedor = Controller.Fornecedor.BuscarPorId((this.comboBoxFornecedor.SelectedItem as ModelComboBox).Id);
-                    
+
                     Controller.CarteiraVacinacao.CriarCarteiraVacinacao(
                         0,
                         this.txtDataVacinacao.Text,
@@ -177,14 +177,39 @@ namespace Views
         private void setarDadosCarteiraVacinacaoEdicao(int idCarteiraVacinacao)
         {
             Model.CarteiraVacinacao CarteiraVacinacaoAtual = Controller.CarteiraVacinacao.BuscarPorId(idCarteiraVacinacao);
-
+           
             this.idCarteiraVacinacaoEdicao = idCarteiraVacinacao;
             this.txtDataVacinacao.Text = CarteiraVacinacaoAtual.DataVacinacao.ToString();
             this.txtProximaDose.Text = CarteiraVacinacaoAtual.ProximaDose.ToString();
             this.txtNroDoses.Text = CarteiraVacinacaoAtual.NroDose.ToString();
-            this.comboBoxAnimal.SelectedItem = CarteiraVacinacaoAtual.Animal;
-            this.comboBoxVacina.SelectedItem = CarteiraVacinacaoAtual.Vacina;
-            this.comboBoxFornecedor.SelectedItem = CarteiraVacinacaoAtual.Fornecedor;
+
+            foreach (ModelComboBox animal in this.comboBoxAnimal.Items)
+            {   
+                if (CarteiraVacinacaoAtual.AnimalId.Equals(animal.Id))
+                {
+                    this.comboBoxAnimal.SelectedItem = animal;
+                }
+            }
+
+            foreach (ModelComboBox comboboxVacina in this.comboBoxVacina.Items)
+            {
+                if (CarteiraVacinacaoAtual.VacinaId.Equals(comboboxVacina.Id))
+                {
+                    this.comboBoxVacina.SelectedItem = comboboxVacina;
+                }
+            }
+
+            foreach (ModelComboBox comboboxFornecedor in this.comboBoxFornecedor.Items)
+            {
+                if (CarteiraVacinacaoAtual.FornecedorId.Equals(comboboxFornecedor.Id))
+                {
+                    this.comboBoxFornecedor.SelectedItem = comboboxFornecedor;
+                }
+            }
+
+            this.comboBoxAnimal.Enabled = false;
+            this.comboBoxVacina.Enabled = false;
+            this.comboBoxFornecedor.Enabled = false;
         }
 
         private void setComboBoxAnimal()

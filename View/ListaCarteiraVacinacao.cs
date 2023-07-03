@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace Views
 {
     class ListaCarteiraVacinacao : Form
-        {
+    {
         private Panel buttonPanel = new Panel();
         private DataGridView carteiraVacinacaoGridView = new DataGridView();
         private Button adicionarCarteiraVacinacaoButton = new Button();
@@ -20,7 +20,7 @@ namespace Views
             this.Load += new EventHandler(ListaCarteiraVacinacao_Load);
 
             // List<Model.CarteiraVacinacao> carteirasVacinacao = Controller.CarteiraVacinacao.VerificarCarteirasProximaDose();
-       
+
             //  foreach (Model.CarteiraVacinacao carteiraVacinacao in carteirasVacinacao)
             // {
             //     Console.WriteLine($"A carteira de vacinação de ID {carteiraVacinacao.Id} está com a próxima dose agendada para daqui a 30 dias.");
@@ -131,8 +131,11 @@ namespace Views
             foreach (var carteiraVacinacao in listaCarteiraVacinacoes)
             {
                 Model.CarteiraVacinacao carteiraVacinacoes = Controller.CarteiraVacinacao.BuscarPorId(carteiraVacinacao.Id);
+                Model.Vacina vacina = Controller.Vacina.BuscarPorId(carteiraVacinacao.VacinaId);
+                Model.Animal animal = Controller.Animal.BuscarPorId(carteiraVacinacao.AnimalId);
+                Model.Fornecedor fornecedor = Controller.Fornecedor.BuscarPorId(carteiraVacinacao.FornecedorId);
 
-                object[] linhaCarteiraVacinacao = {carteiraVacinacao.Id.ToString(), carteiraVacinacao.DataVacinacao, carteiraVacinacao.ProximaDose, carteiraVacinacao.NroDose, carteiraVacinacao.Animal, carteiraVacinacao.Vacina, carteiraVacinacao.Fornecedor};
+                object[] linhaCarteiraVacinacao = { carteiraVacinacao.Id.ToString(), animal.nroRegistro, carteiraVacinacao.DataVacinacao, carteiraVacinacao.ProximaDose, carteiraVacinacao.NroDose,  vacina.Tipo, fornecedor.nomeFantasia };
                 carteiraVacinacaoGridView.Rows.Add(linhaCarteiraVacinacao);
             }
         }

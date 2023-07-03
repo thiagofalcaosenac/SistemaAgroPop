@@ -11,9 +11,12 @@ namespace Model
         public DateOnly DataVacinacao { get; set; }
         public DateOnly ProximaDose { get; set; }
         public int NroDose { get; set; }
-        public Animal Animal {get; set;}
-        public Vacina Vacina {get; set;}
-        public Fornecedor Fornecedor {get; set;}
+        public Animal Animal { get; set; }
+        public int AnimalId { get; set; }
+        public Vacina Vacina { get; set; }
+        public int VacinaId { get; set; }
+        public Fornecedor Fornecedor { get; set; }
+        public int FornecedorId { get; set; }
 
         public CarteiraVacinacao(int id, DateOnly dataVacinacao, DateOnly proximaDose, int nroDose, Animal animal, Vacina vacina, Fornecedor fornecedor)
         {
@@ -21,10 +24,10 @@ namespace Model
             DataVacinacao = dataVacinacao;
             ProximaDose = proximaDose;
             NroDose = nroDose;
-            Animal = animal;
-            Vacina = vacina;
-            Fornecedor = fornecedor;
-             
+            AnimalId = animal.id;
+            VacinaId = vacina.Id;
+            FornecedorId = fornecedor.id;
+
             Database db = new Database();
             db.CarteiraVacinacoes.Add(this);
             db.SaveChanges();
