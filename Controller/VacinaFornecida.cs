@@ -7,7 +7,7 @@ namespace Controller
 {
     public class VacinaFornecida
     {
-        public Model.VacinaFornecida CriarVacinaFornecida(int id, string dataFabricacao, string dataValidade, string dataCompra, int quantidade, float preco, Model.Fornecedor fornecedor, Model.Vacina vacina)
+        public static Model.VacinaFornecida CriarVacinaFornecida(string dataFabricacao, string dataValidade, string dataCompra, int quantidade, float preco, Model.Fornecedor fornecedor, Model.Vacina vacina)
         {
             if (string.IsNullOrEmpty(dataFabricacao) || string.IsNullOrEmpty(dataValidade) || string.IsNullOrEmpty(dataCompra))
                 throw new Exception("As datas de fabricação, validade e compra são obrigatórias.");
@@ -26,11 +26,11 @@ namespace Controller
 
             float valorTotal = quantidade * preco;
 
-            Model.VacinaFornecida vacinaFornecida = new Model.VacinaFornecida(id, parsedDataFabricacao, parsedDataValidade, parsedDataCompra, quantidade, preco, valorTotal, fornecedor, vacina);
+            Model.VacinaFornecida vacinaFornecida = new Model.VacinaFornecida(0, parsedDataFabricacao, parsedDataValidade, parsedDataCompra, quantidade, preco, valorTotal, fornecedor, vacina);
             return vacinaFornecida;
         }
 
-        public Model.VacinaFornecida AlterarVacinaFornecida(int id, string dataFabricacao, string dataValidade, string dataCompra, int quantidade, float preco)
+        public static Model.VacinaFornecida AlterarVacinaFornecida(int id, string dataFabricacao, string dataValidade, string dataCompra, int quantidade, float preco)
         {
             if (string.IsNullOrEmpty(dataFabricacao) || string.IsNullOrEmpty(dataValidade) || string.IsNullOrEmpty(dataCompra))
                 throw new Exception("As datas de fabricação, validade e compra são obrigatórias.");
@@ -52,17 +52,17 @@ namespace Controller
             return Model.VacinaFornecida.Alterar(id, parsedDataFabricacao, parsedDataValidade, parsedDataCompra, quantidade, preco, vacinaFornecida.ValorTotal);
         }
 
-        public void ExcluirVacinaFornecida(int id)
+        public static void ExcluirVacinaFornecida(int id)
         {
             Model.VacinaFornecida.Excluir(id);
         }
 
-        public List<Model.VacinaFornecida> ListarVacinaFornecida()
+        public static List<Model.VacinaFornecida> ListarVacinaFornecida()
         {
             return Model.VacinaFornecida.Listar();
         }
 
-        public  Model.VacinaFornecida BuscarVacinaFornecidaPorId(int id)
+        public static Model.VacinaFornecida BuscarVacinaFornecidaPorId(int id)
         {
             return Model.VacinaFornecida.BuscarPorId(id);
         }

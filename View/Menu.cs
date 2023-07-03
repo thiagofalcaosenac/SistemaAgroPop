@@ -37,7 +37,8 @@ namespace View
             Raca.Location = new Point(75, 150);
             Raca.Height = 40;
             Raca.Width = 300;
-            Raca.Click += new EventHandler(Raca_Click);            
+            Raca.Click += new EventHandler(Raca_Click);
+
 
             Animal.Text = "Animal";
             Animal.Name = "Animal";
@@ -52,6 +53,13 @@ namespace View
             Fornecedor.Height = 40;
             Fornecedor.Width = 300;
             Fornecedor.Click += new EventHandler(Fornecedor_Click);
+
+            CarteiraVacinacao.Text = "Carteira de Vacinação";
+            CarteiraVacinacao.Name = "Carteira de Vacinação";
+            CarteiraVacinacao.Location = new Point(75, 300);
+            CarteiraVacinacao.Height = 40;
+            CarteiraVacinacao.Width = 300;
+            //carteiraVacinacao.Click += new EventHandler(CarteiraVacinacao_Click);
 
             Vacina.Text = "Vacina";
             Vacina.Name = "Vacina";
@@ -93,6 +101,47 @@ namespace View
 
         }
 
+        //     public void Animal_Click(object sender, EventArgs e)
+        //     {
+        //         using var context = new Models.Context();
+
+        //         ListaAnimal listaAnimal = new ListaAnimal(context);
+        //         listaAnimal.FormLayout();
+        //         listaAnimal.Show();
+        //     }
+        //     public void Fornecedor_Click(object sender, EventArgs e)
+        //     {
+        //         using var context = new Models.Context();
+
+        //         ListaFornecedor listaFornecedor = new ListaFornecedor(context);
+        //         listaFornecedor.FormLayout();
+        //         listaFornecedor.Show();
+        //     }
+        //    public void CarteiraVacinacao_Click(object sender, EventArgs e)
+        //     {
+        //         using var context = new Models.Context();
+
+        //         ListaCarteiraVacinacao listaCarteiraVacinacao = new ListaCarteiraVacinacao(context);
+        //         listaCarteiraVacinacao.FormLayout();
+        //         listaCarteiraVacinacao.Show();
+        //     }
+        //     public void CarteiraVacinacao_Click(object sender, EventArgs e)
+        //     {
+        //         using var context = new Models.Context();
+
+        //         ListaCarteiraVacinacao listaCarteiraVacinacao = new ListaCarteiraVacinacao(context);
+        //         listaCarteiraVacinacao.FormLayout();
+        //         listaCarteiraVacinacao.Show();
+        //     }
+        //     public void VacinaFornecida_Click(object sender, EventArgs e)
+        //     {
+        //         using var context = new Models.Context();
+
+        //         ListaVacinaFornecida listaVacinaFornecida = new ListaVacinaFornecida(context);
+        //         listaVacinaFornecida.FormLayout();
+        //         listaVacinaFornecida.Show();
+        //     }
+
         public void Fazenda_Click(object sender, EventArgs e)
         {
             ListaFazenda listaFazendaForm = new ListaFazenda();
@@ -114,27 +163,21 @@ namespace View
 
         public void Fornecedor_Click(object sender, EventArgs e)
         {
-            
             ListaFornecedor listaFornecedor = new ListaFornecedor();
             listaFornecedor.ShowDialog();
         }
 
         public void Vacina_Click(object sender, EventArgs e)
         {
-            // using var context = new Models.Context();
 
-            // ListaFornecedor listaFornecedor = new ListaFornecedor(context);
-            // listaFornecedor.FormLayout();
-            // listaFornecedor.Show();
+            ListaVacina listaVacinaForm = new ListaVacina();
+            listaVacinaForm.ShowDialog();
         }
 
         public void VacinaFornecida_Click(object sender, EventArgs e)
         {
-            // using var context = new Models.Context();
-
-            // ListaCarteiraVacinacao listaCarteiraVacinacao = new ListaCarteiraVacinacao(context);
-            // listaCarteiraVacinacao.FormLayout();
-            // listaCarteiraVacinacao.Show();
+            ListaVacinaFornecida listaVacinaFornecida = new ListaVacinaFornecida();
+            listaVacinaFornecida.ShowDialog();
         }
 
         public void CarteiraVacinacao_Click(object sender, EventArgs e)

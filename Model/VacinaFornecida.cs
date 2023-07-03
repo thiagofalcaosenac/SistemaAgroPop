@@ -16,7 +16,9 @@ namespace Model
         public float Preco { get; set; }
         public float ValorTotal { get; set; } //qtd * preco
         public Fornecedor Fornecedor { get; set; }
+        public int fornecedorId { get; set; }        
         public Vacina Vacina { get; set; }
+        public int vacinaId { get; set; }
 
         public VacinaFornecida(int id, DateOnly dataFabricacao, DateOnly dataValidade, DateOnly dataCompra,
         int quantidade,
@@ -32,8 +34,8 @@ namespace Model
             Quantidade = quantidade;
             Preco = preco;
             ValorTotal = valorTotal;
-            Fornecedor = fornecedor;
-            Vacina = vacina;
+            fornecedorId = fornecedor.id;
+            vacinaId = vacina.Id;
 
             Database db = new Database();
             db.VacinaFornecidas.Add(this);
