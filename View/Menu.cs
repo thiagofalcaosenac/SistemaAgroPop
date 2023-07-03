@@ -117,7 +117,6 @@ namespace View
 
         public void Fornecedor_Click(object sender, EventArgs e)
         {
-            
             ListaFornecedor listaFornecedor = new ListaFornecedor();
             listaFornecedor.ShowDialog();
         }
@@ -133,11 +132,8 @@ namespace View
 
         public void VacinaFornecida_Click(object sender, EventArgs e)
         {
-            // using var context = new Models.Context();
-
-            // ListaCarteiraVacinacao listaCarteiraVacinacao = new ListaCarteiraVacinacao(context);
-            // listaCarteiraVacinacao.FormLayout();
-            // listaCarteiraVacinacao.Show();
+            ListaVacinaFornecida listaVacinaFornecida = new ListaVacinaFornecida();
+            listaVacinaFornecida.ShowDialog();
         }
 
         public void CarteiraVacinacao_Click(object sender, EventArgs e)
