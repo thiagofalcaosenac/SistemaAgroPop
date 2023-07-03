@@ -12,7 +12,7 @@ namespace Repository
         public DbSet<Fazenda> Fazendas { get; set; }
         public DbSet<Vacina> Vacinas { get; set; }
         public DbSet<Fornecedor> Fornecedors { get; set; }
-         public DbSet<VacinaFornecida> VacinaFornecidas { get; set; }
+        public DbSet<VacinaFornecida> VacinaFornecidas { get; set; }
         public DbSet<Animal> Animals { get; set; }
         public DbSet<CarteiraVacinacao> CarteiraVacinacoes { get; set; }
         public DbSet<Raca> Racas { get; set; }
