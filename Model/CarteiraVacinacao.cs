@@ -24,7 +24,7 @@ namespace Model
             Animal = animal;
             Vacina = vacina;
             Fornecedor = fornecedor;
-            
+             
             Database db = new Database();
             db.CarteiraVacinacoes.Add(this);
             db.SaveChanges();
@@ -45,7 +45,7 @@ namespace Model
             }
             catch
             {
-                throw new System.Exception("Endereco não encontrado");
+                throw new System.Exception("Carteira de Vacinação não encontrado");
             }
         }
 
@@ -105,7 +105,7 @@ namespace Model
             }
             catch
             {
-                throw new System.Exception("CarteiraVacinal não encontrado");
+                throw new System.Exception("Carteira de Vacinação não encontrado");
             }
         }
 
@@ -121,7 +121,7 @@ namespace Model
             }
             catch
             {
-                throw new System.Exception("CarteiraVacinal não encontrado");
+                throw new System.Exception("Carteira de Vacinação não encontrado");
             }
         }
 

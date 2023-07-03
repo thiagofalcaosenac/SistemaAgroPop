@@ -1,3 +1,5 @@
+using Views;
+
 namespace View
 {
     public class Menu : Form
@@ -108,11 +110,6 @@ namespace View
 
         public void Animal_Click(object sender, EventArgs e)
         {
-            // using var context = new Models.Context();
-
-            // ListaVacina listaVacina = new ListaVacina(context);
-            // listaVacina.FormLayout();
-            // listaVacina.Show();
         }
 
         public void Fornecedor_Click(object sender, EventArgs e)

@@ -10,8 +10,8 @@ namespace Views
         Label lblVacina;
         Label lblFornecedor;
         ComboBox comboBoxAnimal;
-        MonthCalendar mcDataVacinacao;
-        MonthCalendar mcProximaDose;
+        TextBox txtDataVacinacao;
+        TextBox txtProximaDose;
         TextBox txtNroDoses;
         ComboBox comboBoxVacina;
         ComboBox comboBoxFornecedor;
@@ -35,32 +35,62 @@ namespace Views
             lblAnimal.Location = new Point(10, 10);
 
             comboBoxAnimal = new ComboBox();
-            comboBoxAnimal.Location = new Point(150, 200);
+            comboBoxAnimal.Location = new Point(150, 10);
             comboBoxAnimal.Size = new Size(200, 18);
             comboBoxAnimal.TabIndex = 0;
             this.setComboBoxAnimal();
             comboBoxAnimal.Text = " ";
 
             lblDataVacinacao = new Label();
-            lblDataVacinacao.Text = "DataVacinacao:";
+            lblDataVacinacao.Text = "Data de Vacinação:";
             lblDataVacinacao.AutoSize = true;
-            lblDataVacinacao.Location = new Point(10, 100 );
+            lblDataVacinacao.Location = new Point(10, 70);
 
             txtDataVacinacao = new TextBox();
-            txtPeriodicidade.Location = new Point(150, 100);
-            txtPeriodicidade.Size = new Size(200, 18);
+            txtDataVacinacao.Location = new Point(150, 70);
+            txtDataVacinacao.Size = new Size(200, 18);
 
-            lblTipo = new Label();
-            lblTipo.Text = "Tipo:";
-            lblTipo.AutoSize = true;
-            lblTipo.Location = new Point(10, 200);
+            lblProximaDose = new Label();
+            lblProximaDose.Text = "Data da Próxima Dose:";
+            lblProximaDose.AutoSize = true;
+            lblProximaDose.Location = new Point(10, 130);
 
-            comboBoxTipo = new ComboBox();
-            comboBoxTipo.Location = new Point(150, 200);
-            comboBoxTipo.Size = new Size(200, 18);
-            comboBoxTipo.TabIndex = 0;
-            this.setComboBoxTipo();
-            comboBoxTipo.Text = " ";
+            txtProximaDose = new TextBox();
+            txtProximaDose.Location = new Point(150, 130);
+            txtProximaDose.Size = new Size(200, 18);
+
+            lblNroDose = new Label();
+            lblNroDose.Text = "Nro de Doses:";
+            lblNroDose.AutoSize = true;
+            lblNroDose.Location = new Point(10, 190);
+
+            txtNroDoses = new TextBox();
+            txtNroDoses.Location = new Point(150, 190);
+            txtNroDoses.Size = new Size(200, 18);
+
+            lblVacina = new Label();
+            lblVacina.Text = "Vacina:";
+            lblVacina.AutoSize = true;
+            lblVacina.Location = new Point(10, 250);
+
+            comboBoxVacina = new ComboBox();
+            comboBoxVacina.Location = new Point(150, 250);
+            comboBoxVacina.Size = new Size(200, 18);
+            comboBoxVacina.TabIndex = 0;
+            this.setComboBoxVacina();
+            comboBoxVacina.Text = " ";
+
+            lblFornecedor = new Label();
+            lblFornecedor.Text = "Fornecedor:";
+            lblFornecedor.AutoSize = true;
+            lblFornecedor.Location = new Point(10, 310);
+
+            comboBoxFornecedor = new ComboBox();
+            comboBoxFornecedor.Location = new Point(150, 310);
+            comboBoxFornecedor.Size = new Size(200, 18);
+            comboBoxFornecedor.TabIndex = 0;
+            this.setComboBoxFornecedor();
+            comboBoxFornecedor.Text = " ";
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
@@ -77,12 +107,18 @@ namespace Views
             buttonPanel.Height = 50;
             buttonPanel.Dock = DockStyle.Bottom;
 
-            this.Controls.Add(this.lblQtdMinima);
-            this.Controls.Add(this.lblPeriodicidade);
-            this.Controls.Add(this.lblTipo);
-            this.Controls.Add(this.txtQtdMinima);
-            this.Controls.Add(this.txtPeriodicidade);
-            this.Controls.Add(this.comboBoxTipo);
+            this.Controls.Add(this.lblAnimal);
+            this.Controls.Add(this.lblDataVacinacao);
+            this.Controls.Add(this.lblProximaDose);
+            this.Controls.Add(this.lblNroDose);
+            this.Controls.Add(this.lblVacina);
+            this.Controls.Add(this.lblFornecedor);
+            this.Controls.Add(this.comboBoxAnimal);
+            this.Controls.Add(this.txtDataVacinacao);
+            this.Controls.Add(this.txtProximaDose);
+            this.Controls.Add(this.txtNroDoses);
+            this.Controls.Add(this.comboBoxVacina);
+            this.Controls.Add(this.comboBoxFornecedor);
             this.Controls.Add(this.buttonPanel);
 
             if (idCarteiraVacinacao != null)
@@ -100,19 +136,26 @@ namespace Views
                 {
                     Controller.CarteiraVacinacao.AlterarCarteiraVacinacao(
                         this.idCarteiraVacinacaoEdicao.Value,
-                        (Model.CarteiraVacinacao.TipoCarteiraVacinacao) this.comboBoxTipo.SelectedItem,
-                        Int32.Parse(this.txtQtdMinima.Text),
-                        Int32.Parse(this.txtPeriodicidade.Text)
+                        this.txtDataVacinacao.Text,
+                        this.txtProximaDose.Text,
+                        Int32.Parse(this.txtNroDoses.Text)
                         );
                     MessageBox.Show("Carteira de Vacinção atualizada com sucesso!");
                 }
                 else
                 {
+                    Model.Animal animal = Controller.Animal.BuscarPorId((this.comboBoxAnimal.SelectedItem as ModelComboBox).Id);
+                    Model.Vacina vacina = Controller.Vacina.BuscarPorId((this.comboBoxVacina.SelectedItem as ModelComboBox).Id);
+                    Model.Fornecedor fornecedor = Controller.Fornecedor.BuscarPorId((this.comboBoxFornecedor.SelectedItem as ModelComboBox).Id);
+                    
                     Controller.CarteiraVacinacao.CriarCarteiraVacinacao(
                         0,
-                        (Model.CarteiraVacinacao.TipoCarteiraVacinacao) this.comboBoxTipo.SelectedItem,
-                        Int32.Parse(this.txtQtdMinima.Text),
-                        Int32.Parse(this.txtPeriodicidade.Text)
+                        this.txtDataVacinacao.Text,
+                        this.txtProximaDose.Text,
+                        Int32.Parse(this.txtNroDoses.Text),
+                        animal,
+                        vacina,
+                        fornecedor
                         );
                     MessageBox.Show("Carteira de Vacinação cadastrada com sucesso!");
                 }
@@ -121,7 +164,7 @@ namespace Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.InnerException.Message);
 
             }
         }
@@ -135,19 +178,73 @@ namespace Views
         {
             Model.CarteiraVacinacao CarteiraVacinacaoAtual = Controller.CarteiraVacinacao.BuscarPorId(idCarteiraVacinacao);
 
-			this.idCarteiraVacinacaoEdicao = idCarteiraVacinacao;
-			this.txtQtdMinima.Text = CarteiraVacinacaoAtual.QtdMinima.ToString();
-			this.txtPeriodicidade.Text = CarteiraVacinacaoAtual.Periodicidade.ToString();
-			this.comboBoxTipo.SelectedItem = CarteiraVacinacaoAtual.Tipo;
+            this.idCarteiraVacinacaoEdicao = idCarteiraVacinacao;
+            this.txtDataVacinacao.Text = CarteiraVacinacaoAtual.DataVacinacao.ToString();
+            this.txtProximaDose.Text = CarteiraVacinacaoAtual.ProximaDose.ToString();
+            this.txtNroDoses.Text = CarteiraVacinacaoAtual.NroDose.ToString();
+            this.comboBoxAnimal.SelectedItem = CarteiraVacinacaoAtual.Animal;
+            this.comboBoxVacina.SelectedItem = CarteiraVacinacaoAtual.Vacina;
+            this.comboBoxFornecedor.SelectedItem = CarteiraVacinacaoAtual.Fornecedor;
         }
 
-         private void setComboBoxTipo()
+        private void setComboBoxAnimal()
         {
-            comboBoxTipo.Items.Clear();
-            comboBoxTipo.Items.Add(Model.CarteiraVacinacao.TipoCarteiraVacinacao.FEBRE_AFTOSA);
-            comboBoxTipo.Items.Add(Model.CarteiraVacinacao.TipoCarteiraVacinacao.BRUCELOSE);
-            comboBoxTipo.Items.Add(Model.CarteiraVacinacao.TipoCarteiraVacinacao.RAIVA);
+            List<Model.Animal> animais = Controller.Animal.ListarAnimals();
+            foreach (Model.Animal animal in animais)
+            {
+                this.comboBoxAnimal.Items.Add(ModelComboBox.To(animal));
+            }
+
         }
 
+        private void setComboBoxVacina()
+        {
+            List<Model.Vacina> vacinas = Controller.Vacina.ListarVacina();
+            foreach (Model.Vacina vacina in vacinas)
+            {
+                this.comboBoxVacina.Items.Add(ModelComboBox.To(vacina));
+            }
+        }
+
+        private void setComboBoxFornecedor()
+        {
+            List<Model.Fornecedor> fornecedores = Controller.Fornecedor.ListarFornecedors();
+            foreach (Model.Fornecedor fornecedor in fornecedores)
+            {
+                this.comboBoxFornecedor.Items.Add(ModelComboBox.To(fornecedor));
+            }
+        }
+    }
+
+    public class ModelComboBox
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+
+        public ModelComboBox(int id, string nome)
+        {
+            Id = id;
+            Nome = nome;
+        }
+
+        public static ModelComboBox To(Model.Animal model)
+        {
+            return new ModelComboBox(model.id, model.nroRegistro.ToString());
+        }
+
+        public static ModelComboBox To(Model.Fornecedor model)
+        {
+            return new ModelComboBox(model.id, model.nomeFantasia);
+        }
+
+        public static ModelComboBox To(Model.Vacina model)
+        {
+            return new ModelComboBox(model.Id, model.Tipo.ToString());
+        }
+
+        public override string? ToString()
+        {
+            return Nome;
+        }
     }
 }

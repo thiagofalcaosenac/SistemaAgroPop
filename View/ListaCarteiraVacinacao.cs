@@ -8,7 +8,7 @@ namespace Views
     class ListaCarteiraVacinacao : Form
         {
         private Panel buttonPanel = new Panel();
-        private DataGridView CarteiraVacinacaocaoGridView = new DataGridView();
+        private DataGridView carteiraVacinacaoGridView = new DataGridView();
         private Button adicionarCarteiraVacinacaoButton = new Button();
         private Button atualizarCarteiraVacinacaoButton = new Button();
         private Button deletarCarteiraVacinacaoButton = new Button();
@@ -18,6 +18,13 @@ namespace Views
         {
             this.Text = "Listagem de Carteira de Vacinação";
             this.Load += new EventHandler(ListaCarteiraVacinacao_Load);
+
+            // List<Model.CarteiraVacinacao> carteirasVacinacao = Controller.CarteiraVacinacao.VerificarCarteirasProximaDose();
+       
+            //  foreach (Model.CarteiraVacinacao carteiraVacinacao in carteirasVacinacao)
+            // {
+            //     Console.WriteLine($"A carteira de vacinação de ID {carteiraVacinacao.Id} está com a próxima dose agendada para daqui a 30 dias.");
+            // }
         }
 
         private void ListaCarteiraVacinacao_Load(System.Object sender, System.EventArgs e)
@@ -53,22 +60,22 @@ namespace Views
 
         private void SetupLayout()
         {
-            this.Size = new Size(600, 600);
+            this.Size = new Size(800, 700);
 
             adicionarCarteiraVacinacaoButton.Text = "Adicionar";
-            adicionarCarteiraVacinacaoButton.Location = new Point(200, 10);
+            adicionarCarteiraVacinacaoButton.Location = new Point(400, 10);
             adicionarCarteiraVacinacaoButton.Click += new EventHandler(adicionarCarteiraVacinacaoButton_Click);
 
             atualizarCarteiraVacinacaoButton.Text = "Editar";
-            atualizarCarteiraVacinacaoButton.Location = new Point(300, 10);
+            atualizarCarteiraVacinacaoButton.Location = new Point(500, 10);
             atualizarCarteiraVacinacaoButton.Click += new EventHandler(atualizarCarteiraVacinacaoButton_Click);
 
             deletarCarteiraVacinacaoButton.Text = "Excluir";
-            deletarCarteiraVacinacaoButton.Location = new Point(400, 10);
+            deletarCarteiraVacinacaoButton.Location = new Point(600, 10);
             deletarCarteiraVacinacaoButton.Click += new EventHandler(deletarCarteiraVacinacaoButton_Click);
 
             voltarButton.Text = "Voltar";
-            voltarButton.Location = new Point(500, 10);
+            voltarButton.Location = new Point(700, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
 
             buttonPanel.Controls.Add(adicionarCarteiraVacinacaoButton);
@@ -90,7 +97,7 @@ namespace Views
 
             carteiraVacinacaoGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
             carteiraVacinacaoGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            carteiraVacinacaoGridView.ColumnHeadersDefaultCellStyle.Font = new Font(CarteiraVacinacaoGridView.Font, FontStyle.Bold);
+            carteiraVacinacaoGridView.ColumnHeadersDefaultCellStyle.Font = new Font(carteiraVacinacaoGridView.Font, FontStyle.Bold);
 
             carteiraVacinacaoGridView.Name = "CarteiraVacinacaoGridView";
             carteiraVacinacaoGridView.Location = new Point(8, 8);
@@ -104,7 +111,7 @@ namespace Views
             carteiraVacinacaoGridView.Columns[0].Name = "Id da Carteira de Vacinação";
             carteiraVacinacaoGridView.Columns[1].Name = "Animal";
             carteiraVacinacaoGridView.Columns[2].Name = "Data de Aplicação";
-            carteiraVacinacaoGridView.Columns[3].Name = "Data da Proxima Dose";
+            carteiraVacinacaoGridView.Columns[3].Name = "Data da Próxima Dose";
             carteiraVacinacaoGridView.Columns[4].Name = "Numero de Doses";
             carteiraVacinacaoGridView.Columns[5].Name = "Vacina";
             carteiraVacinacaoGridView.Columns[6].Name = "Fornecedor";
@@ -113,20 +120,20 @@ namespace Views
             carteiraVacinacaoGridView.MultiSelect = false;
             carteiraVacinacaoGridView.Dock = DockStyle.Fill;
 
-            carteiraVacinacaoGridView.CellFormatting += new DataGridViewCellFormattingEventHandler(CarteiraVacinacaoGridView_CellFormatting);
+            carteiraVacinacaoGridView.CellFormatting += new DataGridViewCellFormattingEventHandler(carteiraVacinacaoGridView_CellFormatting);
         }
 
         private void PopulateDataGridView()
         {
-            List<Model.CarteiraVacinacao> listaCarteiraVacinacaos = Controller.CarteiraVacinacao.ListarCarteiraVacinacao();
+            List<Model.CarteiraVacinacao> listaCarteiraVacinacoes = Controller.CarteiraVacinacao.ListarCarteiraVacinacao();
 
             carteiraVacinacaoGridView.Rows.Clear();
             foreach (var carteiraVacinacao in listaCarteiraVacinacoes)
             {
                 Model.CarteiraVacinacao carteiraVacinacoes = Controller.CarteiraVacinacao.BuscarPorId(carteiraVacinacao.Id);
 
-                object[] linhaCarteiraVacinacao = {carteiraVacinacao.Id.ToString(), carteiraVacinacao.Tipo, carteiraVacinacao.Periodicidade, carteiraVacinacao.QtdMinima};
-                CarteiraVacinacaoGridView.Rows.Add(linhaCarteiraVacinacao);
+                object[] linhaCarteiraVacinacao = {carteiraVacinacao.Id.ToString(), carteiraVacinacao.DataVacinacao, carteiraVacinacao.ProximaDose, carteiraVacinacao.NroDose, carteiraVacinacao.Animal, carteiraVacinacao.Vacina, carteiraVacinacao.Fornecedor};
+                carteiraVacinacaoGridView.Rows.Add(linhaCarteiraVacinacao);
             }
         }
 
@@ -165,7 +172,7 @@ namespace Views
                 if (confirmResult == DialogResult.Yes)
                 {
                     string idCarteiraVacinacao = carteiraVacinacaoGridView.Rows[this.carteiraVacinacaoGridView.SelectedRows[0].Index].Cells[0].Value.ToString();
-                    Controller.CarteiraVacinacao.ExcluirCarteiraVacinacao(Int32.Parse(idCarteiraVacinacao));
+                    Controller.CarteiraVacinacao.ExcluirVacinaCarteiraVacinacao(Int32.Parse(idCarteiraVacinacao));
                     this.PopulateDataGridView();
                     this.carteiraVacinacaoGridView.Refresh();
                 }

@@ -135,14 +135,23 @@ namespace Model
             {
                 Database db = new Database();
                 VacinaFornecida vacinaFornecida = (from u in db.VacinaFornecidas
-                                          where u.Vacina == vacina
-                                          select u).First();
+                                                   where u.Vacina == vacina
+                                                   select u).First();
                 return vacinaFornecida;
             }
             catch
             {
                 throw new System.Exception("CarteiraVacinal não encontrado");
             }
+        }
+
+        public void AtualizarNrDoses(int nroDoseUtilizadas)
+        {
+            this.Quantidade -= nroDoseUtilizadas;
+            Database db = new Database();
+            db.VacinaFornecidas.Update(this);
+            db.SaveChanges();
+
         }
 
         public override string ToString()
