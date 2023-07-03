@@ -12,25 +12,35 @@ namespace Model
         public DateTime dataNascimento { get; set; }
         public int nroRegistro { get; set; }
         public EnumOrigem origem { get; set; }
-        public int cor { get; set; }
+        public string cor { get; set; }
         public int peso { get; set; }
         public Raca raca { get; set; }
+        public int racaid { get; set; }
         public Fazenda fazenda { get; set; }
+        public int fazendaid { get; set; }
 
-        public Animal(DateTime dataNascimento, int nroRegistro,EnumOrigem origem,int cor,int peso,Raca raca,Fazenda fazenda)
+        public Animal(DateTime dataNascimento, int nroRegistro,EnumOrigem origem,string cor,int peso,Raca raca,Fazenda fazenda)
         {
-            this.dataNascimento = dataNascimento;
-            this.nroRegistro = nroRegistro;
-            this.origem = origem;
-            this.cor = cor;
-            this.peso = peso;
-            this.raca = raca;
-             this.fazenda = fazenda;
-
-
-            Database db = new Database();
-            db.Animals.Add(this);
-            db.SaveChanges();
+            try
+            {
+                this.dataNascimento = dataNascimento;
+                this.nroRegistro = nroRegistro;
+                this.origem = origem;
+                this.cor = cor;
+                this.peso = peso;
+                this.racaid = raca.id;
+                this.fazendaid = fazenda.id;
+            
+                Database db = new Database();
+                db.Animals.Add(this);
+                db.SaveChanges();
+            }
+            catch (System.Exception e)
+            {
+                 Console.WriteLine(e);
+                throw;
+            }
+           
         }
 
         public Animal()
@@ -95,7 +105,7 @@ namespace Model
             DateTime dataNascimento,
             int nroRegistro,
             EnumOrigem origem,
-            int cor,
+            string cor,
             int peso,
             Raca raca,
             Fazenda fazenda

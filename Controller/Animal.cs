@@ -33,7 +33,6 @@ namespace Controller
             int nroRegistroInt = Int32.Parse(nroRegistro);
             int fazendaId = Int32.Parse(fazenda);
             int pesoInt = Int32.Parse(peso);
-            int corInt = Int32.Parse(cor);
             DateTime dataDeNascimento = DateTime.Parse(dataNascimento);
             Model.Raca racaBanco = Controller.Raca.BuscarPorId(racaId);
             Model.Fazenda fazendaBanco = Controller.Fazenda.BuscarPorId(fazendaId);
@@ -41,11 +40,10 @@ namespace Controller
                dataDeNascimento,
                nroRegistroInt,
                enumOrigem,
-               corInt,
+               cor,
                pesoInt,
                racaBanco,
                fazendaBanco
-
             );
         }
 
@@ -78,7 +76,6 @@ namespace Controller
             int racaId = Int32.Parse(raca);
             int fazendaId = Int32.Parse(fazenda);
             int pesoInt = Int32.Parse(peso);
-            int corInt = Int32.Parse(cor);
             Model.Raca racaBanco = Controller.Raca.BuscarPorId(racaId);
             Model.Fazenda fazendaBanco = Controller.Fazenda.BuscarPorId(fazendaId);
                 return Model.Animal.AlterarAnimal(
@@ -86,7 +83,7 @@ namespace Controller
                     dataDeNascimento,
                     nroRegistroInt,
                     enumOrigem,
-                    corInt,
+                    cor,
                     pesoInt,
                     racaBanco,
                     fazendaBanco
