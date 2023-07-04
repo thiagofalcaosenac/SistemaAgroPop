@@ -13,9 +13,9 @@ namespace Controller
             if (string.IsNullOrEmpty(dataVacinacao) || string.IsNullOrEmpty(proximaDose))
                 throw new Exception("Data de vacinação e próxima dose são obrigatórias.");
 
-            DateOnly parsedDataVacinacao;
-            DateOnly parsedProximaDose;
-            if (!DateOnly.TryParse(dataVacinacao, out parsedDataVacinacao) || !DateOnly.TryParse(proximaDose, out parsedProximaDose))
+            DateTime parsedDataVacinacao;
+            DateTime parsedProximaDose;
+            if (!DateTime.TryParse(dataVacinacao, out parsedDataVacinacao) || !DateTime.TryParse(proximaDose, out parsedProximaDose))
                 throw new Exception("As datas devem estar em um formato válido.");
 
             if (animal == null)
@@ -27,7 +27,10 @@ namespace Controller
             if (fornecedor == null)
                 throw new Exception("É necessário selecionar um fornecedor.");
 
-            Model.CarteiraVacinacao carteiraVacinacao = new Model.CarteiraVacinacao(id, parsedDataVacinacao, parsedProximaDose, nroDose, animal, vacina, fornecedor);
+            DateOnly dataVacinacaoVar = DateOnly.FromDateTime(parsedDataVacinacao);
+            DateOnly proximaDoseVar = DateOnly.FromDateTime(parsedProximaDose);
+
+            Model.CarteiraVacinacao carteiraVacinacao = new Model.CarteiraVacinacao(id, dataVacinacaoVar, proximaDoseVar, nroDose, animal, vacina, fornecedor);
             
             Model.VacinaFornecida vacinaFornecida = Controller.VacinaFornecida.BuscarVacinaFornecidaPorVacina(vacina);
             vacinaFornecida.AtualizarNrDoses(nroDose);
@@ -40,17 +43,20 @@ namespace Controller
             if (string.IsNullOrEmpty(dataVacinacao) || string.IsNullOrEmpty(proximaDose))
                 throw new Exception("Data de vacinação e próxima dose são obrigatórias.");
 
-            DateOnly parsedDataVacinacao;
-            DateOnly parsedProximaDose;
-            if (!DateOnly.TryParse(dataVacinacao, out parsedDataVacinacao) || !DateOnly.TryParse(proximaDose, out parsedProximaDose))
+            DateTime parsedDataVacinacao;
+            DateTime parsedProximaDose;
+            if (!DateTime.TryParse(dataVacinacao, out parsedDataVacinacao) || !DateTime.TryParse(proximaDose, out parsedProximaDose))
                 throw new Exception("As datas devem estar em um formato válido.");
+
+            DateOnly dataVacinacaoVar = DateOnly.FromDateTime(parsedDataVacinacao);
+            DateOnly proximaDoseVar = DateOnly.FromDateTime(parsedProximaDose);
 
             Model.CarteiraVacinacao carteiraVacinacao = Model.CarteiraVacinacao.BuscarPorId(id);
             carteiraVacinacao.NroDose = nroDose;
-            carteiraVacinacao.DataVacinacao = parsedDataVacinacao;
-            carteiraVacinacao.ProximaDose = parsedProximaDose;
+            carteiraVacinacao.DataVacinacao = dataVacinacaoVar;
+            carteiraVacinacao.ProximaDose = proximaDoseVar;
 
-            return Model.CarteiraVacinacao.Alterar(id, parsedDataVacinacao, parsedProximaDose, nroDose);
+            return Model.CarteiraVacinacao.Alterar(id, dataVacinacaoVar, proximaDoseVar, nroDose);
         }
 
         public static void ExcluirVacinaCarteiraVacinacao(int id)

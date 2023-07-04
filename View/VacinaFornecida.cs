@@ -11,9 +11,9 @@ namespace View
         Label lblPreco;
         Label lblFornecedor;
         Label lblVacina;
-        TextBox txtDataFabricacao;
-        TextBox txtDataValidade;
-        TextBox txtDataCompra;
+        DateTimePicker txtDataFabricacao;
+        DateTimePicker txtDataValidade;
+        DateTimePicker txtDataCompra;
         TextBox txtQuantidade;
         TextBox txtPreco;
         ComboBox comboboxFornecedor;
@@ -39,7 +39,7 @@ namespace View
             lblDataFabricacao.Text = "Data Fabricação:";
             lblDataFabricacao.AutoSize = true;
             lblDataFabricacao.Location = new Point(20, 60);
-            txtDataFabricacao = new TextBox();
+            txtDataFabricacao = new DateTimePicker();
             txtDataFabricacao.Location = new Point(150, 60);
             txtDataFabricacao.Size = new Size(200, 18);
 
@@ -47,7 +47,7 @@ namespace View
             lblDataValidade.Text = "Data Validade:";
             lblDataValidade.AutoSize = true;
             lblDataValidade.Location = new Point(20, 120);
-            txtDataValidade = new TextBox();
+            txtDataValidade = new DateTimePicker();
             txtDataValidade.Location = new Point(150, 120);
             txtDataValidade.Size = new Size(200, 18);
 
@@ -55,7 +55,7 @@ namespace View
             lblDataCompra.Text = "Data Compra:";
             lblDataCompra.AutoSize = true;
             lblDataCompra.Location = new Point(20, 180);
-            txtDataCompra = new TextBox();
+            txtDataCompra = new DateTimePicker();
             txtDataCompra.Location = new Point(150, 180);
             txtDataCompra.Size = new Size(200, 18);
 
@@ -184,9 +184,10 @@ namespace View
             Model.Fornecedor fornecedor = Controller.Fornecedor.BuscarPorId(vacinaFornecidaAtual.fornecedorId);
 
 			this.idVacinaFornecidaEdicao = idVacinaFornecida;
-			this.txtDataFabricacao.Text = vacinaFornecidaAtual.DataFabricacao.ToString();
-			this.txtDataValidade.Text = vacinaFornecidaAtual.DataValidade.ToString();
-			this.txtDataCompra.Text = vacinaFornecidaAtual.DataCompra.ToString();
+			this.txtDataFabricacao.Value = new DateTime(vacinaFornecidaAtual.DataFabricacao.Year, vacinaFornecidaAtual.DataFabricacao.Month, vacinaFornecidaAtual.DataFabricacao.Day);
+			this.txtDataValidade.Value = new DateTime(vacinaFornecidaAtual.DataValidade.Year, vacinaFornecidaAtual.DataValidade.Month, vacinaFornecidaAtual.DataValidade.Day);
+			this.txtDataCompra.Value = new DateTime(vacinaFornecidaAtual.DataCompra.Year, vacinaFornecidaAtual.DataCompra.Month, vacinaFornecidaAtual.DataCompra.Day);
+
 			this.txtQuantidade.Text = vacinaFornecidaAtual.Quantidade.ToString();
 			this.txtPreco.Text = vacinaFornecidaAtual.Preco.ToString();
 

@@ -132,19 +132,19 @@ namespace View
                 Model.Endereco endereco = Controller.Endereco.BuscarPorId(fornecedor.enderecoId);
 
                 object[] linhaFornecedor = {
-                                            fornecedor.id.ToString(),
-                                            fornecedor.cnpj,
-                                            fornecedor.nomeFantasia,
-                                            fornecedor.razaoSocial,
-                                            endereco.telefone,
-                                            endereco.email,
-                                            endereco.bairro,
-                                            endereco.rua,
-                                            endereco.numero,
-                                            endereco.complemento,
-                                            endereco.cidade,
-                                            endereco.estado
-                                        };
+                    fornecedor.id.ToString(),
+                    fornecedor.nomeFantasia,
+                    fornecedor.cnpj,
+                    fornecedor.razaoSocial,
+                    endereco.telefone,
+                    endereco.email,
+                    endereco.bairro,
+                    endereco.rua,
+                    endereco.numero,
+                    endereco.complemento,
+                    endereco.cidade,
+                    endereco.estado
+                };
                 fornecedorGridView.Rows.Add(linhaFornecedor);
             }
         }

@@ -194,9 +194,9 @@ namespace View
                 {
                     Controller.Fornecedor.AlterarFornecedor(
                         this.idFornecedorEdicao.ToString(),
-                        this.txtNome.Text,
                         this.txtCnpj.Text,
                         this.txtRazaoSocial.Text,
+                         this.txtNome.Text,
                         this.txtTelefone.Text,
                         this.txtEmail.Text,
                         this.txtBairro.Text,
@@ -248,7 +248,7 @@ namespace View
 			this.idFornecedorEdicao = idFornecedor;
 			this.txtNome.Text = fornecedorAtual.nomeFantasia;
 			this.txtCnpj.Text = fornecedorAtual.cnpj.ToString();
-			this.txtCnpj.Text = fornecedorAtual.razaoSocial.ToString();
+			this.txtRazaoSocial.Text = fornecedorAtual.razaoSocial.ToString();
 			this.txtTelefone.Text = endereco.telefone;
 			this.txtEmail.Text = endereco.email;
 			this.txtBairro.Text = endereco.bairro;

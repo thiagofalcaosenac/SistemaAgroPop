@@ -12,10 +12,10 @@ namespace Controller
             if (string.IsNullOrEmpty(dataFabricacao) || string.IsNullOrEmpty(dataValidade) || string.IsNullOrEmpty(dataCompra))
                 throw new Exception("As datas de fabricação, validade e compra são obrigatórias.");
 
-            DateOnly parsedDataFabricacao;
-            DateOnly parsedDataValidade;
-            DateOnly parsedDataCompra;
-            if (!DateOnly.TryParse(dataFabricacao, out parsedDataFabricacao) || !DateOnly.TryParse(dataValidade, out parsedDataValidade) || !DateOnly.TryParse(dataCompra, out parsedDataCompra))
+            DateTime parsedDataFabricacao;
+            DateTime parsedDataValidade;
+            DateTime parsedDataCompra;
+            if (!DateTime.TryParse(dataFabricacao, out parsedDataFabricacao) || !DateTime.TryParse(dataValidade, out parsedDataValidade) || !DateTime.TryParse(dataCompra, out parsedDataCompra))
                 throw new Exception("As datas devem estar em um formato válido.");
 
             if (fornecedor == null)
@@ -26,7 +26,7 @@ namespace Controller
 
             float valorTotal = quantidade * preco;
 
-            Model.VacinaFornecida vacinaFornecida = new Model.VacinaFornecida(0, parsedDataFabricacao, parsedDataValidade, parsedDataCompra, quantidade, preco, valorTotal, fornecedor, vacina);
+            Model.VacinaFornecida vacinaFornecida = new Model.VacinaFornecida(0, DateOnly.FromDateTime(parsedDataFabricacao), DateOnly.FromDateTime(parsedDataValidade), DateOnly.FromDateTime(parsedDataCompra), quantidade, preco, valorTotal, fornecedor, vacina);
             return vacinaFornecida;
         }
 
@@ -35,21 +35,21 @@ namespace Controller
             if (string.IsNullOrEmpty(dataFabricacao) || string.IsNullOrEmpty(dataValidade) || string.IsNullOrEmpty(dataCompra))
                 throw new Exception("As datas de fabricação, validade e compra são obrigatórias.");
 
-            DateOnly parsedDataFabricacao;
-            DateOnly parsedDataValidade;
-            DateOnly parsedDataCompra;
-            if (!DateOnly.TryParse(dataFabricacao, out parsedDataFabricacao) || !DateOnly.TryParse(dataValidade, out parsedDataValidade) || !DateOnly.TryParse(dataCompra, out parsedDataCompra))
+            DateTime parsedDataFabricacao;
+            DateTime parsedDataValidade;
+            DateTime parsedDataCompra;
+            if (!DateTime.TryParse(dataFabricacao, out parsedDataFabricacao) || !DateTime.TryParse(dataValidade, out parsedDataValidade) || !DateTime.TryParse(dataCompra, out parsedDataCompra))
                 throw new Exception("As datas devem estar em um formato válido.");
 
             Model.VacinaFornecida vacinaFornecida = Model.VacinaFornecida.BuscarPorId(id);
-            vacinaFornecida.DataFabricacao = parsedDataFabricacao;
-            vacinaFornecida.DataValidade = parsedDataValidade;
-            vacinaFornecida.DataCompra = parsedDataCompra;
+            vacinaFornecida.DataFabricacao = DateOnly.FromDateTime(parsedDataFabricacao);
+            vacinaFornecida.DataValidade = DateOnly.FromDateTime(parsedDataValidade);
+            vacinaFornecida.DataCompra = DateOnly.FromDateTime(parsedDataCompra);
             vacinaFornecida.Quantidade = quantidade;
             vacinaFornecida.Preco = preco;
             vacinaFornecida.ValorTotal = quantidade * preco;
 
-            return Model.VacinaFornecida.Alterar(id, parsedDataFabricacao, parsedDataValidade, parsedDataCompra, quantidade, preco, vacinaFornecida.ValorTotal);
+            return Model.VacinaFornecida.Alterar(id, DateOnly.FromDateTime(parsedDataFabricacao), DateOnly.FromDateTime(parsedDataValidade), DateOnly.FromDateTime(parsedDataCompra), quantidade, preco, vacinaFornecida.ValorTotal);
         }
 
         public static void ExcluirVacinaFornecida(int id)

@@ -9,8 +9,8 @@ namespace Model
     public class Animal
     {
         public int id { get; set; }
-        public DateTime dataNascimento { get; set; }
-        public int nroRegistro { get; set; }
+        public DateOnly dataNascimento { get; set; }
+        public string nroRegistro { get; set; }
         public EnumOrigem origem { get; set; }
         public string cor { get; set; }
         public int peso { get; set; }
@@ -19,7 +19,7 @@ namespace Model
         public Fazenda fazenda { get; set; }
         public int fazendaid { get; set; }
 
-        public Animal(DateTime dataNascimento, int nroRegistro,EnumOrigem origem,string cor,int peso,Raca raca,Fazenda fazenda)
+        public Animal(DateOnly dataNascimento, string nroRegistro, EnumOrigem origem, string cor, int peso, Raca raca, Fazenda fazenda)
         {
             try
             {
@@ -30,17 +30,17 @@ namespace Model
                 this.peso = peso;
                 this.racaid = raca.id;
                 this.fazendaid = fazenda.id;
-            
+
                 Database db = new Database();
                 db.Animals.Add(this);
                 db.SaveChanges();
             }
             catch (System.Exception e)
             {
-                 Console.WriteLine(e);
+                Console.WriteLine(e);
                 throw;
             }
-           
+
         }
 
         public Animal()
@@ -49,13 +49,13 @@ namespace Model
 
         public override string ToString()
         {
-            return $"Id: {id}, Data Nascimento: {dataNascimento}, numero Registro: {nroRegistro},"+
-            $"origem: {origem}"+
-            $"Data Nascimento: {dataNascimento}"+
-            $"cor: {cor}"+
-            $"peso: {peso}"+
-            $"raca: {raca.id}"+
-            $"fazenda: {fazenda.id}"+
+            return $"Id: {id}, Data Nascimento: {dataNascimento}, numero Registro: {nroRegistro}," +
+            $"origem: {origem}" +
+            $"Data Nascimento: {dataNascimento}" +
+            $"cor: {cor}" +
+            $"peso: {peso}" +
+            $"raca: {raca.id}" +
+            $"fazenda: {fazenda.id}" +
             "";
         }
 
@@ -90,8 +90,8 @@ namespace Model
             try
             {
                 Model.Animal fazenda = (from u in db.Animals
-                                          where u.id == id
-                                          select u).First();
+                                        where u.id == id
+                                        select u).First();
                 return fazenda;
             }
             catch
@@ -102,8 +102,8 @@ namespace Model
 
         public static Animal AlterarAnimal(
             int id,
-            DateTime dataNascimento,
-            int nroRegistro,
+            DateOnly dataNascimento,
+            string nroRegistro,
             EnumOrigem origem,
             string cor,
             int peso,
@@ -155,7 +155,7 @@ namespace Model
         {
             Database db = new Database();
             List<Model.Animal> animal = (from u in db.Animals
-                                             select u).ToList();
+                                         select u).ToList();
             return animal;
         }
 
@@ -165,8 +165,8 @@ namespace Model
             {
                 Database db = new Database();
                 Model.Animal animal = (from u in db.Animals
-                                          where u.id == Id
-                                          select u).First();
+                                       where u.id == Id
+                                       select u).First();
                 return animal;
             }
             catch
@@ -174,14 +174,14 @@ namespace Model
                 throw new System.Exception("Animal não encontrado");
             }
         }
-         public static Model.Animal BuscarPornroRegistro(int nroRegistro)
+        public static Model.Animal BuscarPornroRegistro(string nroRegistro)
         {
             try
             {
                 Database db = new Database();
                 Model.Animal animal = (from u in db.Animals
-                                          where u.nroRegistro == nroRegistro
-                                          select u).First();
+                                       where u.nroRegistro == nroRegistro
+                                       select u).First();
                 return animal;
             }
             catch
@@ -189,14 +189,14 @@ namespace Model
                 throw new System.Exception("Animal não encontrado");
             }
         }
-         public static Model.Animal BuscarPorRaca(int raca)
+        public static Model.Animal BuscarPorRaca(int raca)
         {
             try
             {
                 Database db = new Database();
                 Model.Animal animal = (from u in db.Animals
-                                          where u.raca.id == raca
-                                          select u).First();
+                                       where u.raca.id == raca
+                                       select u).First();
                 return animal;
             }
             catch
@@ -204,14 +204,14 @@ namespace Model
                 throw new System.Exception("Animal não encontrado");
             }
         }
-         public static Model.Animal BuscarPorFazenda(int fazenda)
+        public static Model.Animal BuscarPorFazenda(int fazenda)
         {
             try
             {
                 Database db = new Database();
                 Model.Animal animal = (from u in db.Animals
-                                          where u.fazenda.id == fazenda
-                                          select u).First();
+                                       where u.fazenda.id == fazenda
+                                       select u).First();
                 return animal;
             }
             catch

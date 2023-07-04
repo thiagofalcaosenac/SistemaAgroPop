@@ -256,7 +256,7 @@ namespace View
             Model.Fazenda fazenda = Controller.Fazenda.BuscarPorId(animalAtual.fazendaid);
            
 			this.idAnimalEdicao = idAnimal;
-			this.dataNascimentoTime.Text = animalAtual.dataNascimento.ToString(); //dataPiker
+			this.dataNascimentoTime.Value = new DateTime(animalAtual.dataNascimento.Year, animalAtual.dataNascimento.Month, animalAtual.dataNascimento.Day); //dataPiker
 			this.txtnroRegistro.Text = animalAtual.nroRegistro.ToString();
 			this.cmbOrigem.Text = animalAtual.origem.ToString();
 			this.txtCor.Text = animalAtual.cor;
