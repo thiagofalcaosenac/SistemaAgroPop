@@ -82,6 +82,7 @@ namespace SistemaAgroPop
             contentPanel.Size = new Size(600, 400);
             contentPanel.Location = new Point(160, 60);
             contentPanel.BorderStyle = BorderStyle.Fixed3D;
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
 
             this.Controls.Add(lblMenu);
             this.Controls.Add(pictureBox);
@@ -95,12 +96,11 @@ namespace SistemaAgroPop
             this.Controls.Add(btnSair);
             this.Controls.Add(contentPanel);
             this.Size = new Size(800, 600);
-            this.BackColor = Color.WhiteSmoke;
         }
 
         public void Fazenda_Click(object sender, EventArgs e)
         {
-            this.Controls.Remove(pictureBox);
+
             this.contentPanel.Controls.Clear();
 
             ListaFazenda listaFazendaForm = new ListaFazenda();
@@ -112,7 +112,7 @@ namespace SistemaAgroPop
 
         public void Raca_Click(object sender, EventArgs e)
         {
-            this.Controls.Remove(pictureBox);
+
             this.contentPanel.Controls.Clear();
 
             ListaRaca listaRacaForm = new ListaRaca();
@@ -124,7 +124,7 @@ namespace SistemaAgroPop
 
         public void Animal_Click(object sender, EventArgs e)
         {
-            this.Controls.Remove(pictureBox);
+
             this.contentPanel.Controls.Clear();
                         
             ListaAnimal listaAnimalForm = new ListaAnimal();
@@ -136,7 +136,7 @@ namespace SistemaAgroPop
 
         public void Fornecedor_Click(object sender, EventArgs e)
         {
-            this.Controls.Remove(pictureBox);
+
             this.contentPanel.Controls.Clear();
 
             ListaFornecedor listaFornecedorForm = new ListaFornecedor();
@@ -148,7 +148,7 @@ namespace SistemaAgroPop
 
         public void Vacina_Click(object sender, EventArgs e)
         {
-            this.Controls.Remove(pictureBox);
+
             this.contentPanel.Controls.Clear();
                         
             ListaVacina listaVacinaForm = new ListaVacina();
@@ -160,7 +160,7 @@ namespace SistemaAgroPop
 
         public void VacinaFornecida_Click(object sender, EventArgs e)
         {
-            this.Controls.Remove(pictureBox);
+
             this.contentPanel.Controls.Clear();
                         
             ListaVacinaFornecida listaVacinaFornecidaForm = new ListaVacinaFornecida();
@@ -172,7 +172,7 @@ namespace SistemaAgroPop
 
         public void CarteiraVacinacao_Click(object sender, EventArgs e)
         {
-            this.Controls.Remove(pictureBox);
+
             this.contentPanel.Controls.Clear();
                         
             ListaCarteiraVacinacao listaCarteiraVacinacaoForm = new ListaCarteiraVacinacao();
