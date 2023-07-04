@@ -34,85 +34,91 @@ namespace View
         {
             this.Text = "Cadastro de Animal";
 
-            this.Size = new Size(1000, 900);
+            this.Size = new Size(600, 500);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#52bf90");
 
             lbldataNascimento = new Label();
             lbldataNascimento.Text = "Data de Nascimento:";
             lbldataNascimento.AutoSize = true;
-            lbldataNascimento.Location = new Point(20, 60);
+            lbldataNascimento.Location = new Point(10, 10);
         
             // Criar o DateTimePicker
             dataNascimentoTime = new DateTimePicker();
-            dataNascimentoTime.Location = new Point(150, 60);
+            dataNascimentoTime.Location = new Point(150, 10);
             dataNascimentoTime.Size = new Size(200, 18);
 
             lblnroRegistro = new Label();
             lblnroRegistro.Text = "Número do Registro:";
             lblnroRegistro.AutoSize = true;
-            lblnroRegistro.Location = new Point(20, 120);
+            lblnroRegistro.Location = new Point(10, 70);
 
             txtnroRegistro = new TextBox();
-            txtnroRegistro.Location = new Point(150, 120);
+            txtnroRegistro.Location = new Point(150, 70);
             txtnroRegistro.Size = new Size(200, 18);
 
             lblOrigem = new Label();
             lblOrigem.Text = "Origem:";
             lblOrigem.AutoSize = true;
-            lblOrigem.Location = new Point(20, 180);
+            lblOrigem.Location = new Point(10, 130);
 
             cmbOrigem = new ComboBox();
-            cmbOrigem.Location = new Point(150, 180);
+            cmbOrigem.Location = new Point(150, 130);
             cmbOrigem.Size = new Size(200, 18);
             cmbOrigem.DropDownStyle = ComboBoxStyle.DropDownList; // Impedir que o usuário digite valores
 
             lblCor= new Label();
             lblCor.Text = "Cor:";
             lblCor.AutoSize = true;
-            lblCor.Location = new Point(20, 240);
+            lblCor.Location = new Point(10, 190);
 
             txtCor = new TextBox();
-            txtCor.Location = new Point(150, 240);
+            txtCor.Location = new Point(150, 190);
             txtCor.Size = new Size(200, 18);
 
             lblPeso = new Label();
             lblPeso.Text = "Peso:";
             lblPeso.AutoSize = true;
-            lblPeso.Location = new Point(20, 300);
+            lblPeso.Location = new Point(10, 250);
 
             txtPeso = new TextBox();
-            txtPeso.Location = new Point(150, 300);
+            txtPeso.Location = new Point(150, 250);
             txtPeso.Size = new Size(200, 18);
 
             lblRaca = new Label();
             lblRaca.Text = "Raça:";
             lblRaca.AutoSize = true;
-            lblRaca.Location = new Point(20, 360);
+            lblRaca.Location = new Point(10, 310);
            
             cmbRaca = new ComboBox();
-            cmbRaca.Location = new Point(150, 360);
+            cmbRaca.Location = new Point(150, 310);
             cmbRaca.Size = new Size(200, 18);
             cmbRaca.DropDownStyle = ComboBoxStyle.DropDownList; // Impedir que o usuário digite valores
             this.adicionarRacaCombobox();
             lblFazenda = new Label();
             lblFazenda.Text = "Fazenda:";
             lblFazenda.AutoSize = true;
-            lblFazenda.Location = new Point(20, 420);
+            lblFazenda.Location = new Point(10, 370);
 
             cmbFazenda = new ComboBox();
-            cmbFazenda.Location = new Point(150, 420);
+            cmbFazenda.Location = new Point(150, 370);
             cmbFazenda.Size = new Size(200, 18);
             cmbFazenda.DropDownStyle = ComboBoxStyle.DropDownList; // Impedir que o usuário digite valores
             this.adicionarFazendaCombobox();
 
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.Location = new Point(800, 10);
+            btnConfirmar.Location = new Point(400, 10);
             btnConfirmar.Click += new EventHandler(adicionarAnimalButton_Click);
+            btnConfirmar.ForeColor = Color.White;
+            btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
-            btnVoltar.Location = new Point(900, 10);
+            btnVoltar.Location = new Point(490, 10);
             btnVoltar.Click += new EventHandler(voltarButton_Click);
+            btnVoltar.ForeColor = Color.White;
+            btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);

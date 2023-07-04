@@ -56,18 +56,26 @@ namespace View
             adicionarRacaButton.Text = "Adicionar";
             adicionarRacaButton.Location = new Point(250, 10);
             adicionarRacaButton.Click += new EventHandler(adicionarRacaButton_Click);
+            adicionarRacaButton.ForeColor = Color.White;
+            adicionarRacaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             atualizarRacaButton.Text = "Editar";
             atualizarRacaButton.Location = new Point(330, 10);
             atualizarRacaButton.Click += new EventHandler(atualizarRacaButton_Click);
+            atualizarRacaButton.ForeColor = Color.White;
+            atualizarRacaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             deletarRacaButton.Text = "Excluir";
             deletarRacaButton.Location = new Point(410, 10);
             deletarRacaButton.Click += new EventHandler(deletarRacaButton_Click);
+            deletarRacaButton.ForeColor = Color.White;
+            deletarRacaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             voltarButton.Text = "Voltar";
             voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
+            voltarButton.ForeColor = Color.White;
+            voltarButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             buttonPanel.Controls.Add(adicionarRacaButton);
             buttonPanel.Controls.Add(atualizarRacaButton);
@@ -77,7 +85,7 @@ namespace View
             buttonPanel.Dock = DockStyle.Bottom;
 
             this.Size = new Size(600, 400);
-            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#49ab81");
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Controls.Add(this.buttonPanel);            
@@ -89,7 +97,7 @@ namespace View
 
             racaGridView.ColumnCount =4;
 
-            racaGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            racaGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             racaGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             racaGridView.ColumnHeadersDefaultCellStyle.Font = new Font(racaGridView.Font, FontStyle.Bold);
 
@@ -100,6 +108,7 @@ namespace View
             racaGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             racaGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             racaGridView.GridColor = Color.Black;
+            racaGridView.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#419873");
             racaGridView.RowHeadersVisible = false;
 
             racaGridView.Columns[0].Name = "Id";

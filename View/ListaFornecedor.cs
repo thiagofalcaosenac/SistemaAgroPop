@@ -56,18 +56,30 @@ namespace View
             adicionarFornecedorButton.Text = "Adicionar";
             adicionarFornecedorButton.Location = new Point(250, 10);
             adicionarFornecedorButton.Click += new EventHandler(adicionarFornecedorButton_Click);
+            adicionarFornecedorButton.ForeColor = Color.White;
+            adicionarFornecedorButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarFornecedorButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             atualizarFornecedorButton.Text = "Editar";
             atualizarFornecedorButton.Location = new Point(330, 10);
             atualizarFornecedorButton.Click += new EventHandler(atualizarFornecedorButton_Click);
+            atualizarFornecedorButton.ForeColor = Color.White;
+            atualizarFornecedorButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            atualizarFornecedorButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             deletarFornecedorButton.Text = "Excluir";
             deletarFornecedorButton.Location = new Point(410, 10);
             deletarFornecedorButton.Click += new EventHandler(deletarFornecedorButton_Click);
+            deletarFornecedorButton.ForeColor = Color.White;
+            deletarFornecedorButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            deletarFornecedorButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             voltarButton.Text = "Voltar";
             voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
+            voltarButton.ForeColor = Color.White;
+            voltarButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            voltarButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(adicionarFornecedorButton);
             buttonPanel.Controls.Add(atualizarFornecedorButton);
@@ -77,7 +89,7 @@ namespace View
             buttonPanel.Dock = DockStyle.Bottom;
 
             this.Size = new Size(600, 400);
-            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#49ab81");
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Controls.Add(this.buttonPanel);            
@@ -89,9 +101,9 @@ namespace View
 
             fornecedorGridView.ColumnCount = 12;
 
-            fornecedorGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            fornecedorGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             fornecedorGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            fornecedorGridView.ColumnHeadersDefaultCellStyle.Font = new Font(fornecedorGridView.Font, FontStyle.Bold);
+            fornecedorGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
 
             fornecedorGridView.Name = "fornecedorGridView";
@@ -100,7 +112,9 @@ namespace View
             fornecedorGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             fornecedorGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             fornecedorGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            fornecedorGridView.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fornecedorGridView.GridColor = Color.Black;
+            fornecedorGridView.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#419873");
             fornecedorGridView.RowHeadersVisible = false;
 
             fornecedorGridView.Columns[0].Name = "Id";

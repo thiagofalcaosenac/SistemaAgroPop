@@ -56,18 +56,26 @@ namespace View
             adicionarVacinaFornecidaButton.Text = "Adicionar";
             adicionarVacinaFornecidaButton.Location = new Point(250, 10);
             adicionarVacinaFornecidaButton.Click += new EventHandler(adicionarVacinaFornecidaButton_Click);
+            adicionarVacinaFornecidaButton.ForeColor = Color.White;
+            adicionarVacinaFornecidaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             atualizarVacinaFornecidaButton.Text = "Editar";
             atualizarVacinaFornecidaButton.Location = new Point(330, 10);
             atualizarVacinaFornecidaButton.Click += new EventHandler(atualizarVacinaFornecidaButton_Click);
+            atualizarVacinaFornecidaButton.ForeColor = Color.White;
+            atualizarVacinaFornecidaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             deletarVacinaFornecidaButton.Text = "Excluir";
             deletarVacinaFornecidaButton.Location = new Point(410, 10);
             deletarVacinaFornecidaButton.Click += new EventHandler(deletarVacinaFornecidaButton_Click);
+            deletarVacinaFornecidaButton.ForeColor = Color.White;
+            deletarVacinaFornecidaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             voltarButton.Text = "Voltar";
             voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
+            voltarButton.ForeColor = Color.White;
+            voltarButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             buttonPanel.Controls.Add(adicionarVacinaFornecidaButton);
             buttonPanel.Controls.Add(atualizarVacinaFornecidaButton);
@@ -77,7 +85,7 @@ namespace View
             buttonPanel.Dock = DockStyle.Bottom;
 
             this.Size = new Size(600, 400);
-            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#49ab81");
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Controls.Add(this.buttonPanel);            
@@ -89,7 +97,7 @@ namespace View
 
             vacinaFornecidaGridView.ColumnCount = 8;
 
-            vacinaFornecidaGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            vacinaFornecidaGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             vacinaFornecidaGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             vacinaFornecidaGridView.ColumnHeadersDefaultCellStyle.Font = new Font(vacinaFornecidaGridView.Font, FontStyle.Bold);
 
@@ -100,6 +108,7 @@ namespace View
             vacinaFornecidaGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             vacinaFornecidaGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
             vacinaFornecidaGridView.GridColor = Color.Black;
+            vacinaFornecidaGridView.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#419873");
             vacinaFornecidaGridView.RowHeadersVisible = false;
 
             vacinaFornecidaGridView.Columns[0].Name = "Id";

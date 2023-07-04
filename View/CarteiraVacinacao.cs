@@ -28,6 +28,7 @@ namespace Views
 
             this.Size = new Size(600, 500);
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#52bf90");
 
             lblAnimal = new Label();
             lblAnimal.Text = "Animal:";
@@ -92,15 +93,19 @@ namespace Views
             this.setComboBoxFornecedor();
             comboBoxFornecedor.Text = " ";
 
-            btnVoltar = new Button();
-            btnVoltar.Text = "Voltar";
-            btnVoltar.Location = new Point(400, 10);
-            btnVoltar.Click += new EventHandler(voltarButton_Click);
-
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.Location = new Point(490, 10);
+            btnConfirmar.Location = new Point(400, 10);
             btnConfirmar.Click += new EventHandler(adicionarCarteiraVacinacaoButton_Click);
+            btnConfirmar.ForeColor = Color.White;
+            btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+
+            btnVoltar = new Button();
+            btnVoltar.Text = "Voltar";
+            btnVoltar.Location = new Point(490, 10);
+            btnVoltar.Click += new EventHandler(voltarButton_Click);
+            btnVoltar.ForeColor = Color.White;
+            btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);

@@ -56,18 +56,30 @@ namespace View
             adicionarFazendaButton.Text = "Adicionar";
             adicionarFazendaButton.Location = new Point(250, 10);
             adicionarFazendaButton.Click += new EventHandler(adicionarFazendaButton_Click);
+            adicionarFazendaButton.ForeColor = Color.White;
+            adicionarFazendaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarFazendaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             atualizarFazendaButton.Text = "Editar";
             atualizarFazendaButton.Location = new Point(330, 10);
             atualizarFazendaButton.Click += new EventHandler(atualizarFazendaButton_Click);
+            atualizarFazendaButton.ForeColor = Color.White;
+            atualizarFazendaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            atualizarFazendaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             deletarFazendaButton.Text = "Excluir";
             deletarFazendaButton.Location = new Point(410, 10);
             deletarFazendaButton.Click += new EventHandler(deletarFazendaButton_Click);
+            deletarFazendaButton.ForeColor = Color.White;
+            deletarFazendaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            deletarFazendaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             voltarButton.Text = "Voltar";
             voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
+            voltarButton.ForeColor = Color.White;
+            voltarButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            voltarButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(adicionarFazendaButton);
             buttonPanel.Controls.Add(atualizarFazendaButton);
@@ -77,7 +89,7 @@ namespace View
             buttonPanel.Dock = DockStyle.Bottom;
 
             this.Size = new Size(600, 400);
-            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#49ab81");
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Controls.Add(this.buttonPanel);            
@@ -89,9 +101,9 @@ namespace View
 
             fazendaGridView.ColumnCount = 11;
 
-            fazendaGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            fazendaGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             fazendaGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            fazendaGridView.ColumnHeadersDefaultCellStyle.Font = new Font(fazendaGridView.Font, FontStyle.Bold);
+            fazendaGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             fazendaGridView.Name = "fazendaGridView";
             fazendaGridView.Location = new Point(8, 8);
@@ -99,7 +111,9 @@ namespace View
             fazendaGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             fazendaGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             fazendaGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            fazendaGridView.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fazendaGridView.GridColor = Color.Black;
+            fazendaGridView.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#419873");
             fazendaGridView.RowHeadersVisible = false;
 
             fazendaGridView.Columns[0].Name = "Id";
