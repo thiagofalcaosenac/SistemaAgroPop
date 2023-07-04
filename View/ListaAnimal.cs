@@ -56,18 +56,30 @@ namespace View
             adicionarAnimalButton.Text = "Adicionar";
             adicionarAnimalButton.Location = new Point(250, 10);
             adicionarAnimalButton.Click += new EventHandler(adicionarAnimalButton_Click);
+            adicionarAnimalButton.ForeColor = Color.White;
+            adicionarAnimalButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarAnimalButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             atualizarAnimalButton.Text = "Editar";
             atualizarAnimalButton.Location = new Point(330, 10);
             atualizarAnimalButton.Click += new EventHandler(atualizarAnimalButton_Click);
+            atualizarAnimalButton.ForeColor = Color.White;
+            atualizarAnimalButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarAnimalButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             deletarAnimalButton.Text = "Excluir";
             deletarAnimalButton.Location = new Point(410, 10);
             deletarAnimalButton.Click += new EventHandler(deletarAnimalButton_Click);
+            deletarAnimalButton.ForeColor = Color.White;
+            deletarAnimalButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarAnimalButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             voltarButton.Text = "Voltar";
             voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
+            voltarButton.ForeColor = Color.White;
+            voltarButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            voltarButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(adicionarAnimalButton);
             buttonPanel.Controls.Add(atualizarAnimalButton);
@@ -77,7 +89,7 @@ namespace View
             buttonPanel.Dock = DockStyle.Bottom;
 
             this.Size = new Size(600, 400);
-            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#49ab81");
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Controls.Add(this.buttonPanel);            
@@ -89,9 +101,9 @@ namespace View
 
             animalGridView.ColumnCount = 8;
 
-            animalGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            animalGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             animalGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            animalGridView.ColumnHeadersDefaultCellStyle.Font = new Font(animalGridView.Font, FontStyle.Bold);
+            animalGridView.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             animalGridView.Name = "animalGridView";
             animalGridView.Location = new Point(8, 8);
@@ -99,7 +111,9 @@ namespace View
             animalGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             animalGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             animalGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            animalGridView.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             animalGridView.GridColor = Color.Black;
+            animalGridView.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#419873");
             animalGridView.RowHeadersVisible = false;
 
             animalGridView.Columns[0].Name = "Id";

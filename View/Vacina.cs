@@ -22,6 +22,7 @@ namespace Views
 
             this.Size = new Size(600, 500);
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#52bf90");
 
             lblQtdMinima = new Label();
             lblQtdMinima.Text = "Quantidade Mínima:";
@@ -35,33 +36,37 @@ namespace Views
             lblPeriodicidade = new Label();
             lblPeriodicidade.Text = "Periodicidade:";
             lblPeriodicidade.AutoSize = true;
-            lblPeriodicidade.Location = new Point(10, 100 );
+            lblPeriodicidade.Location = new Point(10, 70 );
 
             txtPeriodicidade = new TextBox();
-            txtPeriodicidade.Location = new Point(150, 100);
+            txtPeriodicidade.Location = new Point(150, 70);
             txtPeriodicidade.Size = new Size(200, 18);
 
             lblTipo = new Label();
             lblTipo.Text = "Tipo:";
             lblTipo.AutoSize = true;
-            lblTipo.Location = new Point(10, 200);
+            lblTipo.Location = new Point(10, 130);
 
             comboBoxTipo = new ComboBox();
-            comboBoxTipo.Location = new Point(150, 200);
+            comboBoxTipo.Location = new Point(150, 130);
             comboBoxTipo.Size = new Size(200, 18);
             comboBoxTipo.TabIndex = 0;
             this.setComboBoxTipo();
             comboBoxTipo.Text = " ";
 
-            btnVoltar = new Button();
-            btnVoltar.Text = "Voltar";
-            btnVoltar.Location = new Point(400, 10);
-            btnVoltar.Click += new EventHandler(voltarButton_Click);
-
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.Location = new Point(490, 10);
+            btnConfirmar.Location = new Point(400, 10);
             btnConfirmar.Click += new EventHandler(adicionarVacinaButton_Click);
+            btnConfirmar.ForeColor = Color.White;
+            btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+
+            btnVoltar = new Button();
+            btnVoltar.Text = "Voltar";
+            btnVoltar.Location = new Point(490, 10);
+            btnVoltar.Click += new EventHandler(voltarButton_Click);
+            btnVoltar.ForeColor = Color.White;
+            btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);

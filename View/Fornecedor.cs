@@ -39,116 +39,122 @@ namespace View
         {
             this.Text = "Cadastro de Fornecedor";
 
-            this.Size = new Size(1000, 900);
+            this.Size = new Size(600, 700);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#52bf90");
 
             lblNome = new Label();
             lblNome.Text = "Nome:";
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(20, 60);
+            lblNome.Location = new Point(10, 10);
 
             txtNome = new TextBox();
-            txtNome.Location = new Point(150, 60);
+            txtNome.Location = new Point(150, 10);
             txtNome.Size = new Size(200, 18);
 
             lblCnpj = new Label();
             lblCnpj.Text = "Cnpj:";
             lblCnpj.AutoSize = true;
-            lblCnpj.Location = new Point(20, 120);
+            lblCnpj.Location = new Point(10, 70);
 
             txtCnpj = new TextBox();
-            txtCnpj.Location = new Point(150, 120);
+            txtCnpj.Location = new Point(150, 70);
             txtCnpj.Size = new Size(200, 18);
 
             lblRazaoSocial = new Label();
             lblRazaoSocial.Text = "Razao Social:";
             lblRazaoSocial.AutoSize = true;
-            lblRazaoSocial.Location = new Point(20, 150);
+            lblRazaoSocial.Location = new Point(10, 130);
 
             txtRazaoSocial = new TextBox();
-            txtRazaoSocial.Location = new Point(150, 150);
+            txtRazaoSocial.Location = new Point(150, 130);
             txtRazaoSocial.Size = new Size(200, 18);
 
             lblTelefone = new Label();
             lblTelefone.Text = "Telefone:";
             lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(20, 180);
+            lblTelefone.Location = new Point(10, 190);
 
             txtTelefone = new TextBox();
-            txtTelefone.Location = new Point(150, 180);
+            txtTelefone.Location = new Point(150, 190);
             txtTelefone.Size = new Size(200, 18);
 
             lblEmail = new Label();
             lblEmail.Text = "Email:";
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(20, 240);
+            lblEmail.Location = new Point(10, 250);
 
             txtEmail = new TextBox();
-            txtEmail.Location = new Point(150, 240);
+            txtEmail.Location = new Point(150, 250);
             txtEmail.Size = new Size(200, 18);
 
             lblBairro = new Label();
             lblBairro.Text = "Bairro:";
             lblBairro.AutoSize = true;
-            lblBairro.Location = new Point(20, 300);
+            lblBairro.Location = new Point(10, 310);
 
             txtBairro = new TextBox();
-            txtBairro.Location = new Point(150, 300);
+            txtBairro.Location = new Point(150, 310);
             txtBairro.Size = new Size(200, 18);
 
             lblRua = new Label();
             lblRua.Text = "Rua:";
             lblRua.AutoSize = true;
-            lblRua.Location = new Point(20, 360);
+            lblRua.Location = new Point(10, 370);
 
             txtRua = new TextBox();
-            txtRua.Location = new Point(150, 360);
+            txtRua.Location = new Point(150, 370);
             txtRua.Size = new Size(200, 18);
 
             lblNumero = new Label();
             lblNumero.Text = "Número:";
             lblNumero.AutoSize = true;
-            lblNumero.Location = new Point(20, 420);
+            lblNumero.Location = new Point(10, 430);
 
             txtNumero = new TextBox();
-            txtNumero.Location = new Point(150, 420);
+            txtNumero.Location = new Point(150, 430);
             txtNumero.Size = new Size(200, 18);
 
             lblComplemento = new Label();
             lblComplemento.Text = "Complemento:";
             lblComplemento.AutoSize = true;
-            lblComplemento.Location = new Point(20, 480);
+            lblComplemento.Location = new Point(10, 490);
 
             txtComplemento = new TextBox();
-            txtComplemento.Location = new Point(150, 480);
+            txtComplemento.Location = new Point(150, 490);
             txtComplemento.Size = new Size(200, 18);
 
             lblCidade = new Label();
             lblCidade.Text = "Cidade:";
             lblCidade.AutoSize = true;
-            lblCidade.Location = new Point(20, 540);
+            lblCidade.Location = new Point(10, 550);
 
             txtCidade = new TextBox();
-            txtCidade.Location = new Point(150, 540);
+            txtCidade.Location = new Point(150, 550);
             txtCidade.Size = new Size(200, 18);
 
             lblEstado = new Label();
             lblEstado.Text = "Estado:";
             lblEstado.AutoSize = true;
-            lblEstado.Location = new Point(20, 600);
+            lblEstado.Location = new Point(10, 610);
 
             txtEstado = new TextBox();
-            txtEstado.Location = new Point(150, 600);
+            txtEstado.Location = new Point(150, 610);
             txtEstado.Size = new Size(200, 18);
 
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.Location = new Point(800, 10);
+            btnConfirmar.Location = new Point(400, 10);
             btnConfirmar.Click += new EventHandler(adicionarFornecedorButton_Click);
+            btnConfirmar.ForeColor = Color.White;
+            btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
-            btnVoltar.Location = new Point(900, 10);
+            btnVoltar.Location = new Point(500, 10);
             btnVoltar.Click += new EventHandler(voltarButton_Click);
+            btnVoltar.ForeColor = Color.White;
+            btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);

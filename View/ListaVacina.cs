@@ -56,18 +56,30 @@ namespace Views
             adicionarVacinaButton.Text = "Adicionar";
             adicionarVacinaButton.Location = new Point(250, 10);
             adicionarVacinaButton.Click += new EventHandler(adicionarVacinaButton_Click);
+            adicionarVacinaButton.ForeColor = Color.White;
+            adicionarVacinaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarVacinaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             atualizarVacinaButton.Text = "Editar";
             atualizarVacinaButton.Location = new Point(330, 10);
             atualizarVacinaButton.Click += new EventHandler(atualizarVacinaButton_Click);
+            atualizarVacinaButton.ForeColor = Color.White;
+            atualizarVacinaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            atualizarVacinaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             deletarVacinaButton.Text = "Excluir";
             deletarVacinaButton.Location = new Point(410, 10);
             deletarVacinaButton.Click += new EventHandler(deletarVacinaButton_Click);
+            deletarVacinaButton.ForeColor = Color.White;
+            deletarVacinaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            deletarVacinaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             voltarButton.Text = "Voltar";
             voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
+            voltarButton.ForeColor = Color.White;
+            voltarButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            voltarButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(adicionarVacinaButton);
             buttonPanel.Controls.Add(atualizarVacinaButton);
@@ -77,7 +89,7 @@ namespace Views
             buttonPanel.Dock = DockStyle.Bottom;
 
             this.Size = new Size(600, 400);
-            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#49ab81");
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Controls.Add(this.buttonPanel);
@@ -89,9 +101,9 @@ namespace Views
 
             vacinaGridView.ColumnCount = 4;
 
-            vacinaGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            vacinaGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             vacinaGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            vacinaGridView.ColumnHeadersDefaultCellStyle.Font = new Font(vacinaGridView.Font, FontStyle.Bold);
+            vacinaGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             vacinaGridView.Name = "vacinaGridView";
             vacinaGridView.Location = new Point(8, 8);
@@ -99,7 +111,9 @@ namespace Views
             vacinaGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             vacinaGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             vacinaGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            vacinaGridView.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             vacinaGridView.GridColor = Color.Black;
+            vacinaGridView.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#419873");
             vacinaGridView.RowHeadersVisible = false;
 
             vacinaGridView.Columns[0].Name = "Id da Vacina";

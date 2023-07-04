@@ -33,75 +33,81 @@ namespace View
         {
             this.Text = "Cadastro de Vacina Fornecida";
 
-            this.Size = new Size(1000, 900);
+            this.Size = new Size(600, 500);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#52bf90");
 
             lblDataFabricacao = new Label();
             lblDataFabricacao.Text = "Data Fabricação:";
             lblDataFabricacao.AutoSize = true;
-            lblDataFabricacao.Location = new Point(20, 60);
+            lblDataFabricacao.Location = new Point(10, 10);
             txtDataFabricacao = new DateTimePicker();
-            txtDataFabricacao.Location = new Point(150, 60);
+            txtDataFabricacao.Location = new Point(150, 10);
             txtDataFabricacao.Size = new Size(200, 18);
 
             lblDataValidade = new Label();
             lblDataValidade.Text = "Data Validade:";
             lblDataValidade.AutoSize = true;
-            lblDataValidade.Location = new Point(20, 120);
+            lblDataValidade.Location = new Point(10, 70);
             txtDataValidade = new DateTimePicker();
-            txtDataValidade.Location = new Point(150, 120);
+            txtDataValidade.Location = new Point(150, 70);
             txtDataValidade.Size = new Size(200, 18);
 
             lblDataCompra = new Label();
             lblDataCompra.Text = "Data Compra:";
             lblDataCompra.AutoSize = true;
-            lblDataCompra.Location = new Point(20, 180);
+            lblDataCompra.Location = new Point(10, 130);
             txtDataCompra = new DateTimePicker();
-            txtDataCompra.Location = new Point(150, 180);
+            txtDataCompra.Location = new Point(150, 130);
             txtDataCompra.Size = new Size(200, 18);
 
             lblQuantidade = new Label();
             lblQuantidade.Text = "Quantidade:";
             lblQuantidade.AutoSize = true;
-            lblQuantidade.Location = new Point(20, 240);
+            lblQuantidade.Location = new Point(10, 190);
             txtQuantidade = new TextBox();
-            txtQuantidade.Location = new Point(150, 240);
+            txtQuantidade.Location = new Point(150, 190);
             txtQuantidade.Size = new Size(200, 18);
 
             lblPreco = new Label();
             lblPreco.Text = "Preço:";
             lblPreco.AutoSize = true;
-            lblPreco.Location = new Point(20, 300);
+            lblPreco.Location = new Point(10, 250);
             txtPreco = new TextBox();
-            txtPreco.Location = new Point(150, 300);
+            txtPreco.Location = new Point(150, 250);
             txtPreco.Size = new Size(200, 18);
 
             lblFornecedor = new Label();
             lblFornecedor.Text = "Fornecedor:";
             lblFornecedor.AutoSize = true;
-            lblFornecedor.Location = new Point(20, 360);
+            lblFornecedor.Location = new Point(10, 310);
             comboboxFornecedor = new ComboBox();
-            comboboxFornecedor.Location = new Point(150, 360);
+            comboboxFornecedor.Location = new Point(150, 310);
             comboboxFornecedor.Size = new Size(200, 18);
             this.adicionarFornecedoresCombobox();
 
             lblVacina = new Label();
             lblVacina.Text = "Vacina:";
             lblVacina.AutoSize = true;
-            lblVacina.Location = new Point(20, 420);
+            lblVacina.Location = new Point(10, 370);
             comboboxVacina = new ComboBox();
-            comboboxVacina.Location = new Point(150, 420);
+            comboboxVacina.Location = new Point(150, 370);
             comboboxVacina.Size = new Size(200, 18);
             this.adicionarVacinasCombobox();
 
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.Location = new Point(800, 10);
+            btnConfirmar.Location = new Point(400, 10);
             btnConfirmar.Click += new EventHandler(adicionarVacinaFornecidaButton_Click);
+            btnConfirmar.ForeColor = Color.White;
+            btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
-            btnVoltar.Location = new Point(900, 10);
+            btnVoltar.Location = new Point(490, 10);
             btnVoltar.Click += new EventHandler(voltarButton_Click);
+            btnVoltar.ForeColor = Color.White;
+            btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
 
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);

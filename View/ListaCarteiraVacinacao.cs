@@ -63,18 +63,30 @@ namespace Views
             adicionarCarteiraVacinacaoButton.Text = "Adicionar";
             adicionarCarteiraVacinacaoButton.Location = new Point(250, 10);
             adicionarCarteiraVacinacaoButton.Click += new EventHandler(adicionarCarteiraVacinacaoButton_Click);
+            adicionarCarteiraVacinacaoButton.ForeColor = Color.White;
+            adicionarCarteiraVacinacaoButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarCarteiraVacinacaoButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             atualizarCarteiraVacinacaoButton.Text = "Editar";
             atualizarCarteiraVacinacaoButton.Location = new Point(330, 10);
             atualizarCarteiraVacinacaoButton.Click += new EventHandler(atualizarCarteiraVacinacaoButton_Click);
+            atualizarCarteiraVacinacaoButton.ForeColor = Color.White;
+            atualizarCarteiraVacinacaoButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarCarteiraVacinacaoButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             deletarCarteiraVacinacaoButton.Text = "Excluir";
             deletarCarteiraVacinacaoButton.Location = new Point(410, 10);
             deletarCarteiraVacinacaoButton.Click += new EventHandler(deletarCarteiraVacinacaoButton_Click);
+            deletarCarteiraVacinacaoButton.ForeColor = Color.White;
+            deletarCarteiraVacinacaoButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            deletarCarteiraVacinacaoButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             voltarButton.Text = "Voltar";
             voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
+            voltarButton.ForeColor = Color.White;
+            voltarButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            voltarButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(adicionarCarteiraVacinacaoButton);
             buttonPanel.Controls.Add(atualizarCarteiraVacinacaoButton);
@@ -84,7 +96,7 @@ namespace Views
             buttonPanel.Dock = DockStyle.Bottom;
 
             this.Size = new Size(600, 400);
-            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#49ab81");
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Controls.Add(this.buttonPanel);            
@@ -96,9 +108,9 @@ namespace Views
 
             carteiraVacinacaoGridView.ColumnCount = 7;
 
-            carteiraVacinacaoGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            carteiraVacinacaoGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             carteiraVacinacaoGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            carteiraVacinacaoGridView.ColumnHeadersDefaultCellStyle.Font = new Font(carteiraVacinacaoGridView.Font, FontStyle.Bold);
+            carteiraVacinacaoGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             carteiraVacinacaoGridView.Name = "CarteiraVacinacaoGridView";
             carteiraVacinacaoGridView.Location = new Point(8, 8);
@@ -106,7 +118,9 @@ namespace Views
             carteiraVacinacaoGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             carteiraVacinacaoGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             carteiraVacinacaoGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            carteiraVacinacaoGridView.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             carteiraVacinacaoGridView.GridColor = Color.Black;
+            carteiraVacinacaoGridView.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#419873");
             carteiraVacinacaoGridView.RowHeadersVisible = false;
 
             carteiraVacinacaoGridView.Columns[0].Name = "Id";
