@@ -10,8 +10,8 @@ namespace Views
         Label lblVacina;
         Label lblFornecedor;
         ComboBox comboBoxAnimal;
-        TextBox txtDataVacinacao;
-        TextBox txtProximaDose;
+        DateTimePicker txtDataVacinacao;
+        DateTimePicker txtProximaDose;
         TextBox txtNroDoses;
         ComboBox comboBoxVacina;
         ComboBox comboBoxFornecedor;
@@ -46,7 +46,7 @@ namespace Views
             lblDataVacinacao.AutoSize = true;
             lblDataVacinacao.Location = new Point(10, 70);
 
-            txtDataVacinacao = new TextBox();
+            txtDataVacinacao = new DateTimePicker();
             txtDataVacinacao.Location = new Point(150, 70);
             txtDataVacinacao.Size = new Size(200, 18);
 
@@ -55,7 +55,7 @@ namespace Views
             lblProximaDose.AutoSize = true;
             lblProximaDose.Location = new Point(10, 130);
 
-            txtProximaDose = new TextBox();
+            txtProximaDose = new DateTimePicker();
             txtProximaDose.Location = new Point(150, 130);
             txtProximaDose.Size = new Size(200, 18);
 
@@ -179,8 +179,8 @@ namespace Views
             Model.CarteiraVacinacao CarteiraVacinacaoAtual = Controller.CarteiraVacinacao.BuscarPorId(idCarteiraVacinacao);
            
             this.idCarteiraVacinacaoEdicao = idCarteiraVacinacao;
-            this.txtDataVacinacao.Text = CarteiraVacinacaoAtual.DataVacinacao.ToString();
-            this.txtProximaDose.Text = CarteiraVacinacaoAtual.ProximaDose.ToString();
+            this.txtDataVacinacao.Value = new DateTime(CarteiraVacinacaoAtual.DataVacinacao.Year, CarteiraVacinacaoAtual.DataVacinacao.Month, CarteiraVacinacaoAtual.DataVacinacao.Day);
+            this.txtProximaDose.Value = new DateTime(CarteiraVacinacaoAtual.ProximaDose.Year, CarteiraVacinacaoAtual.ProximaDose.Month, CarteiraVacinacaoAtual.ProximaDose.Day);
             this.txtNroDoses.Text = CarteiraVacinacaoAtual.NroDose.ToString();
 
             foreach (ModelComboBox animal in this.comboBoxAnimal.Items)
