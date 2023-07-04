@@ -53,22 +53,20 @@ namespace View
 
         private void SetupLayout()
         {
-            this.Size = new Size(1000, 900);
-
             adicionarVacinaFornecidaButton.Text = "Adicionar";
-            adicionarVacinaFornecidaButton.Location = new Point(600, 10);
+            adicionarVacinaFornecidaButton.Location = new Point(250, 10);
             adicionarVacinaFornecidaButton.Click += new EventHandler(adicionarVacinaFornecidaButton_Click);
 
             atualizarVacinaFornecidaButton.Text = "Editar";
-            atualizarVacinaFornecidaButton.Location = new Point(700, 10);
+            atualizarVacinaFornecidaButton.Location = new Point(330, 10);
             atualizarVacinaFornecidaButton.Click += new EventHandler(atualizarVacinaFornecidaButton_Click);
 
             deletarVacinaFornecidaButton.Text = "Excluir";
-            deletarVacinaFornecidaButton.Location = new Point(800, 10);
+            deletarVacinaFornecidaButton.Location = new Point(410, 10);
             deletarVacinaFornecidaButton.Click += new EventHandler(deletarVacinaFornecidaButton_Click);
 
             voltarButton.Text = "Voltar";
-            voltarButton.Location = new Point(900, 10);
+            voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
 
             buttonPanel.Controls.Add(adicionarVacinaFornecidaButton);
@@ -78,8 +76,11 @@ namespace View
             buttonPanel.Height = 50;
             buttonPanel.Dock = DockStyle.Bottom;
 
+            this.Size = new Size(600, 400);
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
             this.ControlBox = false;
-            this.Controls.Add(this.buttonPanel);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Add(this.buttonPanel);            
         }
 
         private void SetupDataGridView()

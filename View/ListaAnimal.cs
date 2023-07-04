@@ -53,22 +53,20 @@ namespace View
 
         private void SetupLayout()
         {
-            this.Size = new Size(1000, 900);
-
             adicionarAnimalButton.Text = "Adicionar";
-            adicionarAnimalButton.Location = new Point(600, 10);
+            adicionarAnimalButton.Location = new Point(250, 10);
             adicionarAnimalButton.Click += new EventHandler(adicionarAnimalButton_Click);
 
             atualizarAnimalButton.Text = "Editar";
-            atualizarAnimalButton.Location = new Point(700, 10);
+            atualizarAnimalButton.Location = new Point(330, 10);
             atualizarAnimalButton.Click += new EventHandler(atualizarAnimalButton_Click);
 
             deletarAnimalButton.Text = "Excluir";
-            deletarAnimalButton.Location = new Point(800, 10);
+            deletarAnimalButton.Location = new Point(410, 10);
             deletarAnimalButton.Click += new EventHandler(deletarAnimalButton_Click);
 
             voltarButton.Text = "Voltar";
-            voltarButton.Location = new Point(900, 10);
+            voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
 
             buttonPanel.Controls.Add(adicionarAnimalButton);
@@ -78,8 +76,11 @@ namespace View
             buttonPanel.Height = 50;
             buttonPanel.Dock = DockStyle.Bottom;
 
+            this.Size = new Size(600, 400);
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
             this.ControlBox = false;
-            this.Controls.Add(this.buttonPanel);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Add(this.buttonPanel);            
         }
 
         private void SetupDataGridView()

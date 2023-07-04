@@ -60,22 +60,20 @@ namespace Views
 
         private void SetupLayout()
         {
-            this.Size = new Size(800, 700);
-
             adicionarCarteiraVacinacaoButton.Text = "Adicionar";
-            adicionarCarteiraVacinacaoButton.Location = new Point(400, 10);
+            adicionarCarteiraVacinacaoButton.Location = new Point(250, 10);
             adicionarCarteiraVacinacaoButton.Click += new EventHandler(adicionarCarteiraVacinacaoButton_Click);
 
             atualizarCarteiraVacinacaoButton.Text = "Editar";
-            atualizarCarteiraVacinacaoButton.Location = new Point(500, 10);
+            atualizarCarteiraVacinacaoButton.Location = new Point(330, 10);
             atualizarCarteiraVacinacaoButton.Click += new EventHandler(atualizarCarteiraVacinacaoButton_Click);
 
             deletarCarteiraVacinacaoButton.Text = "Excluir";
-            deletarCarteiraVacinacaoButton.Location = new Point(600, 10);
+            deletarCarteiraVacinacaoButton.Location = new Point(410, 10);
             deletarCarteiraVacinacaoButton.Click += new EventHandler(deletarCarteiraVacinacaoButton_Click);
 
             voltarButton.Text = "Voltar";
-            voltarButton.Location = new Point(700, 10);
+            voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
 
             buttonPanel.Controls.Add(adicionarCarteiraVacinacaoButton);
@@ -85,8 +83,11 @@ namespace Views
             buttonPanel.Height = 50;
             buttonPanel.Dock = DockStyle.Bottom;
 
+            this.Size = new Size(600, 400);
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
             this.ControlBox = false;
-            this.Controls.Add(this.buttonPanel);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Add(this.buttonPanel);            
         }
 
         private void SetupDataGridView()
@@ -108,11 +109,11 @@ namespace Views
             carteiraVacinacaoGridView.GridColor = Color.Black;
             carteiraVacinacaoGridView.RowHeadersVisible = false;
 
-            carteiraVacinacaoGridView.Columns[0].Name = "Id da Carteira de Vacinação";
+            carteiraVacinacaoGridView.Columns[0].Name = "Id";
             carteiraVacinacaoGridView.Columns[1].Name = "Animal";
-            carteiraVacinacaoGridView.Columns[2].Name = "Data de Aplicação";
-            carteiraVacinacaoGridView.Columns[3].Name = "Data da Próxima Dose";
-            carteiraVacinacaoGridView.Columns[4].Name = "Numero de Doses";
+            carteiraVacinacaoGridView.Columns[2].Name = "Aplicação";
+            carteiraVacinacaoGridView.Columns[3].Name = "Próxima Dose";
+            carteiraVacinacaoGridView.Columns[4].Name = "Nro Doses";
             carteiraVacinacaoGridView.Columns[5].Name = "Vacina";
             carteiraVacinacaoGridView.Columns[6].Name = "Fornecedor";
 

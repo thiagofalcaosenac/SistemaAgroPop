@@ -92,8 +92,8 @@ namespace Views
                     Controller.Vacina.AlterarVacina(
                         this.idVacinaEdicao.Value,
                         (Model.Vacina.TipoVacina) this.comboBoxTipo.SelectedItem,
-                        Int32.Parse(this.txtQtdMinima.Text),
-                        Int32.Parse(this.txtPeriodicidade.Text)
+                        Int32.Parse(this.txtPeriodicidade.Text),
+                        Int32.Parse(this.txtQtdMinima.Text)
                         );
                     MessageBox.Show("Vacina atualizada com sucesso!");
                 }
@@ -102,8 +102,8 @@ namespace Views
                     Controller.Vacina.CriarVacina(
                         0,
                         (Model.Vacina.TipoVacina) this.comboBoxTipo.SelectedItem,
-                        Int32.Parse(this.txtQtdMinima.Text),
-                        Int32.Parse(this.txtPeriodicidade.Text)
+                        Int32.Parse(this.txtPeriodicidade.Text),
+                        Int32.Parse(this.txtQtdMinima.Text)
                         );
                     MessageBox.Show("Vacina cadastrada com sucesso!");
                 }
