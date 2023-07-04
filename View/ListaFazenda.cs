@@ -53,22 +53,20 @@ namespace View
 
         private void SetupLayout()
         {
-            this.Size = new Size(1000, 900);
-
             adicionarFazendaButton.Text = "Adicionar";
-            adicionarFazendaButton.Location = new Point(600, 10);
+            adicionarFazendaButton.Location = new Point(250, 10);
             adicionarFazendaButton.Click += new EventHandler(adicionarFazendaButton_Click);
 
             atualizarFazendaButton.Text = "Editar";
-            atualizarFazendaButton.Location = new Point(700, 10);
+            atualizarFazendaButton.Location = new Point(330, 10);
             atualizarFazendaButton.Click += new EventHandler(atualizarFazendaButton_Click);
 
             deletarFazendaButton.Text = "Excluir";
-            deletarFazendaButton.Location = new Point(800, 10);
+            deletarFazendaButton.Location = new Point(410, 10);
             deletarFazendaButton.Click += new EventHandler(deletarFazendaButton_Click);
 
             voltarButton.Text = "Voltar";
-            voltarButton.Location = new Point(900, 10);
+            voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
 
             buttonPanel.Controls.Add(adicionarFazendaButton);
@@ -78,8 +76,11 @@ namespace View
             buttonPanel.Height = 50;
             buttonPanel.Dock = DockStyle.Bottom;
 
+            this.Size = new Size(600, 400);
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
             this.ControlBox = false;
-            this.Controls.Add(this.buttonPanel);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Add(this.buttonPanel);            
         }
 
         private void SetupDataGridView()
@@ -103,7 +104,7 @@ namespace View
 
             fazendaGridView.Columns[0].Name = "Id";
             fazendaGridView.Columns[1].Name = "Nome";
-            fazendaGridView.Columns[2].Name = "Qtd Limite Animal";
+            fazendaGridView.Columns[2].Name = "Limite Animal";
             fazendaGridView.Columns[3].Name = "Telefone";
             fazendaGridView.Columns[4].Name = "Email";
             fazendaGridView.Columns[5].Name = "Bairro";
@@ -116,7 +117,7 @@ namespace View
             fazendaGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             fazendaGridView.MultiSelect = false;
             fazendaGridView.Dock = DockStyle.Fill;
-
+            
             fazendaGridView.CellFormatting += new DataGridViewCellFormattingEventHandler(fazendaGridView_CellFormatting);
         }
 

@@ -5,11 +5,11 @@ namespace SistemaAgroPop
 
     static class Program
     {
-        public static Menu form = new Menu();
+        public static MenuPrincipal form = new MenuPrincipal();
         [STAThread]
         static void Main()
         {
-            form.FormLayout();
+            form.Show();
             Application.Run(form);
         }
     }

@@ -53,22 +53,20 @@ namespace View
 
         private void SetupLayout()
         {
-            this.Size = new Size(1000, 900);
-
             adicionarRacaButton.Text = "Adicionar";
-            adicionarRacaButton.Location = new Point(600, 10);
+            adicionarRacaButton.Location = new Point(250, 10);
             adicionarRacaButton.Click += new EventHandler(adicionarRacaButton_Click);
 
             atualizarRacaButton.Text = "Editar";
-            atualizarRacaButton.Location = new Point(700, 10);
+            atualizarRacaButton.Location = new Point(330, 10);
             atualizarRacaButton.Click += new EventHandler(atualizarRacaButton_Click);
 
             deletarRacaButton.Text = "Excluir";
-            deletarRacaButton.Location = new Point(800, 10);
+            deletarRacaButton.Location = new Point(410, 10);
             deletarRacaButton.Click += new EventHandler(deletarRacaButton_Click);
 
             voltarButton.Text = "Voltar";
-            voltarButton.Location = new Point(900, 10);
+            voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
 
             buttonPanel.Controls.Add(adicionarRacaButton);
@@ -78,8 +76,11 @@ namespace View
             buttonPanel.Height = 50;
             buttonPanel.Dock = DockStyle.Bottom;
 
+            this.Size = new Size(600, 400);
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
             this.ControlBox = false;
-            this.Controls.Add(this.buttonPanel);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Add(this.buttonPanel);            
         }
 
         private void SetupDataGridView()

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 namespace Views
 {
     class ListaVacina : Form
-        {
+    {
         private Panel buttonPanel = new Panel();
         private DataGridView vacinaGridView = new DataGridView();
         private Button adicionarVacinaButton = new Button();
@@ -53,22 +53,20 @@ namespace Views
 
         private void SetupLayout()
         {
-            this.Size = new Size(600, 600);
-
             adicionarVacinaButton.Text = "Adicionar";
-            adicionarVacinaButton.Location = new Point(200, 10);
+            adicionarVacinaButton.Location = new Point(250, 10);
             adicionarVacinaButton.Click += new EventHandler(adicionarVacinaButton_Click);
 
             atualizarVacinaButton.Text = "Editar";
-            atualizarVacinaButton.Location = new Point(300, 10);
+            atualizarVacinaButton.Location = new Point(330, 10);
             atualizarVacinaButton.Click += new EventHandler(atualizarVacinaButton_Click);
 
             deletarVacinaButton.Text = "Excluir";
-            deletarVacinaButton.Location = new Point(400, 10);
+            deletarVacinaButton.Location = new Point(410, 10);
             deletarVacinaButton.Click += new EventHandler(deletarVacinaButton_Click);
 
             voltarButton.Text = "Voltar";
-            voltarButton.Location = new Point(500, 10);
+            voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
 
             buttonPanel.Controls.Add(adicionarVacinaButton);
@@ -78,7 +76,10 @@ namespace Views
             buttonPanel.Height = 50;
             buttonPanel.Dock = DockStyle.Bottom;
 
+            this.Size = new Size(600, 400);
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#d0e0e3");
             this.ControlBox = false;
+            this.FormBorderStyle = FormBorderStyle.None;
             this.Controls.Add(this.buttonPanel);
         }
 
@@ -103,8 +104,8 @@ namespace Views
 
             vacinaGridView.Columns[0].Name = "Id da Vacina";
             vacinaGridView.Columns[1].Name = "Tipo da Vacina";
-            vacinaGridView.Columns[2].Name = "Periocidade";
-            vacinaGridView.Columns[3].Name = "Qtd Mínima";
+            vacinaGridView.Columns[2].Name = "Qtd Mínima";
+            vacinaGridView.Columns[3].Name = "Periocidade";
 
             vacinaGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             vacinaGridView.MultiSelect = false;
@@ -122,7 +123,7 @@ namespace Views
             {
                 Model.Vacina vacinas = Controller.Vacina.BuscarPorId(vacina.Id);
 
-                object[] linhaVacina = {vacina.Id.ToString(), vacina.Tipo, vacina.Periodicidade, vacina.QtdMinima};
+                object[] linhaVacina = { vacina.Id.ToString(), vacina.Tipo, vacina.QtdMinima, vacina.Periodicidade };
                 vacinaGridView.Rows.Add(linhaVacina);
             }
         }
