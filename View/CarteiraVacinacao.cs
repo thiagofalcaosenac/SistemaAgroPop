@@ -34,6 +34,7 @@ namespace Views
             lblAnimal.Text = "Animal:";
             lblAnimal.AutoSize = true;
             lblAnimal.Location = new Point(10, 10);
+            lblAnimal.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             comboBoxAnimal = new ComboBox();
             comboBoxAnimal.Location = new Point(150, 10);
@@ -41,38 +42,46 @@ namespace Views
             comboBoxAnimal.TabIndex = 0;
             this.setComboBoxAnimal();
             comboBoxAnimal.Text = " ";
+            comboBoxAnimal.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblDataVacinacao = new Label();
             lblDataVacinacao.Text = "Data de Vacinação:";
             lblDataVacinacao.AutoSize = true;
             lblDataVacinacao.Location = new Point(10, 70);
+            lblDataVacinacao.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             txtDataVacinacao = new DateTimePicker();
             txtDataVacinacao.Location = new Point(150, 70);
             txtDataVacinacao.Size = new Size(200, 18);
+            txtDataVacinacao.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblProximaDose = new Label();
             lblProximaDose.Text = "Data da Próxima Dose:";
             lblProximaDose.AutoSize = true;
             lblProximaDose.Location = new Point(10, 130);
+            lblProximaDose.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             txtProximaDose = new DateTimePicker();
             txtProximaDose.Location = new Point(150, 130);
             txtProximaDose.Size = new Size(200, 18);
+            txtProximaDose.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblNroDose = new Label();
             lblNroDose.Text = "Nro de Doses:";
             lblNroDose.AutoSize = true;
             lblNroDose.Location = new Point(10, 190);
+            lblNroDose.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             txtNroDoses = new TextBox();
             txtNroDoses.Location = new Point(150, 190);
             txtNroDoses.Size = new Size(200, 18);
+            txtNroDoses.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblVacina = new Label();
             lblVacina.Text = "Vacina:";
             lblVacina.AutoSize = true;
             lblVacina.Location = new Point(10, 250);
+            lblVacina.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             comboBoxVacina = new ComboBox();
             comboBoxVacina.Location = new Point(150, 250);
@@ -80,11 +89,14 @@ namespace Views
             comboBoxVacina.TabIndex = 0;
             this.setComboBoxVacina();
             comboBoxVacina.Text = " ";
+            comboBoxVacina.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
 
             lblFornecedor = new Label();
             lblFornecedor.Text = "Fornecedor:";
             lblFornecedor.AutoSize = true;
             lblFornecedor.Location = new Point(10, 310);
+            lblFornecedor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             comboBoxFornecedor = new ComboBox();
             comboBoxFornecedor.Location = new Point(150, 310);
@@ -92,6 +104,7 @@ namespace Views
             comboBoxFornecedor.TabIndex = 0;
             this.setComboBoxFornecedor();
             comboBoxFornecedor.Text = " ";
+            comboBoxFornecedor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
@@ -99,6 +112,7 @@ namespace Views
             btnConfirmar.Click += new EventHandler(adicionarCarteiraVacinacaoButton_Click);
             btnConfirmar.ForeColor = Color.White;
             btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnConfirmar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
@@ -106,6 +120,7 @@ namespace Views
             btnVoltar.Click += new EventHandler(voltarButton_Click);
             btnVoltar.ForeColor = Color.White;
             btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnVoltar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);

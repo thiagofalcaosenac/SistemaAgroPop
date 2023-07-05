@@ -58,24 +58,28 @@ namespace View
             adicionarRacaButton.Click += new EventHandler(adicionarRacaButton_Click);
             adicionarRacaButton.ForeColor = Color.White;
             adicionarRacaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarRacaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             atualizarRacaButton.Text = "Editar";
             atualizarRacaButton.Location = new Point(330, 10);
             atualizarRacaButton.Click += new EventHandler(atualizarRacaButton_Click);
             atualizarRacaButton.ForeColor = Color.White;
             atualizarRacaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            atualizarRacaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             deletarRacaButton.Text = "Excluir";
             deletarRacaButton.Location = new Point(410, 10);
             deletarRacaButton.Click += new EventHandler(deletarRacaButton_Click);
             deletarRacaButton.ForeColor = Color.White;
             deletarRacaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            deletarRacaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             voltarButton.Text = "Voltar";
             voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
             voltarButton.ForeColor = Color.White;
             voltarButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            voltarButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(adicionarRacaButton);
             buttonPanel.Controls.Add(atualizarRacaButton);
@@ -99,7 +103,7 @@ namespace View
 
             racaGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             racaGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            racaGridView.ColumnHeadersDefaultCellStyle.Font = new Font(racaGridView.Font, FontStyle.Bold);
+            racaGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             racaGridView.Name = "racaGridView";
             racaGridView.Location = new Point(8, 8);
@@ -107,6 +111,7 @@ namespace View
             racaGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             racaGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             racaGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            racaGridView.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             racaGridView.GridColor = Color.Black;
             racaGridView.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#419873");
             racaGridView.RowHeadersVisible = false;

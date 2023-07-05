@@ -42,8 +42,8 @@ namespace View
             lbldataNascimento.Text = "Data de Nascimento:";
             lbldataNascimento.AutoSize = true;
             lbldataNascimento.Location = new Point(10, 10);
-        
-            // Criar o DateTimePicker
+            lbldataNascimento.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             dataNascimentoTime = new DateTimePicker();
             dataNascimentoTime.Location = new Point(150, 10);
             dataNascimentoTime.Size = new Size(200, 18);
@@ -52,59 +52,72 @@ namespace View
             lblnroRegistro.Text = "Número do Registro:";
             lblnroRegistro.AutoSize = true;
             lblnroRegistro.Location = new Point(10, 70);
+            lblnroRegistro.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             txtnroRegistro = new TextBox();
             txtnroRegistro.Location = new Point(150, 70);
             txtnroRegistro.Size = new Size(200, 18);
+            txtnroRegistro.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblOrigem = new Label();
             lblOrigem.Text = "Origem:";
             lblOrigem.AutoSize = true;
             lblOrigem.Location = new Point(10, 130);
+            lblOrigem.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             cmbOrigem = new ComboBox();
             cmbOrigem.Location = new Point(150, 130);
             cmbOrigem.Size = new Size(200, 18);
             cmbOrigem.DropDownStyle = ComboBoxStyle.DropDownList; // Impedir que o usuário digite valores
+            cmbOrigem.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblCor= new Label();
             lblCor.Text = "Cor:";
             lblCor.AutoSize = true;
             lblCor.Location = new Point(10, 190);
+            lblCor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             txtCor = new TextBox();
             txtCor.Location = new Point(150, 190);
             txtCor.Size = new Size(200, 18);
+            txtCor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblPeso = new Label();
             lblPeso.Text = "Peso:";
             lblPeso.AutoSize = true;
             lblPeso.Location = new Point(10, 250);
+            lblPeso.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             txtPeso = new TextBox();
             txtPeso.Location = new Point(150, 250);
             txtPeso.Size = new Size(200, 18);
+            txtPeso.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblRaca = new Label();
             lblRaca.Text = "Raça:";
             lblRaca.AutoSize = true;
             lblRaca.Location = new Point(10, 310);
-           
+            lblRaca.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             cmbRaca = new ComboBox();
             cmbRaca.Location = new Point(150, 310);
             cmbRaca.Size = new Size(200, 18);
             cmbRaca.DropDownStyle = ComboBoxStyle.DropDownList; // Impedir que o usuário digite valores
             this.adicionarRacaCombobox();
+            cmbRaca.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             lblFazenda = new Label();
             lblFazenda.Text = "Fazenda:";
             lblFazenda.AutoSize = true;
             lblFazenda.Location = new Point(10, 370);
+            lblFazenda.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             cmbFazenda = new ComboBox();
             cmbFazenda.Location = new Point(150, 370);
             cmbFazenda.Size = new Size(200, 18);
             cmbFazenda.DropDownStyle = ComboBoxStyle.DropDownList; // Impedir que o usuário digite valores
             this.adicionarFazendaCombobox();
+            cmbFazenda.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
@@ -112,6 +125,7 @@ namespace View
             btnConfirmar.Click += new EventHandler(adicionarAnimalButton_Click);
             btnConfirmar.ForeColor = Color.White;
             btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnConfirmar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
@@ -119,6 +133,7 @@ namespace View
             btnVoltar.Click += new EventHandler(voltarButton_Click);
             btnVoltar.ForeColor = Color.White;
             btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnVoltar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);

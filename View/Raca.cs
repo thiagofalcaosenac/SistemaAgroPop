@@ -35,31 +35,36 @@ namespace View
             lblEspecie.Text = "Especie:";
             lblEspecie.AutoSize = true;
             lblEspecie.Location = new Point(10, 10);
-            // Criar o ComboBox
+            lblEspecie.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             cmbEspecie = new ComboBox();
             cmbEspecie.Location = new Point(150, 10);
             cmbEspecie.Size = new Size(200, 18);
             cmbEspecie.DropDownStyle = ComboBoxStyle.DropDownList; // Impedir que o usuário digite valores
-            
+            cmbEspecie.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             lblNome = new Label();
             lblNome.Text = "Nome da raça:";
             lblNome.AutoSize = true;
             lblNome.Location = new Point(10, 70);
+            lblNome.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             txtNome = new TextBox();
             txtNome.Location = new Point(150, 70);
             txtNome.Size = new Size(200, 18);
+            txtNome.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblPorte = new Label();
             lblPorte.Text = "Porte:";
             lblPorte.AutoSize = true;
             lblPorte.Location = new Point(10, 130);
+            lblPorte.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             cmbPorte = new ComboBox();
             cmbPorte.Location = new Point(150, 130);
             cmbPorte.Size = new Size(200, 18);
             cmbPorte.DropDownStyle = ComboBoxStyle.DropDownList; // Impedir que o usuário digite valores
-
+            cmbPorte.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
@@ -67,6 +72,7 @@ namespace View
             btnConfirmar.Click += new EventHandler(adicionarRacaButton_Click);
             btnConfirmar.ForeColor = Color.White;
             btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnConfirmar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
@@ -74,7 +80,7 @@ namespace View
             btnVoltar.Click += new EventHandler(voltarButton_Click);
             btnVoltar.ForeColor = Color.White;
             btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
-
+            btnVoltar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);
             buttonPanel.Height = 50;

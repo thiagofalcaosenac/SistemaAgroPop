@@ -41,59 +41,82 @@ namespace View
             lblDataFabricacao.Text = "Data Fabricação:";
             lblDataFabricacao.AutoSize = true;
             lblDataFabricacao.Location = new Point(10, 10);
+            lblDataFabricacao.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             txtDataFabricacao = new DateTimePicker();
             txtDataFabricacao.Location = new Point(150, 10);
             txtDataFabricacao.Size = new Size(200, 18);
+            txtDataFabricacao.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblDataValidade = new Label();
             lblDataValidade.Text = "Data Validade:";
             lblDataValidade.AutoSize = true;
             lblDataValidade.Location = new Point(10, 70);
+            lblDataValidade.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             txtDataValidade = new DateTimePicker();
             txtDataValidade.Location = new Point(150, 70);
             txtDataValidade.Size = new Size(200, 18);
+            txtDataValidade.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblDataCompra = new Label();
             lblDataCompra.Text = "Data Compra:";
             lblDataCompra.AutoSize = true;
             lblDataCompra.Location = new Point(10, 130);
+            lblDataCompra.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             txtDataCompra = new DateTimePicker();
             txtDataCompra.Location = new Point(150, 130);
             txtDataCompra.Size = new Size(200, 18);
+            txtDataCompra.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblQuantidade = new Label();
             lblQuantidade.Text = "Quantidade:";
             lblQuantidade.AutoSize = true;
             lblQuantidade.Location = new Point(10, 190);
+            lblQuantidade.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             txtQuantidade = new TextBox();
             txtQuantidade.Location = new Point(150, 190);
             txtQuantidade.Size = new Size(200, 18);
+            txtQuantidade.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblPreco = new Label();
             lblPreco.Text = "Preço:";
             lblPreco.AutoSize = true;
             lblPreco.Location = new Point(10, 250);
+            lblPreco.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             txtPreco = new TextBox();
             txtPreco.Location = new Point(150, 250);
             txtPreco.Size = new Size(200, 18);
+            txtPreco.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblFornecedor = new Label();
             lblFornecedor.Text = "Fornecedor:";
             lblFornecedor.AutoSize = true;
             lblFornecedor.Location = new Point(10, 310);
+            lblFornecedor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             comboboxFornecedor = new ComboBox();
             comboboxFornecedor.Location = new Point(150, 310);
             comboboxFornecedor.Size = new Size(200, 18);
             this.adicionarFornecedoresCombobox();
+            comboboxFornecedor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
 
             lblVacina = new Label();
             lblVacina.Text = "Vacina:";
             lblVacina.AutoSize = true;
             lblVacina.Location = new Point(10, 370);
+            lblVacina.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             comboboxVacina = new ComboBox();
             comboboxVacina.Location = new Point(150, 370);
             comboboxVacina.Size = new Size(200, 18);
             this.adicionarVacinasCombobox();
+            comboboxVacina.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
 
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
@@ -101,6 +124,7 @@ namespace View
             btnConfirmar.Click += new EventHandler(adicionarVacinaFornecidaButton_Click);
             btnConfirmar.ForeColor = Color.White;
             btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnConfirmar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
@@ -108,6 +132,7 @@ namespace View
             btnVoltar.Click += new EventHandler(voltarButton_Click);
             btnVoltar.ForeColor = Color.White;
             btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnVoltar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);

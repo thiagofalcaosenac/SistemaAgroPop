@@ -37,6 +37,7 @@ namespace SistemaAgroPop
             btnFazenda.Click += new EventHandler(this.Fazenda_Click);
             btnFazenda.ForeColor = Color.White;
             btnFazenda.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnFazenda.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnRaca = new Button();
             btnRaca.Text = "Raça";
@@ -45,6 +46,7 @@ namespace SistemaAgroPop
             btnRaca.Click += new EventHandler(this.Raca_Click);
             btnRaca.ForeColor = Color.White;
             btnRaca.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnRaca.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnAnimal = new Button();
             btnAnimal.Text = "Animal";
@@ -53,6 +55,7 @@ namespace SistemaAgroPop
             btnAnimal.Click += new EventHandler(this.Animal_Click);
             btnAnimal.ForeColor = Color.White;
             btnAnimal.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnAnimal.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnFornecedor = new Button();
             btnFornecedor.Text = "Fornecedor";
@@ -61,6 +64,7 @@ namespace SistemaAgroPop
             btnFornecedor.Click += new EventHandler(this.Fornecedor_Click);
             btnFornecedor.ForeColor = Color.White;
             btnFornecedor.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnFornecedor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnVacinaFornecida = new Button();
             btnVacinaFornecida.Text = "Vacina Fornecida";
@@ -69,6 +73,7 @@ namespace SistemaAgroPop
             btnVacinaFornecida.Click += new EventHandler(this.VacinaFornecida_Click);
             btnVacinaFornecida.ForeColor = Color.White;
             btnVacinaFornecida.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnVacinaFornecida.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnVacina = new Button();
             btnVacina.Text = "Vacina";
@@ -77,14 +82,16 @@ namespace SistemaAgroPop
             btnVacina.Click += new EventHandler(this.Vacina_Click);
             btnVacina.ForeColor = Color.White;
             btnVacina.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnVacina.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnCarteiraVacinacao = new Button();
             btnCarteiraVacinacao.Text = "Carteira Vacinação";
-            btnCarteiraVacinacao.Size = new Size(120, 30);
+            btnCarteiraVacinacao.Size = new Size(120, 40);
             btnCarteiraVacinacao.Location = new Point(20, 340);
             btnCarteiraVacinacao.Click += new EventHandler(this.CarteiraVacinacao_Click); 
             btnCarteiraVacinacao.ForeColor = Color.White;
             btnCarteiraVacinacao.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");           
+            btnCarteiraVacinacao.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnSair = new Button();
             btnSair.Text = "Sair";
@@ -93,6 +100,7 @@ namespace SistemaAgroPop
             btnSair.Click += new EventHandler(this.btnSairClick);
             btnSair.ForeColor = Color.White;
             btnSair.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnSair.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             contentPanel = new Panel();
             contentPanel.AutoSize = true; 
