@@ -58,24 +58,28 @@ namespace View
             adicionarVacinaFornecidaButton.Click += new EventHandler(adicionarVacinaFornecidaButton_Click);
             adicionarVacinaFornecidaButton.ForeColor = Color.White;
             adicionarVacinaFornecidaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarVacinaFornecidaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             atualizarVacinaFornecidaButton.Text = "Editar";
             atualizarVacinaFornecidaButton.Location = new Point(330, 10);
             atualizarVacinaFornecidaButton.Click += new EventHandler(atualizarVacinaFornecidaButton_Click);
             atualizarVacinaFornecidaButton.ForeColor = Color.White;
             atualizarVacinaFornecidaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            atualizarVacinaFornecidaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             deletarVacinaFornecidaButton.Text = "Excluir";
             deletarVacinaFornecidaButton.Location = new Point(410, 10);
             deletarVacinaFornecidaButton.Click += new EventHandler(deletarVacinaFornecidaButton_Click);
             deletarVacinaFornecidaButton.ForeColor = Color.White;
             deletarVacinaFornecidaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            deletarVacinaFornecidaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             voltarButton.Text = "Voltar";
             voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
             voltarButton.ForeColor = Color.White;
             voltarButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            voltarButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(adicionarVacinaFornecidaButton);
             buttonPanel.Controls.Add(atualizarVacinaFornecidaButton);
@@ -99,7 +103,7 @@ namespace View
 
             vacinaFornecidaGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             vacinaFornecidaGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            vacinaFornecidaGridView.ColumnHeadersDefaultCellStyle.Font = new Font(vacinaFornecidaGridView.Font, FontStyle.Bold);
+            vacinaFornecidaGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             vacinaFornecidaGridView.Name = "vacinaFornecidaGridView";
             vacinaFornecidaGridView.Location = new Point(8, 8);
@@ -107,6 +111,7 @@ namespace View
             vacinaFornecidaGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             vacinaFornecidaGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             vacinaFornecidaGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            vacinaFornecidaGridView.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             vacinaFornecidaGridView.GridColor = Color.Black;
             vacinaFornecidaGridView.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#419873");
             vacinaFornecidaGridView.RowHeadersVisible = false;

@@ -28,24 +28,29 @@ namespace Views
             lblQtdMinima.Text = "Quantidade Mínima:";
             lblQtdMinima.AutoSize = true;
             lblQtdMinima.Location = new Point(10, 10);
+            lblQtdMinima.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             txtQtdMinima = new TextBox();
             txtQtdMinima.Location = new Point(150, 10);
             txtQtdMinima.Size = new Size(200, 18);
+            txtQtdMinima.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblPeriodicidade = new Label();
             lblPeriodicidade.Text = "Periodicidade:";
             lblPeriodicidade.AutoSize = true;
             lblPeriodicidade.Location = new Point(10, 70 );
+            lblPeriodicidade.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             txtPeriodicidade = new TextBox();
             txtPeriodicidade.Location = new Point(150, 70);
             txtPeriodicidade.Size = new Size(200, 18);
+            txtPeriodicidade.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblTipo = new Label();
             lblTipo.Text = "Tipo:";
             lblTipo.AutoSize = true;
             lblTipo.Location = new Point(10, 130);
+            lblTipo.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             comboBoxTipo = new ComboBox();
             comboBoxTipo.Location = new Point(150, 130);
@@ -53,6 +58,7 @@ namespace Views
             comboBoxTipo.TabIndex = 0;
             this.setComboBoxTipo();
             comboBoxTipo.Text = " ";
+            comboBoxTipo.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
@@ -60,6 +66,7 @@ namespace Views
             btnConfirmar.Click += new EventHandler(adicionarVacinaButton_Click);
             btnConfirmar.ForeColor = Color.White;
             btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnConfirmar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
@@ -67,6 +74,7 @@ namespace Views
             btnVoltar.Click += new EventHandler(voltarButton_Click);
             btnVoltar.ForeColor = Color.White;
             btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnVoltar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);
