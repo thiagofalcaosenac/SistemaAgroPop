@@ -3,7 +3,7 @@
 namespace SistemaAgroPop
 {
 
-    static class Program
+    public static class Program
     {
         public static MenuPrincipal form = new MenuPrincipal();
         [STAThread]

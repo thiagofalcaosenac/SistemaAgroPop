@@ -6,6 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWindowsForms>true</UseWindowsForms>
     <Nullable>enable</Nullable>
+    <StartupObject>SistemaAgroPop.Program</StartupObject>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +20,10 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.Mysql.Design" Version="1.1.2" />
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
     <PackageReference Include="ThenInclude.EF6" Version="1.0.0.8" />
+
+    <PackageReference Include="nunit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
   </ItemGroup>
 
 </Project>
