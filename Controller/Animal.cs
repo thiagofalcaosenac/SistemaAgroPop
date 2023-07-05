@@ -35,6 +35,9 @@ namespace Controller
             DateOnly dataDeNascimento = DateOnly.FromDateTime(DateTime.Parse(dataNascimento));
             Model.Raca racaBanco = Controller.Raca.BuscarPorId(racaId);
             Model.Fazenda fazendaBanco = Controller.Fazenda.BuscarPorId(fazendaId);
+
+            validarQtdLimiteAnimalPorFazenda(fazendaBanco);
+
             return new Model.Animal(
                dataDeNascimento,
                nroRegistro,
@@ -76,6 +79,9 @@ namespace Controller
                 int pesoInt = Int32.Parse(peso);
                 Model.Raca racaBanco = Controller.Raca.BuscarPorId(racaId);
                 Model.Fazenda fazendaBanco = Controller.Fazenda.BuscarPorId(fazendaId);
+
+                validarQtdLimiteAnimalPorFazenda(fazendaBanco);
+
                 return Model.Animal.AlterarAnimal(
                     idAnimal,
                     dataDeNascimento,
@@ -169,6 +175,17 @@ namespace Controller
                 throw new Exception("Informe de qual fazenda e o animal!");
         }
 
+        private static void validarQtdLimiteAnimalPorFazenda(Model.Fazenda fazenda)
+        {
+            int qtdLimiteAnimalFazenda = fazenda.qtdLimiteAnimal;
+            int qtdAtualAnimaisPorFazenda = Model.Animal.BuscarPorFazenda(fazenda.id).Count();
+
+            MessageBox.Show(qtdLimiteAnimalFazenda.ToString());
+            MessageBox.Show(qtdAtualAnimaisPorFazenda.ToString());
+
+            if (qtdAtualAnimaisPorFazenda >= qtdLimiteAnimalFazenda)
+                throw new Exception("A quantidade de animais já chegou no limite na fazenda selecionada!");
+        }
 
     }
 }

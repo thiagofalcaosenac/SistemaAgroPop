@@ -99,7 +99,7 @@ namespace Views
         {
             this.Controls.Add(vacinaGridView);
 
-            vacinaGridView.ColumnCount = 4;
+            vacinaGridView.ColumnCount = 5;
 
             vacinaGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             vacinaGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -119,7 +119,8 @@ namespace Views
             vacinaGridView.Columns[0].Name = "Id da Vacina";
             vacinaGridView.Columns[1].Name = "Tipo da Vacina";
             vacinaGridView.Columns[2].Name = "Qtd Mínima";
-            vacinaGridView.Columns[3].Name = "Periocidade";
+            vacinaGridView.Columns[3].Name = "Nro Doses Disponiveis";            
+            vacinaGridView.Columns[4].Name = "Periocidade";
 
             vacinaGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             vacinaGridView.MultiSelect = false;
@@ -137,7 +138,7 @@ namespace Views
             {
                 Model.Vacina vacinas = Controller.Vacina.BuscarPorId(vacina.Id);
 
-                object[] linhaVacina = { vacina.Id.ToString(), vacina.Tipo, vacina.QtdMinima, vacina.Periodicidade };
+                object[] linhaVacina = { vacina.Id.ToString(), vacina.Tipo, vacina.QtdMinima, vacina.NroDosesDisponiveis, vacina.Periodicidade };
                 vacinaGridView.Rows.Add(linhaVacina);
             }
         }

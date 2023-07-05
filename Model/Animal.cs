@@ -204,15 +204,16 @@ namespace Model
                 throw new System.Exception("Animal não encontrado");
             }
         }
-        public static Model.Animal BuscarPorFazenda(int fazenda)
+        public static List<Model.Animal> BuscarPorFazenda(int parametroFazendaId)
         {
             try
             {
                 Database db = new Database();
-                Model.Animal animal = (from u in db.Animals
-                                       where u.fazenda.id == fazenda
-                                       select u).First();
-                return animal;
+                List<Model.Animal> listAnimais = (from u in db.Animals
+                                                  join fazenda in db.Fazendas on u.fazendaid equals fazenda.id
+                                                  where u.fazenda.id == parametroFazendaId
+                                                  select u).ToList();
+                return listAnimais;
             }
             catch
             {
