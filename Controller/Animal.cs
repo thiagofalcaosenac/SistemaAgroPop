@@ -180,9 +180,6 @@ namespace Controller
             int qtdLimiteAnimalFazenda = fazenda.qtdLimiteAnimal;
             int qtdAtualAnimaisPorFazenda = Model.Animal.BuscarPorFazenda(fazenda.id).Count();
 
-            MessageBox.Show(qtdLimiteAnimalFazenda.ToString());
-            MessageBox.Show(qtdAtualAnimaisPorFazenda.ToString());
-
             if (qtdAtualAnimaisPorFazenda >= qtdLimiteAnimalFazenda)
                 throw new Exception("A quantidade de animais já chegou no limite na fazenda selecionada!");
         }
