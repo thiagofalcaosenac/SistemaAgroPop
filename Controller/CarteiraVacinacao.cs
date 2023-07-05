@@ -8,15 +8,18 @@ namespace Controller
 {
     public class CarteiraVacinacao
     {
-        public Model.CarteiraVacinacao CriarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, int nroDose, Model.Animal animal, Model.Vacina vacina, Model.Fornecedor fornecedor)
+        public static Model.CarteiraVacinacao CriarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, string nroDose, Model.Animal animal, Model.Vacina vacina, Model.Fornecedor fornecedor)
         {
             if (string.IsNullOrEmpty(dataVacinacao) || string.IsNullOrEmpty(proximaDose))
                 throw new Exception("Data de vacinação e próxima dose são obrigatórias.");
 
-            DateOnly parsedDataVacinacao;
-            DateOnly parsedProximaDose;
-            if (!DateOnly.TryParse(dataVacinacao, out parsedDataVacinacao) || !DateOnly.TryParse(proximaDose, out parsedProximaDose))
+            DateTime parsedDataVacinacao;
+            DateTime parsedProximaDose;
+            if (!DateTime.TryParse(dataVacinacao, out parsedDataVacinacao) || !DateTime.TryParse(proximaDose, out parsedProximaDose))
                 throw new Exception("As datas devem estar em um formato válido.");
+
+            if (animal == null)
+                throw new Exception("É necessário selecionar um animal.");
 
             if (animal == null)
                 throw new Exception("É necessário selecionar um animal.");
@@ -24,42 +27,55 @@ namespace Controller
             if (vacina == null)
                 throw new Exception("É necessário selecionar uma vacina.");
 
-            if (fornecedor == null)
-                throw new Exception("É necessário selecionar um fornecedor.");
+            if (String.IsNullOrEmpty(nroDose))
+                throw new Exception("Informe o número de doses!");
 
-            Model.CarteiraVacinacao carteiraVacinacao = new Model.CarteiraVacinacao(id, parsedDataVacinacao, parsedProximaDose, nroDose, animal, vacina, fornecedor);
+            DateOnly dataVacinacaoVar = DateOnly.FromDateTime(parsedDataVacinacao);
+            DateOnly proximaDoseVar = DateOnly.FromDateTime(parsedProximaDose);
+
+            Model.CarteiraVacinacao carteiraVacinacao = new Model.CarteiraVacinacao(id, dataVacinacaoVar, proximaDoseVar, Int32.Parse(nroDose), animal, vacina, fornecedor);
+            
+            Model.VacinaFornecida vacinaFornecida = Controller.VacinaFornecida.BuscarVacinaFornecidaPorVacina(vacina);
+            vacinaFornecida.AtualizarNrDoses(Int32.Parse(nroDose));
+            
             return carteiraVacinacao;
         }
 
-        public Model.CarteiraVacinacao AlterarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, int nroDose)
+        public static Model.CarteiraVacinacao AlterarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, string nroDose)
         {
             if (string.IsNullOrEmpty(dataVacinacao) || string.IsNullOrEmpty(proximaDose))
                 throw new Exception("Data de vacinação e próxima dose são obrigatórias.");
 
-            DateOnly parsedDataVacinacao;
-            DateOnly parsedProximaDose;
-            if (!DateOnly.TryParse(dataVacinacao, out parsedDataVacinacao) || !DateOnly.TryParse(proximaDose, out parsedProximaDose))
+            if (String.IsNullOrEmpty(nroDose))
+                throw new Exception("Informe o número de doses!");                
+
+            DateTime parsedDataVacinacao;
+            DateTime parsedProximaDose;
+            if (!DateTime.TryParse(dataVacinacao, out parsedDataVacinacao) || !DateTime.TryParse(proximaDose, out parsedProximaDose))
                 throw new Exception("As datas devem estar em um formato válido.");
 
-            Model.CarteiraVacinacao carteiraVacinacao = Model.CarteiraVacinacao.BuscarPorId(id);
-            carteiraVacinacao.NroDose = nroDose;
-            carteiraVacinacao.DataVacinacao = parsedDataVacinacao;
-            carteiraVacinacao.ProximaDose = parsedProximaDose;
+            DateOnly dataVacinacaoVar = DateOnly.FromDateTime(parsedDataVacinacao);
+            DateOnly proximaDoseVar = DateOnly.FromDateTime(parsedProximaDose);
 
-            return Model.CarteiraVacinacao.Alterar(id, parsedDataVacinacao, parsedProximaDose, nroDose);
+            Model.CarteiraVacinacao carteiraVacinacao = Model.CarteiraVacinacao.BuscarPorId(id);
+            carteiraVacinacao.NroDose = Int32.Parse(nroDose);
+            carteiraVacinacao.DataVacinacao = dataVacinacaoVar;
+            carteiraVacinacao.ProximaDose = proximaDoseVar;
+
+            return Model.CarteiraVacinacao.Alterar(id, dataVacinacaoVar, proximaDoseVar, Int32.Parse(nroDose));
         }
 
-        public void ExcluirVacinaCarteiraVacinacao(int id)
+        public static void ExcluirVacinaCarteiraVacinacao(int id)
         {
             Model.CarteiraVacinacao.Excluir(id);
         }
 
-        public List<Model.CarteiraVacinacao> ListarCarteiraVacinacao()
+        public static List<Model.CarteiraVacinacao> ListarCarteiraVacinacao()
         {
             return Model.CarteiraVacinacao.Listar();
         }
 
-        public Model.CarteiraVacinacao BuscarPorId(int id)
+        public static Model.CarteiraVacinacao BuscarPorId(int id)
         {
             return Model.CarteiraVacinacao.BuscarPorId(id);
         }
@@ -91,17 +107,14 @@ namespace Controller
             }
         }
 
-        public static void VerificarCarteirasProximaDose()
+        public static List<Model.CarteiraVacinacao>  VerificarCarteirasProximaDose()
         {
             Database db = new Database();
             List<Model.CarteiraVacinacao> carteirasVacinacao = (from cv in db.CarteiraVacinacoes
                                                                 where (DateTime.Parse(cv.ProximaDose.ToString()) - DateTime.Today).TotalDays <= 30
                                                                 select cv).ToList();
-
-            foreach (Model.CarteiraVacinacao carteiraVacinacao in carteirasVacinacao)
-            {
-                Console.WriteLine($"A carteira de vacinação de ID {carteiraVacinacao.Id} está com a próxima dose agendada para daqui a 30 dias.");
-            }
+            return carteirasVacinacao;
+           
         }
     }
 }

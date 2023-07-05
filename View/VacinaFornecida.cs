@@ -11,9 +11,9 @@ namespace View
         Label lblPreco;
         Label lblFornecedor;
         Label lblVacina;
-        TextBox txtDataFabricacao;
-        TextBox txtDataValidade;
-        TextBox txtDataCompra;
+        DateTimePicker txtDataFabricacao;
+        DateTimePicker txtDataValidade;
+        DateTimePicker txtDataCompra;
         TextBox txtQuantidade;
         TextBox txtPreco;
         ComboBox comboboxFornecedor;
@@ -33,75 +33,106 @@ namespace View
         {
             this.Text = "Cadastro de Vacina Fornecida";
 
-            this.Size = new Size(1000, 900);
+            this.Size = new Size(600, 500);
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#52bf90");
 
             lblDataFabricacao = new Label();
             lblDataFabricacao.Text = "Data Fabricação:";
             lblDataFabricacao.AutoSize = true;
-            lblDataFabricacao.Location = new Point(20, 60);
-            txtDataFabricacao = new TextBox();
-            txtDataFabricacao.Location = new Point(150, 60);
+            lblDataFabricacao.Location = new Point(10, 10);
+            lblDataFabricacao.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            txtDataFabricacao = new DateTimePicker();
+            txtDataFabricacao.Location = new Point(150, 10);
             txtDataFabricacao.Size = new Size(200, 18);
+            txtDataFabricacao.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblDataValidade = new Label();
             lblDataValidade.Text = "Data Validade:";
             lblDataValidade.AutoSize = true;
-            lblDataValidade.Location = new Point(20, 120);
-            txtDataValidade = new TextBox();
-            txtDataValidade.Location = new Point(150, 120);
+            lblDataValidade.Location = new Point(10, 70);
+            lblDataValidade.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            txtDataValidade = new DateTimePicker();
+            txtDataValidade.Location = new Point(150, 70);
             txtDataValidade.Size = new Size(200, 18);
+            txtDataValidade.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblDataCompra = new Label();
             lblDataCompra.Text = "Data Compra:";
             lblDataCompra.AutoSize = true;
-            lblDataCompra.Location = new Point(20, 180);
-            txtDataCompra = new TextBox();
-            txtDataCompra.Location = new Point(150, 180);
+            lblDataCompra.Location = new Point(10, 130);
+            lblDataCompra.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            txtDataCompra = new DateTimePicker();
+            txtDataCompra.Location = new Point(150, 130);
             txtDataCompra.Size = new Size(200, 18);
+            txtDataCompra.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblQuantidade = new Label();
             lblQuantidade.Text = "Quantidade:";
             lblQuantidade.AutoSize = true;
-            lblQuantidade.Location = new Point(20, 240);
+            lblQuantidade.Location = new Point(10, 190);
+            lblQuantidade.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             txtQuantidade = new TextBox();
-            txtQuantidade.Location = new Point(150, 240);
+            txtQuantidade.Location = new Point(150, 190);
             txtQuantidade.Size = new Size(200, 18);
+            txtQuantidade.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblPreco = new Label();
             lblPreco.Text = "Preço:";
             lblPreco.AutoSize = true;
-            lblPreco.Location = new Point(20, 300);
+            lblPreco.Location = new Point(10, 250);
+            lblPreco.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             txtPreco = new TextBox();
-            txtPreco.Location = new Point(150, 300);
+            txtPreco.Location = new Point(150, 250);
             txtPreco.Size = new Size(200, 18);
+            txtPreco.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             lblFornecedor = new Label();
             lblFornecedor.Text = "Fornecedor:";
             lblFornecedor.AutoSize = true;
-            lblFornecedor.Location = new Point(20, 360);
+            lblFornecedor.Location = new Point(10, 310);
+            lblFornecedor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             comboboxFornecedor = new ComboBox();
-            comboboxFornecedor.Location = new Point(150, 360);
+            comboboxFornecedor.Location = new Point(150, 310);
             comboboxFornecedor.Size = new Size(200, 18);
             this.adicionarFornecedoresCombobox();
+            comboboxFornecedor.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
 
             lblVacina = new Label();
             lblVacina.Text = "Vacina:";
             lblVacina.AutoSize = true;
-            lblVacina.Location = new Point(20, 420);
+            lblVacina.Location = new Point(10, 370);
+            lblVacina.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             comboboxVacina = new ComboBox();
-            comboboxVacina.Location = new Point(150, 420);
+            comboboxVacina.Location = new Point(150, 370);
             comboboxVacina.Size = new Size(200, 18);
             this.adicionarVacinasCombobox();
+            comboboxVacina.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
 
             btnConfirmar = new Button();
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.Location = new Point(800, 10);
+            btnConfirmar.Location = new Point(400, 10);
             btnConfirmar.Click += new EventHandler(adicionarVacinaFornecidaButton_Click);
+            btnConfirmar.ForeColor = Color.White;
+            btnConfirmar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnConfirmar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             btnVoltar = new Button();
             btnVoltar.Text = "Voltar";
-            btnVoltar.Location = new Point(900, 10);
+            btnVoltar.Location = new Point(490, 10);
             btnVoltar.Click += new EventHandler(voltarButton_Click);
+            btnVoltar.ForeColor = Color.White;
+            btnVoltar.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            btnVoltar.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(btnConfirmar);
             buttonPanel.Controls.Add(btnVoltar);
@@ -184,9 +215,10 @@ namespace View
             Model.Fornecedor fornecedor = Controller.Fornecedor.BuscarPorId(vacinaFornecidaAtual.fornecedorId);
 
 			this.idVacinaFornecidaEdicao = idVacinaFornecida;
-			this.txtDataFabricacao.Text = vacinaFornecidaAtual.DataFabricacao.ToString();
-			this.txtDataValidade.Text = vacinaFornecidaAtual.DataValidade.ToString();
-			this.txtDataCompra.Text = vacinaFornecidaAtual.DataCompra.ToString();
+			this.txtDataFabricacao.Value = new DateTime(vacinaFornecidaAtual.DataFabricacao.Year, vacinaFornecidaAtual.DataFabricacao.Month, vacinaFornecidaAtual.DataFabricacao.Day);
+			this.txtDataValidade.Value = new DateTime(vacinaFornecidaAtual.DataValidade.Year, vacinaFornecidaAtual.DataValidade.Month, vacinaFornecidaAtual.DataValidade.Day);
+			this.txtDataCompra.Value = new DateTime(vacinaFornecidaAtual.DataCompra.Year, vacinaFornecidaAtual.DataCompra.Month, vacinaFornecidaAtual.DataCompra.Day);
+
 			this.txtQuantidade.Text = vacinaFornecidaAtual.Quantidade.ToString();
 			this.txtPreco.Text = vacinaFornecidaAtual.Preco.ToString();
 

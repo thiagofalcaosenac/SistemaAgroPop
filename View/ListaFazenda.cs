@@ -53,23 +53,33 @@ namespace View
 
         private void SetupLayout()
         {
-            this.Size = new Size(1000, 900);
-
             adicionarFazendaButton.Text = "Adicionar";
-            adicionarFazendaButton.Location = new Point(600, 10);
+            adicionarFazendaButton.Location = new Point(250, 10);
             adicionarFazendaButton.Click += new EventHandler(adicionarFazendaButton_Click);
+            adicionarFazendaButton.ForeColor = Color.White;
+            adicionarFazendaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            adicionarFazendaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             atualizarFazendaButton.Text = "Editar";
-            atualizarFazendaButton.Location = new Point(700, 10);
+            atualizarFazendaButton.Location = new Point(330, 10);
             atualizarFazendaButton.Click += new EventHandler(atualizarFazendaButton_Click);
+            atualizarFazendaButton.ForeColor = Color.White;
+            atualizarFazendaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            atualizarFazendaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             deletarFazendaButton.Text = "Excluir";
-            deletarFazendaButton.Location = new Point(800, 10);
+            deletarFazendaButton.Location = new Point(410, 10);
             deletarFazendaButton.Click += new EventHandler(deletarFazendaButton_Click);
+            deletarFazendaButton.ForeColor = Color.White;
+            deletarFazendaButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            deletarFazendaButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             voltarButton.Text = "Voltar";
-            voltarButton.Location = new Point(900, 10);
+            voltarButton.Location = new Point(490, 10);
             voltarButton.Click += new EventHandler(voltarButton_Click);
+            voltarButton.ForeColor = Color.White;
+            voltarButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
+            voltarButton.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             buttonPanel.Controls.Add(adicionarFazendaButton);
             buttonPanel.Controls.Add(atualizarFazendaButton);
@@ -78,19 +88,22 @@ namespace View
             buttonPanel.Height = 50;
             buttonPanel.Dock = DockStyle.Bottom;
 
+            this.Size = new Size(600, 400);
+            this.BackColor = System.Drawing.ColorTranslator.FromHtml("#49ab81");
             this.ControlBox = false;
-            this.Controls.Add(this.buttonPanel);
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Add(this.buttonPanel);            
         }
 
         private void SetupDataGridView()
         {
             this.Controls.Add(fazendaGridView);
 
-            fazendaGridView.ColumnCount = 11;
+            fazendaGridView.ColumnCount = 12;
 
-            fazendaGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            fazendaGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             fazendaGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            fazendaGridView.ColumnHeadersDefaultCellStyle.Font = new Font(fazendaGridView.Font, FontStyle.Bold);
+            fazendaGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
             fazendaGridView.Name = "fazendaGridView";
             fazendaGridView.Location = new Point(8, 8);
@@ -98,25 +111,28 @@ namespace View
             fazendaGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             fazendaGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             fazendaGridView.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            fazendaGridView.Font = new Font("Montserrat", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fazendaGridView.GridColor = Color.Black;
+            fazendaGridView.BackgroundColor = System.Drawing.ColorTranslator.FromHtml("#419873");
             fazendaGridView.RowHeadersVisible = false;
 
             fazendaGridView.Columns[0].Name = "Id";
             fazendaGridView.Columns[1].Name = "Nome";
-            fazendaGridView.Columns[2].Name = "Qtd Limite Animal";
-            fazendaGridView.Columns[3].Name = "Telefone";
-            fazendaGridView.Columns[4].Name = "Email";
-            fazendaGridView.Columns[5].Name = "Bairro";
-            fazendaGridView.Columns[6].Name = "Rua";
-            fazendaGridView.Columns[7].Name = "Numero";
-            fazendaGridView.Columns[8].Name = "Complemento";
-            fazendaGridView.Columns[9].Name = "Cidade";
-            fazendaGridView.Columns[10].Name = "Estado";
+            fazendaGridView.Columns[2].Name = "Limite Animal";
+            fazendaGridView.Columns[3].Name = "Qtd Animais";
+            fazendaGridView.Columns[4].Name = "Telefone";
+            fazendaGridView.Columns[5].Name = "Email";
+            fazendaGridView.Columns[6].Name = "Bairro";
+            fazendaGridView.Columns[7].Name = "Rua";
+            fazendaGridView.Columns[8].Name = "Numero";
+            fazendaGridView.Columns[9].Name = "Complemento";
+            fazendaGridView.Columns[10].Name = "Cidade";
+            fazendaGridView.Columns[11].Name = "Estado";
 
             fazendaGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             fazendaGridView.MultiSelect = false;
             fazendaGridView.Dock = DockStyle.Fill;
-
+            
             fazendaGridView.CellFormatting += new DataGridViewCellFormattingEventHandler(fazendaGridView_CellFormatting);
         }
 
@@ -133,6 +149,7 @@ namespace View
                                             fazenda.id.ToString(),
                                             fazenda.nome,
                                             fazenda.qtdLimiteAnimal,
+                                            fazenda.qtdAtualAnimal,
                                             endereco.telefone,
                                             endereco.email,
                                             endereco.bairro,

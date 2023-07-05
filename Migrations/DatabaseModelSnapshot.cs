@@ -25,17 +25,19 @@ namespace SistemaAgroPop.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("cor")
-                        .HasColumnType("int");
+                    b.Property<string>("cor")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
-                    b.Property<DateTime>("dataNascimento")
-                        .HasColumnType("datetime(6)");
+                    b.Property<DateOnly>("dataNascimento")
+                        .HasColumnType("date");
 
                     b.Property<int>("fazendaid")
                         .HasColumnType("int");
 
-                    b.Property<int>("nroRegistro")
-                        .HasColumnType("int");
+                    b.Property<string>("nroRegistro")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<int>("origem")
                         .HasColumnType("int");
@@ -61,13 +63,13 @@ namespace SistemaAgroPop.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("Animalid")
+                    b.Property<int>("AnimalId")
                         .HasColumnType("int");
 
                     b.Property<DateOnly>("DataVacinacao")
                         .HasColumnType("date");
 
-                    b.Property<int>("Fornecedorid")
+                    b.Property<int>("FornecedorId")
                         .HasColumnType("int");
 
                     b.Property<int>("NroDose")
@@ -81,9 +83,9 @@ namespace SistemaAgroPop.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Animalid");
+                    b.HasIndex("AnimalId");
 
-                    b.HasIndex("Fornecedorid");
+                    b.HasIndex("FornecedorId");
 
                     b.HasIndex("VacinaId");
 
@@ -240,26 +242,26 @@ namespace SistemaAgroPop.Migrations
                     b.Property<DateOnly>("DataValidade")
                         .HasColumnType("date");
 
-                    b.Property<int>("Fornecedorid")
-                        .HasColumnType("int");
-
                     b.Property<float>("Preco")
                         .HasColumnType("float");
 
                     b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
-                    b.Property<int>("VacinaId")
-                        .HasColumnType("int");
-
                     b.Property<float>("ValorTotal")
                         .HasColumnType("float");
 
+                    b.Property<int>("fornecedorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("vacinaId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("Fornecedorid");
+                    b.HasIndex("fornecedorId");
 
-                    b.HasIndex("VacinaId");
+                    b.HasIndex("vacinaId");
 
                     b.ToTable("VacinaFornecidas");
                 });
@@ -287,13 +289,13 @@ namespace SistemaAgroPop.Migrations
                 {
                     b.HasOne("Model.Animal", "Animal")
                         .WithMany()
-                        .HasForeignKey("Animalid")
+                        .HasForeignKey("AnimalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Model.Fornecedor", "Fornecedor")
                         .WithMany()
-                        .HasForeignKey("Fornecedorid")
+                        .HasForeignKey("FornecedorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -336,13 +338,13 @@ namespace SistemaAgroPop.Migrations
                 {
                     b.HasOne("Model.Fornecedor", "Fornecedor")
                         .WithMany()
-                        .HasForeignKey("Fornecedorid")
+                        .HasForeignKey("fornecedorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Model.Vacina", "Vacina")
                         .WithMany()
-                        .HasForeignKey("VacinaId")
+                        .HasForeignKey("vacinaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
