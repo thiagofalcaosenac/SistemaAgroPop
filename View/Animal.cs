@@ -262,7 +262,7 @@ namespace View
 
             // Adicionar os valores ao ComboBox
             cmbOrigem.Items.AddRange(enumOrigemObjects);
-
+            cmbOrigem.SelectedIndex = 0;
     }
 
         private void voltarButton_Click(object sender, EventArgs e)

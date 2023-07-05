@@ -158,7 +158,7 @@ namespace Views
                         this.idCarteiraVacinacaoEdicao.Value,
                         this.txtDataVacinacao.Text,
                         this.txtProximaDose.Text,
-                        Int32.Parse(this.txtNroDoses.Text)
+                        this.txtNroDoses.Text
                         );
                     MessageBox.Show("Carteira de Vacinção atualizada com sucesso!");
                 }
@@ -172,7 +172,7 @@ namespace Views
                         0,
                         this.txtDataVacinacao.Text,
                         this.txtProximaDose.Text,
-                        Int32.Parse(this.txtNroDoses.Text),
+                        this.txtNroDoses.Text,
                         animal,
                         vacina,
                         fornecedor
@@ -184,7 +184,7 @@ namespace Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.InnerException.Message);
+                MessageBox.Show(ex.Message);
 
             }
         }
@@ -197,14 +197,14 @@ namespace Views
         private void setarDadosCarteiraVacinacaoEdicao(int idCarteiraVacinacao)
         {
             Model.CarteiraVacinacao CarteiraVacinacaoAtual = Controller.CarteiraVacinacao.BuscarPorId(idCarteiraVacinacao);
-           
+
             this.idCarteiraVacinacaoEdicao = idCarteiraVacinacao;
             this.txtDataVacinacao.Value = new DateTime(CarteiraVacinacaoAtual.DataVacinacao.Year, CarteiraVacinacaoAtual.DataVacinacao.Month, CarteiraVacinacaoAtual.DataVacinacao.Day);
             this.txtProximaDose.Value = new DateTime(CarteiraVacinacaoAtual.ProximaDose.Year, CarteiraVacinacaoAtual.ProximaDose.Month, CarteiraVacinacaoAtual.ProximaDose.Day);
             this.txtNroDoses.Text = CarteiraVacinacaoAtual.NroDose.ToString();
 
             foreach (ModelComboBox animal in this.comboBoxAnimal.Items)
-            {   
+            {
                 if (CarteiraVacinacaoAtual.AnimalId.Equals(animal.Id))
                 {
                     this.comboBoxAnimal.SelectedItem = animal;
@@ -238,6 +238,7 @@ namespace Views
             foreach (Model.Animal animal in animais)
             {
                 this.comboBoxAnimal.Items.Add(ModelComboBox.To(animal));
+                this.comboBoxAnimal.SelectedIndex = 0;
             }
 
         }
@@ -248,6 +249,7 @@ namespace Views
             foreach (Model.Vacina vacina in vacinas)
             {
                 this.comboBoxVacina.Items.Add(ModelComboBox.To(vacina));
+                this.comboBoxVacina.SelectedIndex = 0;
             }
         }
 
@@ -257,6 +259,7 @@ namespace Views
             foreach (Model.Fornecedor fornecedor in fornecedores)
             {
                 this.comboBoxFornecedor.Items.Add(ModelComboBox.To(fornecedor));
+                this.comboBoxFornecedor.SelectedIndex = 0;
             }
         }
     }

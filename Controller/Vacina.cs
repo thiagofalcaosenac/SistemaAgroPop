@@ -8,15 +8,15 @@ namespace Controller
 {
     public class Vacina
     {
-        public static Model.Vacina CriarVacina(int id, Model.Vacina.TipoVacina tipo, int periodicidade, int qtdMinima)
+        public static Model.Vacina CriarVacina(int id, Model.Vacina.TipoVacina tipo, string periodicidade, string qtdMinima)
         {
             validaCamposObrigatorios(tipo, periodicidade, qtdMinima);
 
-            Model.Vacina vacina = new Model.Vacina(id, tipo, periodicidade, qtdMinima);
+            Model.Vacina vacina = new Model.Vacina(id, tipo, Int32.Parse(periodicidade), Int32.Parse(qtdMinima));
             return vacina;
         }
 
-        public static Model.Vacina AlterarVacina(int id, Model.Vacina.TipoVacina tipo, int periodicidade, int qtdMinima)
+        public static Model.Vacina AlterarVacina(int id, Model.Vacina.TipoVacina tipo, string periodicidade, string qtdMinima)
         {
             Model.Vacina vacina = Model.Vacina.BuscarVacinaPorId(id);
 
@@ -28,10 +28,10 @@ namespace Controller
             validaCamposObrigatorios(tipo, periodicidade, qtdMinima);
 
             vacina.Tipo = tipo;
-            vacina.Periodicidade = periodicidade;
-            vacina.QtdMinima = qtdMinima;
+            vacina.Periodicidade = Int32.Parse(periodicidade);
+            vacina.QtdMinima = Int32.Parse(qtdMinima);
 
-            return Model.Vacina.AlterarVacina(id, tipo, periodicidade, qtdMinima);
+            return Model.Vacina.AlterarVacina(id, tipo, Int32.Parse(periodicidade), Int32.Parse(qtdMinima));
         }
 
         public static void ExcluirVacina(int id)
@@ -64,19 +64,19 @@ namespace Controller
             return vacina;
         }
 
-        private static void validaCamposObrigatorios(Model.Vacina.TipoVacina tipo, int periodicidade, int qtdMinima)
+        private static void validaCamposObrigatorios(Model.Vacina.TipoVacina tipo, string periodicidade, string qtdMinima)
         {
-            if (string.IsNullOrEmpty(tipo.ToString()))
+            if (tipo == null)
             {
                 throw new ArgumentException("O tipo da vacina é obrigatório.");
             }
 
-            if (int.IsNegative(periodicidade))
+            if (String.IsNullOrEmpty(periodicidade))
             {
                 throw new ArgumentException("A periodicidade é obrigatória.");
             }
 
-            if (int.IsNegative(qtdMinima))
+            if (String.IsNullOrEmpty(qtdMinima))
             {
                 throw new ArgumentException("A quantidade minima é obrigatória.");
             }

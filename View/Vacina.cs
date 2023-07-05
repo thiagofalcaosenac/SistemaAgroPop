@@ -105,8 +105,8 @@ namespace Views
                     Controller.Vacina.AlterarVacina(
                         this.idVacinaEdicao.Value,
                         (Model.Vacina.TipoVacina) this.comboBoxTipo.SelectedItem,
-                        Int32.Parse(this.txtPeriodicidade.Text),
-                        Int32.Parse(this.txtQtdMinima.Text)
+                        this.txtPeriodicidade.Text,
+                        this.txtQtdMinima.Text
                         );
                     MessageBox.Show("Vacina atualizada com sucesso!");
                 }
@@ -115,8 +115,8 @@ namespace Views
                     Controller.Vacina.CriarVacina(
                         0,
                         (Model.Vacina.TipoVacina) this.comboBoxTipo.SelectedItem,
-                        Int32.Parse(this.txtPeriodicidade.Text),
-                        Int32.Parse(this.txtQtdMinima.Text)
+                        this.txtPeriodicidade.Text,
+                        this.txtQtdMinima.Text
                         );
                     MessageBox.Show("Vacina cadastrada com sucesso!");
                 }
@@ -151,6 +151,8 @@ namespace Views
             comboBoxTipo.Items.Add(Model.Vacina.TipoVacina.FEBRE_AFTOSA);
             comboBoxTipo.Items.Add(Model.Vacina.TipoVacina.BRUCELOSE);
             comboBoxTipo.Items.Add(Model.Vacina.TipoVacina.RAIVA);
+
+            comboBoxTipo.SelectedIndex = 0;
         }
 
     }

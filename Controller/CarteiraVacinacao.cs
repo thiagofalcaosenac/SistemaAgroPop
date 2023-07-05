@@ -8,7 +8,7 @@ namespace Controller
 {
     public class CarteiraVacinacao
     {
-        public static Model.CarteiraVacinacao CriarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, int nroDose, Model.Animal animal, Model.Vacina vacina, Model.Fornecedor fornecedor)
+        public static Model.CarteiraVacinacao CriarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, string nroDose, Model.Animal animal, Model.Vacina vacina, Model.Fornecedor fornecedor)
         {
             if (string.IsNullOrEmpty(dataVacinacao) || string.IsNullOrEmpty(proximaDose))
                 throw new Exception("Data de vacinação e próxima dose são obrigatórias.");
@@ -21,27 +21,33 @@ namespace Controller
             if (animal == null)
                 throw new Exception("É necessário selecionar um animal.");
 
+            if (animal == null)
+                throw new Exception("É necessário selecionar um animal.");
+
             if (vacina == null)
                 throw new Exception("É necessário selecionar uma vacina.");
 
-            if (fornecedor == null)
-                throw new Exception("É necessário selecionar um fornecedor.");
+            if (String.IsNullOrEmpty(nroDose))
+                throw new Exception("Informe o número de doses!");
 
             DateOnly dataVacinacaoVar = DateOnly.FromDateTime(parsedDataVacinacao);
             DateOnly proximaDoseVar = DateOnly.FromDateTime(parsedProximaDose);
 
-            Model.CarteiraVacinacao carteiraVacinacao = new Model.CarteiraVacinacao(id, dataVacinacaoVar, proximaDoseVar, nroDose, animal, vacina, fornecedor);
+            Model.CarteiraVacinacao carteiraVacinacao = new Model.CarteiraVacinacao(id, dataVacinacaoVar, proximaDoseVar, Int32.Parse(nroDose), animal, vacina, fornecedor);
             
             Model.VacinaFornecida vacinaFornecida = Controller.VacinaFornecida.BuscarVacinaFornecidaPorVacina(vacina);
-            vacinaFornecida.AtualizarNrDoses(nroDose);
+            vacinaFornecida.AtualizarNrDoses(Int32.Parse(nroDose));
             
             return carteiraVacinacao;
         }
 
-        public static Model.CarteiraVacinacao AlterarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, int nroDose)
+        public static Model.CarteiraVacinacao AlterarCarteiraVacinacao(int id, string dataVacinacao, string proximaDose, string nroDose)
         {
             if (string.IsNullOrEmpty(dataVacinacao) || string.IsNullOrEmpty(proximaDose))
                 throw new Exception("Data de vacinação e próxima dose são obrigatórias.");
+
+            if (String.IsNullOrEmpty(nroDose))
+                throw new Exception("Informe o número de doses!");                
 
             DateTime parsedDataVacinacao;
             DateTime parsedProximaDose;
@@ -52,11 +58,11 @@ namespace Controller
             DateOnly proximaDoseVar = DateOnly.FromDateTime(parsedProximaDose);
 
             Model.CarteiraVacinacao carteiraVacinacao = Model.CarteiraVacinacao.BuscarPorId(id);
-            carteiraVacinacao.NroDose = nroDose;
+            carteiraVacinacao.NroDose = Int32.Parse(nroDose);
             carteiraVacinacao.DataVacinacao = dataVacinacaoVar;
             carteiraVacinacao.ProximaDose = proximaDoseVar;
 
-            return Model.CarteiraVacinacao.Alterar(id, dataVacinacaoVar, proximaDoseVar, nroDose);
+            return Model.CarteiraVacinacao.Alterar(id, dataVacinacaoVar, proximaDoseVar, Int32.Parse(nroDose));
         }
 
         public static void ExcluirVacinaCarteiraVacinacao(int id)
