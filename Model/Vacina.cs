@@ -13,6 +13,14 @@ namespace Model
         public int Periodicidade { get; set; }
         public int QtdMinima { get; set; }
 
+        public int NroDosesDisponiveis
+        {
+            get
+            {
+                return BuscarNroDosesDisponiveis(this.Id);
+            }
+        }
+
         public Vacina(int id, TipoVacina tipo, int periodicidade, int qtdMinima)
         {
             Id = id;
@@ -94,6 +102,20 @@ namespace Model
                                     where u.Tipo == tipo
                                     select u).ToList();
             return vacinas;
+        }
+
+        public static int BuscarNroDosesDisponiveis(int vacinaId)
+        {
+            Database db = new Database();
+
+            List<VacinaFornecida> vacinaFornecida = (from vFornecidas in db.VacinaFornecidas
+                                                     join vacina in db.Vacinas on vFornecidas.vacinaId equals vacina.Id
+                                                     where vFornecidas.Vacina.Id == vacinaId
+                                                     select vFornecidas).ToList();
+
+            int nroDosesDisponiveis = vacinaFornecida.Select(item => item.Quantidade).Sum();
+
+            return nroDosesDisponiveis;
         }
 
         public enum TipoVacina

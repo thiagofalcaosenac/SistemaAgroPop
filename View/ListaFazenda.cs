@@ -99,7 +99,7 @@ namespace View
         {
             this.Controls.Add(fazendaGridView);
 
-            fazendaGridView.ColumnCount = 11;
+            fazendaGridView.ColumnCount = 12;
 
             fazendaGridView.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.ColorTranslator.FromHtml("#317256");
             fazendaGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -119,14 +119,15 @@ namespace View
             fazendaGridView.Columns[0].Name = "Id";
             fazendaGridView.Columns[1].Name = "Nome";
             fazendaGridView.Columns[2].Name = "Limite Animal";
-            fazendaGridView.Columns[3].Name = "Telefone";
-            fazendaGridView.Columns[4].Name = "Email";
-            fazendaGridView.Columns[5].Name = "Bairro";
-            fazendaGridView.Columns[6].Name = "Rua";
-            fazendaGridView.Columns[7].Name = "Numero";
-            fazendaGridView.Columns[8].Name = "Complemento";
-            fazendaGridView.Columns[9].Name = "Cidade";
-            fazendaGridView.Columns[10].Name = "Estado";
+            fazendaGridView.Columns[3].Name = "Qtd Animais";
+            fazendaGridView.Columns[4].Name = "Telefone";
+            fazendaGridView.Columns[5].Name = "Email";
+            fazendaGridView.Columns[6].Name = "Bairro";
+            fazendaGridView.Columns[7].Name = "Rua";
+            fazendaGridView.Columns[8].Name = "Numero";
+            fazendaGridView.Columns[9].Name = "Complemento";
+            fazendaGridView.Columns[10].Name = "Cidade";
+            fazendaGridView.Columns[11].Name = "Estado";
 
             fazendaGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             fazendaGridView.MultiSelect = false;
@@ -148,6 +149,7 @@ namespace View
                                             fazenda.id.ToString(),
                                             fazenda.nome,
                                             fazenda.qtdLimiteAnimal,
+                                            fazenda.qtdAtualAnimal,
                                             endereco.telefone,
                                             endereco.email,
                                             endereco.bairro,

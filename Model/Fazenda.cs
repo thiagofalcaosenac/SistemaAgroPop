@@ -11,9 +11,14 @@ namespace Model
         public int id { get; set; }
         public string nome { get; set; }
         public int qtdLimiteAnimal { get; set; }
+        public int qtdAtualAnimal
+        {
+            get
+            {
+                return Model.Animal.BuscarPorFazenda(this.id).Count();
+            }
+        }
 
-        //A fórmula desse campo qtdAtualAnimal irá ser feita após o Model Animal ser criado
-        //public virtual int qtdAtualAnimal { get; set; }
         public Endereco endereco { get; set; }
         public int enderecoId { get; set; }
 
@@ -68,8 +73,8 @@ namespace Model
             try
             {
                 Model.Fazenda fazenda = (from u in db.Fazendas
-                                          where u.id == id
-                                          select u).First();
+                                         where u.id == id
+                                         select u).First();
                 return fazenda;
             }
             catch
@@ -125,7 +130,7 @@ namespace Model
         {
             Database db = new Database();
             List<Model.Fazenda> fazendas = (from u in db.Fazendas
-                                             select u).ToList();
+                                            select u).ToList();
             return fazendas;
         }
 
@@ -135,8 +140,8 @@ namespace Model
             {
                 Database db = new Database();
                 Model.Fazenda fazenda = (from u in db.Fazendas
-                                          where u.nome == nome
-                                          select u).First();
+                                         where u.nome == nome
+                                         select u).First();
                 return fazenda;
             }
             catch
